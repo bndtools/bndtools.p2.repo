@@ -1,0 +1,24 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: org.bndtools.p2
+Bundle-Copyright: Copyright (c) Neil Bartlett (2009, 2019) and others.
+  All Rights Reserved.
+Bundle-Developers: pkriens; email=Peter.Kriens@aQute.biz; name="Peter 
+ Kriens"; organization=Bndtools; organizationUrl=https://github.com/bn
+ dtools; roles="architect,developer"; timezone=1
+Bundle-DocURL: https://bndtools.org/
+Bundle-License: Apache-2.0;description="Apache License, Version 2.0";l
+ ink="https://opensource.org/licenses/Apache-2.0",EPL-2.0;description=
+ "Eclipse Public License, Version 2.0";link="https://opensource.org/li
+ censes/EPL-2.0"
+Bundle-ManifestVersion: 2
+Bundle-Name: org.bndtools.p2
+Bundle-SCM: url=https://github.com/bndtools/bnd, connection=scm:git:ht
+ tps://github.com/bndtools/bnd.git, developerConnection=scm:git:git@gi
+ thub.com:bndtools/bnd.git, tag=4.3.0.REL
+Bundle-SymbolicName: org.bndtools.p2
+Bundle-Vendor: Bndtools https://bndtools.org/
+Bundle-Version: 4.3.0.201909301554
+Git-Descriptor: 4.3.0.REL
+Git-SHA: f1eb4b63fab2c37efb3e87d8cd99c79842165fad
+Private-Package: features,plugins
+
