@@ -2,7 +2,7 @@
 
 ## pre-requisite
 
-[![Static Badge](https://img.shields.io/badge/download%20eclipse%20oomph-orange?style=flat&link=https%3A%2F%2Fwiki.eclipse.org%2FEclipse_Oomph_Installer)](https://img.shields.io/badge/:badgeContent)
+[![Static Badge](https://img.shields.io/badge/download%20eclipse%20oomph-orange?style=flat&link=https%3A%2F%2Fwiki.eclipse.org%2FEclipse_Oomph_Installer)](https://wiki.eclipse.org/Eclipse_Installer)
 
 ## available setups
 
