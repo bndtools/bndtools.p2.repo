@@ -1,8 +1,11 @@
 # bndtools.p2.repo
 
+## pre-requisite
 
-eclipse+installer:https://cdn.klib.io/oomph/setups-github/BndConfiguration.setup
+[![Static Badge](https://img.shields.io/badge/download%20eclipse%20oomph-orange?style=flat&link=https%3A%2F%2Fwiki.eclipse.org%2FEclipse_Oomph_Installer)](https://img.shields.io/badge/:badgeContent)
 
-link:https://github.com/bndtools/bnd/[bndtools/bnd,window=_blank]
+## available setups
 
-![https://img.shields.io/static/v1?logo=eclipseide&label=contribute%20to&message=bnd/bndtools&style=for-the-badge&logoColor=white&labelColor=darkorange&color=gray](eclipse+installer:https://klibio.github.io/bndtools.p2.repo/setup/config_bnd-next_ecl-latest.setup)
+[![latest eclipse - bnd next](https://img.shields.io/static/v1?logo=eclipseide&label=latest%20eclipse&message=bndtools%20:%20next&style=for-the-badge&logoColor=white&labelColor=orange&color=gray)](eclipse+installer:https://klibio.github.io/bndtools.p2.repo/setup/config_bnd-next_ecl-latest.setup)
+
+[![latest eclipse - bnd master](https://img.shields.io/static/v1?logo=eclipseide&label=latest%20Eclipse&message=bndtools%20:%20master&style=for-the-badge&logoColor=white&labelColor=orange&color=gray)](eclipse+installer:https://klibio.github.io/bndtools.p2.repo/setup/config_bnd-master_ecl-latest.setup)
