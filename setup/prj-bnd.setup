@@ -97,6 +97,25 @@
         option="-perspective"
         value="bndtools.perspective"/>
   </setupTask>
+  <setupTask
+      xsi:type="setup:VariableTask"
+      id="bndtools-release"
+      type="URI"
+      name="bndtools-release"
+      label="bndtools-release">
+    <choice
+        value="https://cdn.klib.io/org.bndtools.p2/7.0.0/"
+        label="rel 7.0.0"/>
+    <choice
+        value="https://cdn.klib.io/org.bndtools.p2/6.4.1/"
+        label="rel 6.41"/>
+    <choice
+        value="https://bndtools.jfrog.io/bndtools/update-latest"
+        label="release (JFrog)"/>
+    <choice
+        value="https://bndtools.jfrog.io/bndtools/update-snapshot"
+        label="snapshot (JFrog)"/>
+  </setupTask>
   <stream name="master"
       label="Master">
     <setupTask
@@ -123,7 +142,7 @@
         <requirement
             name="bndtools.pde.feature.feature.group"/>
         <repository
-            url="https://cdn.klib.io/org.bndtools.p2/7.0.0/"/>
+            url="${bndtools-release}"/>
       </setupTask>
     </setupTask>
     <setupTask
@@ -198,7 +217,7 @@
         <requirement
             name="bndtools.pde.feature.feature.group"/>
         <repository
-            url="https://cdn.klib.io/org.bndtools.p2/7.0.0/"/>
+            url="${bndtools-release}"/>
       </setupTask>
     </setupTask>
     <setupTask
