@@ -6,7 +6,7 @@
 
 ## available setups
 
-### bugfixing bndtools release
+### bugfixing bndtools stable / release
 
 <a href="eclipse+installer:https://klibio.github.io/bndtools.p2.repo/setup/config_bnd-master_ecl-latest.setup">
 <img src="https://img.shields.io/static/v1?logo=eclipseide&label=eclipse%20%2B%20bndtools%20release&message=bndtools%20:%20master&style=for-the-badge&logoColor=white&labelColor=963508&color=gray"
@@ -22,5 +22,5 @@ alt="eclipse + bnd snapshot on bndtools next"/></a>
 <img src="https://img.shields.io/static/v1?logo=eclipseide&label=eclipse%20%2B%20bndtools%20release&message=bndtools%20:%20next&style=for-the-badge&logoColor=white&labelColor=963508&color=lightgray"/></a>
 
 <a href="eclipse+installer:https://klibio.github.io/bndtools.p2.repo/setup/config_bnd-master_ecl-latest.setup">
-<img src="https://img.shields.io/static/v1?logo=eclipseide&label=eclipse%20%2B%20bndtools%20snapshot&message=bndtools%20:%20next/&style=for-the-badge&logoColor=white&labelColor=orange&color=lightgray"
+<img src="https://img.shields.io/static/v1?logo=eclipseide&label=eclipse%20%2B%20bndtools%20snapshot&message=bndtools%20:%20next&style=for-the-badge&logoColor=white&labelColor=orange&color=lightgray"
 alt="latest eclipse - bnd master"/></a>

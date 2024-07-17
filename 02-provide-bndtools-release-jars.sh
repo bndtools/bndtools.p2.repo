@@ -41,7 +41,7 @@ done < "$tag_list"
 
 
 # Create the index.html file
-index_file="$base_dir/index.html"
+index_file="$base_dir/p2.html"
 echo "<html><body><h1>Release Directories</h1><ul>" > "$index_file"
 
 # List each version directory and its size
