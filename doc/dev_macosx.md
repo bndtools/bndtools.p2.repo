@@ -8,3 +8,9 @@
 https://www.eclipse.org/setups/installer/?url=https://raw.githubusercontent.com/eclipse-oomph/oomph/master/setups/configurations/OomphConfiguration.setup&show=true
 
 https://shields.io/badges/static-badge
+
+
+```bash
+"/Applications/Eclipse Installer.app/Contents/MacOS/eclipse-inst" \
+    https://raw.githubusercontent.com/klibio/bndtools.p2.repo/main/setup/config_bnd-master_ecl-latest.setup
+```

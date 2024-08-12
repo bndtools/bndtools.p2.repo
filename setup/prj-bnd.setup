@@ -104,10 +104,10 @@
       name="bndtools-release"
       label="bndtools-release">
     <choice
-        value="https://cdn.klib.io/org.bndtools.p2/7.0.0/"
+        value="https://klibio.github.io/bndtools.p2.repo/7.0.0/"
         label="rel 7.0.0"/>
     <choice
-        value="https://cdn.klib.io/org.bndtools.p2/6.4.1/"
+        value="https://klibio.github.io/bndtools.p2.repo/6.4.1/"
         label="rel 6.41"/>
     <choice
         value="https://bndtools.jfrog.io/bndtools/update-latest"
