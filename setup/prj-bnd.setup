@@ -179,6 +179,7 @@
           rootFolder="${git.clone.bndtools.location}"
           locateNestedProjects="true">
         <excludedPath>bndtools.test</excludedPath>
+        <excludedPath>bndtools.core.test/resource</excludedPath>
       </sourceLocator>
     </setupTask>
   </stream>
@@ -245,6 +246,7 @@
           rootFolder="${git.clone.bndtools.location}"
           locateNestedProjects="true">
         <excludedPath>bndtools.test</excludedPath>
+        <excludedPath>bndtools.core.test/resource</excludedPath>
       </sourceLocator>
     </setupTask>
   </stream>
