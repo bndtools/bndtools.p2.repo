@@ -174,17 +174,6 @@
       </setupTask>
     </setupTask>
     <setupTask
-        xsi:type="setup:CompoundTask"
-        name="groovy">
-      <setupTask
-          xsi:type="setup.p2:P2Task">
-        <requirement
-            name="org.codehaus.groovy.eclipse.feature.feature.group"/>
-        <repository
-            url="https://groovy.jfrog.io/artifactory/plugins-snapshot-local/e4.32/"/>
-      </setupTask>
-    </setupTask>
-    <setupTask
         xsi:type="projects:ProjectsImportTask">
       <sourceLocator
           rootFolder="${git.clone.bndtools.location}"
@@ -248,17 +237,6 @@
           location="${jre.location-17}"
           name="JRE for JavaSE-17">
         <description>Define the JRE needed to compile and run the Java projects of ${scope.project.label}</description>
-      </setupTask>
-    </setupTask>
-    <setupTask
-        xsi:type="setup:CompoundTask"
-        name="groovy">
-      <setupTask
-          xsi:type="setup.p2:P2Task">
-        <requirement
-            name="org.codehaus.groovy.eclipse.feature.feature.group"/>
-        <repository
-            url="https://groovy.jfrog.io/artifactory/plugins-snapshot-local/e4.32/"/>
       </setupTask>
     </setupTask>
     <setupTask
