@@ -188,7 +188,9 @@
         xsi:type="projects:ProjectsImportTask">
       <sourceLocator
           rootFolder="${git.clone.bndtools.location}"
-          locateNestedProjects="true"/>
+          locateNestedProjects="true">
+        <excludedPath>bndtools.test/*</excludedPath>
+      </sourceLocator>
     </setupTask>
   </stream>
   <stream name="next"
@@ -263,7 +265,9 @@
         xsi:type="projects:ProjectsImportTask">
       <sourceLocator
           rootFolder="${git.clone.bndtools.location}"
-          locateNestedProjects="true"/>
+          locateNestedProjects="true">
+        <excludedPath>bndtools.test/*</excludedPath>
+      </sourceLocator>
     </setupTask>
   </stream>
   <logicalProjectContainer
