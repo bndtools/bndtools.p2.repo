@@ -80,6 +80,14 @@
           key="/instance/org.eclipse.ui/defaultPerspectiveId"
           value="bndtools.perspective"/>
     </setupTask>
+    <setupTask
+        xsi:type="setup:ResourceCreationTask"
+        targetURL="${workspace.location|uri}/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.ui.prefs">
+      <content>
+        eclipse.preferences.version=1
+        showIntro=false
+      </content>
+    </setupTask>
   </setupTask>
   <setupTask
       xsi:type="setup:CompoundTask"
