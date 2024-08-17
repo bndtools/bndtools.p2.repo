@@ -80,16 +80,6 @@
           key="/instance/org.eclipse.ui/defaultPerspectiveId"
           value="bndtools.perspective"/>
     </setupTask>
-    <setupTask
-        xsi:type="setup:ResourceCreationTask"
-        targetURL="${workspace.location|uri}/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.ui.prefs">
-      <content>
-        eclipse.preferences.version=1
-        showIntro=false
-        org.eclipse.ui.internal.views.markers.CachedMarkerBuilderorg.eclipse.ui.views.ProblemView=&lt;?xml version\=&quot;1.0&quot; encoding\=&quot;UTF-8&quot;?>\n&lt;filterGroups andFilters\=&quot;false&quot; markerLimit\=&quot;250&quot; markerLimitEnabled\=&quot;true&quot;>\n&lt;filterGroup IMemento.internal.id\=&quot;org.eclipse.ui.ide.projectErrorsWarningsGrouping&quot; enabled\=&quot;true&quot; filterLimit\=&quot;-1&quot; scope\=&quot;3&quot; workingSet\=&quot;Aggregate for window 1723922611346&quot;>\n&lt;fieldFilter IMemento.internal.id\=&quot;org.eclipse.ui.ide.severityAndDescriptionField&quot; containsModifier\=&quot;CONTAINS&quot; containsText\=&quot;&quot; selectedSeverities\=&quot;6&quot;/>\n&lt;fieldFilter IMemento.internal.id\=&quot;org.eclipse.ui.ide.markerType&quot;/>\n&lt;/filterGroup>\n&lt;filterGroup IMemento.internal.id\=&quot;org.eclipse.ui.ide.selectedErrorsWarningsGrouping&quot; enabled\=&quot;false&quot; filterLimit\=&quot;-1&quot; scope\=&quot;2&quot; workingSet\=&quot;Aggregate for window 1723922611346&quot;>\n&lt;fieldFilter IMemento.internal.id\=&quot;org.eclipse.ui.ide.severityAndDescriptionField&quot; containsModifier\=&quot;CONTAINS&quot; containsText\=&quot;&quot; selectedSeverities\=&quot;6&quot;/>\n&lt;fieldFilter IMemento.internal.id\=&quot;org.eclipse.ui.ide.markerType&quot;/>\n&lt;/filterGroup>\n&lt;filterGroup IMemento.internal.id\=&quot;org.eclipse.ui.ide.selectedWarningsGrouping&quot; enabled\=&quot;false&quot; filterLimit\=&quot;-1&quot; scope\=&quot;2&quot; workingSet\=&quot;Aggregate for window 1723922611346&quot;>\n&lt;fieldFilter IMemento.internal.id\=&quot;org.eclipse.ui.ide.severityAndDescriptionField&quot; containsModifier\=&quot;CONTAINS&quot; containsText\=&quot;&quot; selectedSeverities\=&quot;2&quot;/>\n&lt;fieldFilter IMemento.internal.id\=&quot;org.eclipse.ui.ide.markerType&quot;/>\n&lt;/filterGroup>\n&lt;filterGroup IMemento.internal.id\=&quot;org.eclipse.ui.ide.errorsFilter&quot; enabled\=&quot;false&quot; filterLimit\=&quot;-1&quot; scope\=&quot;0&quot; workingSet\=&quot;Aggregate for window 1723922611346&quot;>\n&lt;fieldFilter IMemento.internal.id\=&quot;org.eclipse.ui.ide.severityAndDescriptionField&quot; containsModifier\=&quot;CONTAINS&quot; containsText\=&quot;&quot; selectedSeverities\=&quot;4&quot;/>\n&lt;fieldFilter IMemento.internal.id\=&quot;org.eclipse.ui.ide.markerType&quot;/>\n&lt;/filterGroup>\n&lt;/filterGroups>
-        WORKSPACE_NAME=${scope.project.stream.label}
-      </content>
-    </setupTask>
   </setupTask>
   <setupTask
       xsi:type="setup:CompoundTask"
@@ -263,12 +253,13 @@
         xsi:type="setup:CompoundTask"
         name="preferences">
       <setupTask
-          xsi:type="setup:CompoundTask"
-          name="org.eclipse.ui.ide">
-        <setupTask
-            xsi:type="setup:PreferenceTask"
-            key="/instance/org.eclipse.ui.ide/WORKSPACE_NAME"
-            value="${scope.project.stream.label}"/>
+          xsi:type="setup:ResourceCreationTask"
+          targetURL="${workspace.location|uri}/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.ui.prefs">
+        <content>
+          eclipse.preferences.version=1
+          showIntro=false
+          WORKSPACE_NAME=${scope.project.stream.label}
+        </content>
       </setupTask>
     </setupTask>
   </stream>
