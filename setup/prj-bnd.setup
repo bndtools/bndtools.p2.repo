@@ -233,6 +233,17 @@
     </setupTask>
     <setupTask
         xsi:type="setup:CompoundTask"
+        name="kotlin">
+      <setupTask
+          xsi:type="setup.p2:P2Task">
+        <requirement
+            name="org.jetbrains.kotlin.gradle.feature.feature.group"/>
+        <repository
+            url="https://files.pkg.jetbrains.space/kotlin/p/kotlin-eclipse/main/last/"/>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
         name="JRE">
       <setupTask
           xsi:type="setup.p2:P2Task"
@@ -264,6 +275,7 @@
       <sourceLocator
           rootFolder="${git.clone.bndtools.location}"
           locateNestedProjects="true">
+        <excludedPath>biz.aQute.bndlib.tests</excludedPath>
         <excludedPath>bndtools.test</excludedPath>
         <excludedPath>bndtools.core.test</excludedPath>
         <excludedPath>maven-plugins</excludedPath>
