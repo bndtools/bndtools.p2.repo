@@ -276,6 +276,7 @@
           rootFolder="${git.clone.bndtools.location}"
           locateNestedProjects="true">
         <excludedPath>biz.aQute.bndlib.tests</excludedPath>
+        <excludedPath>biz.aQute.repository</excludedPath>
         <excludedPath>bndtools.test</excludedPath>
         <excludedPath>bndtools.core.test</excludedPath>
         <excludedPath>maven-plugins</excludedPath>
