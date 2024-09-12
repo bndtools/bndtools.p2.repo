@@ -12,36 +12,80 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="">
+    <style>
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            overflow-x: auto;
+            font-size: 10px;
+            /* Small font size */
+        }
+
+        #expandableContent {
+            display: none;
+            /* Initially hidden */
+            padding: 10px;
+            border: 1px solid #ddd;
+            margin-top: 10px;
+        }
+
+        .toggle-btn {
+            padding: 8px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 <body>
     <h1>bndtools - oomph - setups</h1>
 
-    <h2>bugfixing bndtools stable / release</h2>
-    <div>
-        <a
-            href="eclipse+installer:https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/main/setup/config_ecl-latest_bnd-release_on_master.setup">
+    <p>Select eclipse and bndtools version (release/snapshot). </br>
+        Depending on your selection you will get the latest stable eclipse version with bndtools plugin in released or
+        the snapshot version</p>
+
+    <h2>released bndtools for bugfixing of latest released bndtools sources</h2>
+    <div><a
+            href="eclipse+installer:https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/master/setup/config_ecl-latest_bnd-release_on_master.setup">
             <img src="https://img.shields.io/static/v1?logo=eclipseide&label=eclipse%20%2B%20bndtools%20release&message=bndtools%20:%20master&style=for-the-badge&logoColor=white&labelColor=963508&color=gray"
                 alt="eclipse + bnd release on bndtools next" /></a>
     </div>
-    <div> <a
-            href="eclipse+installer:https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/main/setup/config_ecl-latest_bnd-next_on_master.setup">
+    <!-- Button to toggle the expandable section -->
+    <button class="toggle-btn" onclick="toggleContent()">terminal instructions</button>
+    <div id="expandableContent">
+        <small>
+            <pre><code id="oomph">"/Applications/Eclipse Installer.app/Contents/MacOS/eclipse-inst" \
+    https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/master/setup/config_ecl-latest_bnd-release_on_master.setup</code></pre>
+        </small>
+        <button class="copy-btn" onclick="copyToClipboard('oomph')">copy oomph command</button>
+    </div>
+
+    <h2>snapshot bndtools for bugfixing of latest released bndtools sources</h2>
+    <div><a
+            href="eclipse+installer:https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/master/setup/config_ecl-latest_bnd-next_on_master.setup">
             <img src="https://img.shields.io/static/v1?logo=eclipseide&label=eclipse%20%2B%20bndtools%20snapshot&message=bndtools%20:%20master&style=for-the-badge&logoColor=white&labelColor=orange&color=gray"
                 alt="eclipse + bnd snapshot on bndtools next" /></a>
     </div>
 
-    <h2>development bndtools next / snapshot</h2>
-    <div> <a
-            href="eclipse+installer:https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/main/setup/config_ecl-latest_bnd-release_on_next.setup">
+    <h2>released bndtools for snapshot development</h2>
+    <div><a
+            href="eclipse+installer:https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/master/setup/config_ecl-latest_bnd-release_on_next.setup">
             <img src="https://img.shields.io/static/v1?logo=eclipseide&label=eclipse%20%2B%20bndtools%20release&message=bndtools%20:%20next&style=for-the-badge&logoColor=white&labelColor=963508&color=lightgray"
                 alt="eclipse + bnd release on bndtools master" /></a>
     </div>
-    <div> <a
-            href="eclipse+installer:https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/main/setup/config_ecl-latest_bnd-next_on_next.setup">
+
+    <h2>snapshot bndtools for snapshot development</h2>
+    <div><a
+            href="eclipse+installer:https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/master/setup/config_ecl-latest_bnd-next_on_next.setup">
             <img src="https://img.shields.io/static/v1?logo=eclipseide&label=eclipse%20%2B%20bndtools%20snapshot&message=bndtools%20:%20next&style=for-the-badge&logoColor=white&labelColor=orange&color=lightgray"
                 alt="eclipse + bnd snapshot on bndtools next" alt="latest eclipse - bnd master" /></a>
     </div>
- 
+
     <h2>p2 repository</h2>
     <div>
         <a href="p2.html">provided repos</a>
@@ -50,7 +94,35 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-    <script src="" async defer></script>
+    <script>
+        function copyToClipboard(elementId) {
+            var codeElement = document.getElementById(elementId);
+            var range = document.createRange();
+            range.selectNode(codeElement);
+            window.getSelection().removeAllRanges(); // Clear current selection
+            window.getSelection().addRange(range); // Select the code block
+
+            try {
+                document.execCommand('copy');
+                alert('command copied to clipboard! open a terminal and execute it inside. - will launch eclipse installer with oomph setup selected');
+            } catch (err) {
+                alert('Failed to copy code.');
+            }
+
+            window.getSelection().removeAllRanges(); // Unselect after copying
+        }
+        function toggleContent() {
+            var content = document.getElementById('expandableContent');
+            var button = document.querySelector('.toggle-btn');
+
+            // Toggle visibility
+            if (content.style.display === "none") {
+                content.style.display = "block";
+            } else {
+                content.style.display = "none";
+            }
+        }
+    </script>
 </body>
 
 </html>

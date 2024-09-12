@@ -12,5 +12,5 @@ https://shields.io/badges/static-badge
 
 ```bash
 "/Applications/Eclipse Installer.app/Contents/MacOS/eclipse-inst" \
-    https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/main/setup/config_bnd-master_ecl-latest.setup
+    https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/master/setup/config_bnd-master_ecl-latest.setup
 ```

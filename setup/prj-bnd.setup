@@ -239,7 +239,7 @@
         <requirement
             name="org.jetbrains.kotlin.gradle.feature.feature.group"/>
         <repository
-            url="https://files.pkg.jetbrains.space/kotlin/p/kotlin-eclipse/main/last/"/>
+            url="https://files.pkg.jetbrains.space/kotlin/p/kotlin-eclipse/master/last/"/>
       </setupTask>
     </setupTask>
     <setupTask
