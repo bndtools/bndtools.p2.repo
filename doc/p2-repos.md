@@ -1,7 +1,7 @@
 # Eclipse p2 repos
 
 
-https://klibio.github.io/bndtools.p2.repo/7.0.0/
+https://bndtools.org/bndtools.p2.repo/7.0.0/
 
 
 
