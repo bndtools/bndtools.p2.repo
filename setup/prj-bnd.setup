@@ -233,17 +233,6 @@
     </setupTask>
     <setupTask
         xsi:type="setup:CompoundTask"
-        name="kotlin">
-      <setupTask
-          xsi:type="setup.p2:P2Task">
-        <requirement
-            name="org.jetbrains.kotlin.gradle.feature.feature.group"/>
-        <repository
-            url="https://files.pkg.jetbrains.space/kotlin/p/kotlin-eclipse/master/last/"/>
-      </setupTask>
-    </setupTask>
-    <setupTask
-        xsi:type="setup:CompoundTask"
         name="JRE">
       <setupTask
           xsi:type="setup.p2:P2Task"
