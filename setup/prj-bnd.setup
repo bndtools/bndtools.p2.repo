@@ -44,7 +44,7 @@
   <setupTask
       xsi:type="git:GitCloneTask"
       id="git.clone.bndtools"
-      remoteURI="bndtools/bnd">
+      remoteURI="https://github.com/bndtools/bndtools.p2.repo.git">
     <annotation
         source="http://www.eclipse.org/oomph/setup/InducedChoices">
       <detail
@@ -190,6 +190,7 @@
           location="${jre.location-17}"
           name="JRE for JavaSE-17">
         <description>Define the JRE needed to compile and run the Java projects of ${scope.project.label}</description>
+        <defaultExecutionEnvironment>JavaSE-17</defaultExecutionEnvironment>
       </setupTask>
     </setupTask>
     <setupTask
@@ -200,6 +201,30 @@
         <excludedPath>bndtools.test</excludedPath>
         <excludedPath>bndtools.core.test/resource</excludedPath>
       </sourceLocator>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="org.eclipse.jdt.core">
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.codegen.targetPlatform"
+          value="17"/>
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.compliance"
+          value="17"/>
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.enablePreviewFeatures"
+          value="disabled"/>
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.reportPreviewFeatures"
+          value="warning"/>
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.source"
+          value="17"/>
     </setupTask>
   </stream>
   <stream name="next"
@@ -257,6 +282,7 @@
           location="${jre.location-17}"
           name="JRE for JavaSE-17">
         <description>Define the JRE needed to compile and run the Java projects of ${scope.project.label}</description>
+        <defaultExecutionEnvironment>JavaSE-17</defaultExecutionEnvironment>
       </setupTask>
     </setupTask>
     <setupTask
@@ -275,6 +301,30 @@
         xsi:type="maven:MavenImportTask">
       <sourceLocator
           rootFolder="${git.clone.bndtools.location}/maven-plugins"/>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="org.eclipse.jdt.core">
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.codegen.targetPlatform"
+          value="17"/>
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.compliance"
+          value="17"/>
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.enablePreviewFeatures"
+          value="disabled"/>
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.reportPreviewFeatures"
+          value="warning"/>
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.source"
+          value="17"/>
     </setupTask>
   </stream>
   <logicalProjectContainer
