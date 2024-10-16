@@ -12,5 +12,15 @@ https://shields.io/badges/static-badge
 
 ```bash
 "/Applications/Eclipse Installer.app/Contents/MacOS/eclipse-inst" \
-    https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/master/setup/config_bnd-master_ecl-latest.setup
+    https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/master/setup/config_ecl-latest_bnd-next_on_master.setup
+
+"/Applications/Eclipse Installer.app/Contents/MacOS/eclipse-inst" \
+    https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/master/setup/config_ecl-latest_bnd-next_on_next.setup
+
+"/Applications/Eclipse Installer.app/Contents/MacOS/eclipse-inst" \
+    https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/master/setup/config_ecl-latest_bnd-release_on_master.setup
+
+"/Applications/Eclipse Installer.app/Contents/MacOS/eclipse-inst" \
+    https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/master/setup/config_ecl-latest_bnd-release_on_next.setup
+
 ```

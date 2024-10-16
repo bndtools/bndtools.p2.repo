@@ -44,7 +44,7 @@
   <setupTask
       xsi:type="git:GitCloneTask"
       id="git.clone.bndtools"
-      remoteURI="https://github.com/bndtools/bndtools.p2.repo.git">
+      remoteURI="bndtools/bndtools.p2.repo">
     <annotation
         source="http://www.eclipse.org/oomph/setup/InducedChoices">
       <detail
@@ -226,6 +226,14 @@
           key="/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.source"
           value="17"/>
     </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="org.eclipse.egit.ui">
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.egit.ui/commit_dialog_signed_off_by"
+          value="true"/>
+    </setupTask>
   </stream>
   <stream name="next"
       label="Next">
@@ -325,6 +333,14 @@
           xsi:type="setup:PreferenceTask"
           key="/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.source"
           value="17"/>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="org.eclipse.egit.ui">
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.egit.ui/commit_dialog_signed_off_by"
+          value="true"/>
     </setupTask>
   </stream>
   <logicalProjectContainer
