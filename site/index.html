@@ -32,7 +32,8 @@
         }
 
         .toggle-btn {
-            padding: 8px;
+            padding: 2px;
+            font-size: 10px;
             background-color: #007bff;
             color: white;
             border: none;
@@ -56,7 +57,7 @@
                 alt="eclipse + bnd release on bndtools next" /></a>
     </div>
     <!-- Button to toggle the expandable section -->
-    <button class="toggle-btn" onclick="toggleContent()">terminal instructions</button>
+    <button class="toggle-btn" onclick="toggleContent()">display terminal instructions</button>
     <div id="expandableContent">
         <small>
             <pre><code id="oomph">"/Applications/Eclipse Installer.app/Contents/MacOS/eclipse-inst" \
@@ -118,8 +119,10 @@
             // Toggle visibility
             if (content.style.display === "none") {
                 content.style.display = "block";
+                button.textContent = "hide terminal instructions"; // Change button text
             } else {
                 content.style.display = "none";
+                button.textContent = "display terminal instructions"; // Change button text
             }
         }
     </script>

@@ -1,8 +1,29 @@
 # bndtools.p2.repo
 
 ```bash
+##################################
+# testing with local file urls
+##################################
+
+# https://wiki.eclipse.org/Eclipse_Oomph_Authoring#Testing_a_Setup_in_a_Clean_Environment
+vmargs="-vmargs -Duser.home=$(pwd)/.oomph/user.home -Doomph.setup.user.home.redirect=true"
+
+# bnd next on master
 "/Applications/Eclipse Installer.app/Contents/MacOS/eclipse-inst" \
-    file:///$(pwd)/setup/config_bnd-master_ecl-latest.setup
+    file:///$(pwd)/setup/config_ecl-latest_bnd-next_on_master.setup ${vmargs}
+
+# bnd next on next
+"/Applications/Eclipse Installer.app/Contents/MacOS/eclipse-inst" \
+    file:///$(pwd)/setup/config_ecl-latest_bnd-next_on_next.setup ${vmargs}
+
+# bnd release on master
+"/Applications/Eclipse Installer.app/Contents/MacOS/eclipse-inst" \
+    file:///$(pwd)/setup/config_ecl-latest_bnd-release_on_master.setup ${vmargs}
+
+# bnd release on next
+"/Applications/Eclipse Installer.app/Contents/MacOS/eclipse-inst" \
+    file:///$(pwd)/setup/config_ecl-latest_bnd-release_on_next.setup ${vmargs}
+
 ```
 
 https://www.eclipse.org/setups/installer/?url=https://raw.githubusercontent.com/eclipse-oomph/oomph/master/setups/configurations/OomphConfiguration.setup&show=true
@@ -11,15 +32,23 @@ https://shields.io/badges/static-badge
 
 
 ```bash
+##############################
+# launch with github setups
+##############################
+
+# bnd next on master
 "/Applications/Eclipse Installer.app/Contents/MacOS/eclipse-inst" \
     https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/master/setup/config_ecl-latest_bnd-next_on_master.setup
 
+# bnd next on next
 "/Applications/Eclipse Installer.app/Contents/MacOS/eclipse-inst" \
     https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/master/setup/config_ecl-latest_bnd-next_on_next.setup
 
+# bnd release on master
 "/Applications/Eclipse Installer.app/Contents/MacOS/eclipse-inst" \
     https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/master/setup/config_ecl-latest_bnd-release_on_master.setup
 
+# bnd release on next
 "/Applications/Eclipse Installer.app/Contents/MacOS/eclipse-inst" \
     https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/master/setup/config_ecl-latest_bnd-release_on_next.setup
 
