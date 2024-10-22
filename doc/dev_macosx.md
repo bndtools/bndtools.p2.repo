@@ -10,19 +10,23 @@ vmargs="-vmargs -Duser.home=$(pwd)/.oomph/user.home -Doomph.setup.user.home.redi
 
 # bnd next on master
 "/Applications/Eclipse Installer.app/Contents/MacOS/eclipse-inst" \
-    file:///$(pwd)/setup/config_ecl-latest_bnd-next_on_master.setup ${vmargs}
+    file:///$(pwd)/setup/config_ecl-latest_bnd-next_on_master.setup ${vmargs} &
 
 # bnd next on next
 "/Applications/Eclipse Installer.app/Contents/MacOS/eclipse-inst" \
-    file:///$(pwd)/setup/config_ecl-latest_bnd-next_on_next.setup ${vmargs}
+    file:///$(pwd)/setup/config_ecl-latest_bnd-next_on_next.setup ${vmargs} &
 
 # bnd release on master
 "/Applications/Eclipse Installer.app/Contents/MacOS/eclipse-inst" \
-    file:///$(pwd)/setup/config_ecl-latest_bnd-release_on_master.setup ${vmargs}
+    file:///$(pwd)/setup/config_ecl-latest_bnd-release_on_master.setup ${vmargs} &
 
 # bnd release on next
 "/Applications/Eclipse Installer.app/Contents/MacOS/eclipse-inst" \
-    file:///$(pwd)/setup/config_ecl-latest_bnd-release_on_next.setup ${vmargs}
+    file:///$(pwd)/setup/config_ecl-latest_bnd-release_on_next.setup ${vmargs} &
+
+# bndtools.p2.repo
+"/Applications/Eclipse Installer.app/Contents/MacOS/eclipse-inst" \
+    file:///$(pwd)/setup/config_bndtools.p2.repo.setup ${vmargs} &
 
 ```
 

@@ -36,8 +36,6 @@
           label="snapshot (JFrog)"/>
     </setupTask>
     <stream
-        href="prj-bnd.setup#//@streams[name='master']"/>
-    <stream
         href="prj-bndtools.p2.repo.setup#//@streams[name='master']"/>
     <description>The bnd workspace provides cool stuff.</description>
   </workspace>

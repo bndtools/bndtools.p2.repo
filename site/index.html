@@ -47,17 +47,69 @@
     <h1>bndtools - oomph - setups</h1>
 
     <p>Select eclipse and bndtools version (release/snapshot). </br>
-        Depending on your selection you will get the latest stable eclipse version with bndtools plugin in released or
-        the snapshot version</p>
 
-    <h2>released bndtools for bugfixing of latest released bndtools sources</h2>
-    <div><a
-            href="eclipse+installer:https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/master/setup/config_ecl-latest_bnd-release_on_master.setup">
-            <img src="https://img.shields.io/static/v1?logo=eclipseide&label=eclipse%20%2B%20bndtools%20release&message=bndtools%20:%20master&style=for-the-badge&logoColor=white&labelColor=963508&color=gray"
-                alt="eclipse + bnd release on bndtools next" /></a>
-    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">PURPOSE</th>
+                <th scope="col">ECLIPSE VERSION</th>
+                <th scope="col">BNDTOOLS VERSION</th>
+                <th scope="col">SOURCE BRANCH</th>
+                <th scope="col">OOMPH LINK</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">bugfix release</th>
+                <td>latest</td>
+                <td>Rel 7.0.0</td>
+                <td>master</td>
+                <td><a
+                        href="eclipse+installer:https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/master/setup/config_ecl-latest_bnd-release_on_master.setup">
+                        <img src="https://img.shields.io/static/v1?logo=eclipseide&label=eclipse%20%2B%20bndtools%20release&message=bndtools%20:%20master&style=for-the-badge&logoColor=white&labelColor=963508&color=gray"
+                            alt="eclipse + bnd release on bndtools next" /></a>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">bugfix release</th>
+                <td>latest</td>
+                <td>latest SNAPSHOT</td>
+                <td>master</td>
+                <td><a
+                        href="eclipse+installer:https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/master/setup/config_ecl-latest_bnd-next_on_master.setup">
+                        <img src="https://img.shields.io/static/v1?logo=eclipseide&label=eclipse%20%2B%20bndtools%20snapshot&message=bndtools%20:%20master&style=for-the-badge&logoColor=white&labelColor=orange&color=gray"
+                            alt="eclipse + bnd snapshot on bndtools next" /></a>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">feature dev</th>
+                <td>latest</td>
+                <td>Rel 7.0.0</td>
+                <td>next</td>
+                <td><a
+                        href="eclipse+installer:https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/master/setup/config_ecl-latest_bnd-next_on_next.setup">
+                        <img src="https://img.shields.io/static/v1?logo=eclipseide&label=eclipse%20%2B%20bndtools%20snapshot&message=bndtools%20:%20next&style=for-the-badge&logoColor=white&labelColor=963508&color=lightgray"
+                            alt="eclipse + bnd snapshot on bndtools next" alt="latest eclipse - bnd master" /></a>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">feature dev</th>
+                <td>latest</td>
+                <td>SNAPSHOT</td>
+                <td>next</td>
+                <td><a
+                        href="eclipse+installer:https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/master/setup/config_ecl-latest_bnd-next_on_next.setup">
+                        <img src="https://img.shields.io/static/v1?logo=eclipseide&label=eclipse%20%2B%20bndtools%20snapshot&message=bndtools%20:%20next&style=for-the-badge&logoColor=white&labelColor=orange&color=lightgray"
+                            alt="eclipse - bnd snapshot on branch next" /></a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
     <!-- Button to toggle the expandable section -->
-    <button class="toggle-btn" onclick="toggleContent()">display terminal instructions</button>
+    <!--
+            <button class="toggle-btn" onclick="toggleContent()">display terminal instructions</button>
     <div id="expandableContent">
         <small>
             <pre><code id="oomph">"/Applications/Eclipse Installer.app/Contents/MacOS/eclipse-inst" \
@@ -65,31 +117,17 @@
         </small>
         <button class="copy-btn" onclick="copyToClipboard('oomph')">copy oomph command</button>
     </div>
-
-    <h2>snapshot bndtools for bugfixing of latest released bndtools sources</h2>
-    <div><a
-            href="eclipse+installer:https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/master/setup/config_ecl-latest_bnd-next_on_master.setup">
-            <img src="https://img.shields.io/static/v1?logo=eclipseide&label=eclipse%20%2B%20bndtools%20snapshot&message=bndtools%20:%20master&style=for-the-badge&logoColor=white&labelColor=orange&color=gray"
-                alt="eclipse + bnd snapshot on bndtools next" /></a>
-    </div>
-
-    <h2>released bndtools for snapshot development</h2>
-    <div><a
-            href="eclipse+installer:https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/master/setup/config_ecl-latest_bnd-release_on_next.setup">
-            <img src="https://img.shields.io/static/v1?logo=eclipseide&label=eclipse%20%2B%20bndtools%20release&message=bndtools%20:%20next&style=for-the-badge&logoColor=white&labelColor=963508&color=lightgray"
-                alt="eclipse + bnd release on bndtools master" /></a>
-    </div>
-
-    <h2>snapshot bndtools for snapshot development</h2>
-    <div><a
-            href="eclipse+installer:https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/master/setup/config_ecl-latest_bnd-next_on_next.setup">
-            <img src="https://img.shields.io/static/v1?logo=eclipseide&label=eclipse%20%2B%20bndtools%20snapshot&message=bndtools%20:%20next&style=for-the-badge&logoColor=white&labelColor=orange&color=lightgray"
-                alt="eclipse + bnd snapshot on bndtools next" alt="latest eclipse - bnd master" /></a>
-    </div>
-
+-->
     <h2>p2 repository</h2>
     <div>
         <a href="p2.html">provided repos</a>
+    </div>
+
+    <h2>oomph config for this repo</h2>
+    <div><a
+            href="eclipse+installer:https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/master/setup/config_ecl-latest_bnd-next_on_next.setup">
+            <img src="https://img.shields.io/static/v1?logo=eclipseide&label=eclipse%20%2B%20bndtools.p2.repo&message=branch%20:%20master&style=for-the-badge&logoColor=white&labelColor=orange&color=lightgray"
+                alt="eclipse on bndtools.p2.repo branch next" /></a>
     </div>
     <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>

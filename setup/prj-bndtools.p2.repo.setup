@@ -9,8 +9,8 @@
     xmlns:setup="http://www.eclipse.org/oomph/setup/1.0"
     xmlns:setup.p2="http://www.eclipse.org/oomph/setup/p2/1.0"
     xsi:schemaLocation="http://www.eclipse.org/oomph/setup/git/1.0 https://raw.githubusercontent.com/eclipse-oomph/oomph/master/setups/models/Git.ecore http://www.eclipse.org/oomph/setup/jdt/1.0 https://raw.githubusercontent.com/eclipse-oomph/oomph/master/setups/models/JDT.ecore http://www.eclipse.org/oomph/setup/projects/1.0 index:/models/Projects.ecore"
-    name="bndtools"
-    label="bndtools/bnd">
+    name="bndtools.p2.repo"
+    label="bndtools/bndtools.p2.repo">
   <annotation
       source="ConfigurationReference">
     <reference
@@ -93,7 +93,7 @@
         xsi:type="setup:ResourceCreationTask"
         targetURL="${workspace.location|uri}/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.ui.ide.prefs">
       <content>
-        WORKSPACE_NAME=bnd-${scope.project.stream.label}
+        WORKSPACE_NAME=bndtools.p2.repo-${scope.project.stream.label}
         org.eclipse.ui.internal.views.markers.CachedMarkerBuilderorg.eclipse.ui.views.ProblemView=&lt;?xml version\=&quot;1.0&quot; encoding\=&quot;UTF-8&quot;?>\n&lt;filterGroups andFilters\=&quot;false&quot; markerLimit\=&quot;250&quot; markerLimitEnabled\=&quot;true&quot;>\n&lt;filterGroup IMemento.internal.id\=&quot;org.eclipse.ui.ide.projectErrorsWarningsGrouping&quot; enabled\=&quot;true&quot; filterLimit\=&quot;-1&quot; scope\=&quot;3&quot;>\n&lt;fieldFilter IMemento.internal.id\=&quot;org.eclipse.ui.ide.severityAndDescriptionField&quot; containsModifier\=&quot;CONTAINS&quot; containsText\=&quot;&quot; selectedSeverities\=&quot;6&quot;/>\n&lt;fieldFilter IMemento.internal.id\=&quot;org.eclipse.ui.ide.markerType&quot;/>\n&lt;/filterGroup>\n&lt;filterGroup IMemento.internal.id\=&quot;org.eclipse.ui.ide.selectedErrorsWarningsGrouping&quot; enabled\=&quot;false&quot; filterLimit\=&quot;-1&quot; scope\=&quot;2&quot;>\n&lt;fieldFilter IMemento.internal.id\=&quot;org.eclipse.ui.ide.severityAndDescriptionField&quot; containsModifier\=&quot;CONTAINS&quot; containsText\=&quot;&quot; selectedSeverities\=&quot;6&quot;/>\n&lt;fieldFilter IMemento.internal.id\=&quot;org.eclipse.ui.ide.markerType&quot;/>\n&lt;/filterGroup>\n&lt;filterGroup IMemento.internal.id\=&quot;org.eclipse.ui.ide.selectedWarningsGrouping&quot; enabled\=&quot;false&quot; filterLimit\=&quot;-1&quot; scope\=&quot;2&quot;>\n&lt;fieldFilter IMemento.internal.id\=&quot;org.eclipse.ui.ide.severityAndDescriptionField&quot; containsModifier\=&quot;CONTAINS&quot; containsText\=&quot;&quot; selectedSeverities\=&quot;2&quot;/>\n&lt;fieldFilter IMemento.internal.id\=&quot;org.eclipse.ui.ide.markerType&quot;/>\n&lt;/filterGroup>\n&lt;filterGroup IMemento.internal.id\=&quot;org.eclipse.ui.ide.errorsFilter&quot; enabled\=&quot;false&quot; filterLimit\=&quot;-1&quot; scope\=&quot;0&quot;>\n&lt;fieldFilter IMemento.internal.id\=&quot;org.eclipse.ui.ide.severityAndDescriptionField&quot; containsModifier\=&quot;CONTAINS&quot; containsText\=&quot;&quot; selectedSeverities\=&quot;4&quot;/>\n&lt;fieldFilter IMemento.internal.id\=&quot;org.eclipse.ui.ide.markerType&quot;/>\n&lt;/filterGroup>\n&lt;/filterGroups>
 
       </content>
@@ -166,15 +166,6 @@
     <setupTask
         xsi:type="setup:CompoundTask"
         name="JRE">
-      <setupTask
-          xsi:type="setup.p2:P2Task"
-          label="JRE17">
-        <requirement
-            name="a.jre.org.eclipse.justj.openjdk.hotspot.jre.full"
-            versionRange="[17.0.0,17.0.0]"/>
-        <repository
-            url="https://download.eclipse.org/justj/jres/17/updates/release"/>
-      </setupTask>
       <setupTask
           xsi:type="setup.p2:P2Task"
           label="JRE21">
