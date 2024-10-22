@@ -135,7 +135,7 @@
         label="snapshot (JFrog)"/>
   </setupTask>
   <stream name="master"
-      label="Master">
+      label="master">
     <setupTask
         xsi:type="setup:EclipseIniTask"
         disabled="true"

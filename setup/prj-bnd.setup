@@ -6,7 +6,7 @@
     xmlns:git="http://www.eclipse.org/oomph/setup/git/1.0"
     xmlns:jdt="http://www.eclipse.org/oomph/setup/jdt/1.0"
     xmlns:maven="http://www.eclipse.org/oomph/setup/maven/1.0"
-    xmlns:projects="http://www.eclipse.org/oomph/setup/projects/1.0"
+    xmlns:projects_1.0="http://www.eclipse.org/oomph/setup/projects/1.0"
     xmlns:setup="http://www.eclipse.org/oomph/setup/1.0"
     xmlns:setup.p2="http://www.eclipse.org/oomph/setup/p2/1.0"
     xsi:schemaLocation="http://www.eclipse.org/oomph/setup/git/1.0 https://raw.githubusercontent.com/eclipse-oomph/oomph/master/setups/models/Git.ecore http://www.eclipse.org/oomph/setup/jdt/1.0 https://raw.githubusercontent.com/eclipse-oomph/oomph/master/setups/models/JDT.ecore http://www.eclipse.org/oomph/setup/maven/1.0 https://raw.githubusercontent.com/eclipse-oomph/oomph/master/setups/models/Maven.ecore"
@@ -19,6 +19,7 @@
   </annotation>
   <setupTask
       xsi:type="setup:ResourceCreationTask"
+      id="ResCrea_org.eclipse.jdt.ui"
       excludedTriggers="STARTUP MANUAL"
       targetURL="${workspace.location|uri}/.metadata/.plugins/org.eclipse.jdt.ui/dialog_settings.xml"
       encoding="UTF-8">
@@ -83,6 +84,7 @@
     </setupTask>
     <setupTask
         xsi:type="setup:ResourceCreationTask"
+        id="ResCrea_org.eclipse.ui.prefs"
         targetURL="${workspace.location|uri}/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.ui.prefs">
       <content>
         defaultPerspectiveId=bndtools.perspective
@@ -92,9 +94,10 @@
     </setupTask>
     <setupTask
         xsi:type="setup:ResourceCreationTask"
+        id="ResCrea_org.eclipse.ui.ide.prefs"
         targetURL="${workspace.location|uri}/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.ui.ide.prefs">
       <content>
-        WORKSPACE_NAME=bnd-${scope.project.stream.label}
+        WORKSPACE_NAME=bnd-${bndtools-release|uriLastSegment}-branch-${scope.project.stream.label}
         org.eclipse.ui.internal.views.markers.CachedMarkerBuilderorg.eclipse.ui.views.ProblemView=&lt;?xml version\=&quot;1.0&quot; encoding\=&quot;UTF-8&quot;?>\n&lt;filterGroups andFilters\=&quot;false&quot; markerLimit\=&quot;250&quot; markerLimitEnabled\=&quot;true&quot;>\n&lt;filterGroup IMemento.internal.id\=&quot;org.eclipse.ui.ide.projectErrorsWarningsGrouping&quot; enabled\=&quot;true&quot; filterLimit\=&quot;-1&quot; scope\=&quot;3&quot;>\n&lt;fieldFilter IMemento.internal.id\=&quot;org.eclipse.ui.ide.severityAndDescriptionField&quot; containsModifier\=&quot;CONTAINS&quot; containsText\=&quot;&quot; selectedSeverities\=&quot;6&quot;/>\n&lt;fieldFilter IMemento.internal.id\=&quot;org.eclipse.ui.ide.markerType&quot;/>\n&lt;/filterGroup>\n&lt;filterGroup IMemento.internal.id\=&quot;org.eclipse.ui.ide.selectedErrorsWarningsGrouping&quot; enabled\=&quot;false&quot; filterLimit\=&quot;-1&quot; scope\=&quot;2&quot;>\n&lt;fieldFilter IMemento.internal.id\=&quot;org.eclipse.ui.ide.severityAndDescriptionField&quot; containsModifier\=&quot;CONTAINS&quot; containsText\=&quot;&quot; selectedSeverities\=&quot;6&quot;/>\n&lt;fieldFilter IMemento.internal.id\=&quot;org.eclipse.ui.ide.markerType&quot;/>\n&lt;/filterGroup>\n&lt;filterGroup IMemento.internal.id\=&quot;org.eclipse.ui.ide.selectedWarningsGrouping&quot; enabled\=&quot;false&quot; filterLimit\=&quot;-1&quot; scope\=&quot;2&quot;>\n&lt;fieldFilter IMemento.internal.id\=&quot;org.eclipse.ui.ide.severityAndDescriptionField&quot; containsModifier\=&quot;CONTAINS&quot; containsText\=&quot;&quot; selectedSeverities\=&quot;2&quot;/>\n&lt;fieldFilter IMemento.internal.id\=&quot;org.eclipse.ui.ide.markerType&quot;/>\n&lt;/filterGroup>\n&lt;filterGroup IMemento.internal.id\=&quot;org.eclipse.ui.ide.errorsFilter&quot; enabled\=&quot;false&quot; filterLimit\=&quot;-1&quot; scope\=&quot;0&quot;>\n&lt;fieldFilter IMemento.internal.id\=&quot;org.eclipse.ui.ide.severityAndDescriptionField&quot; containsModifier\=&quot;CONTAINS&quot; containsText\=&quot;&quot; selectedSeverities\=&quot;4&quot;/>\n&lt;fieldFilter IMemento.internal.id\=&quot;org.eclipse.ui.ide.markerType&quot;/>\n&lt;/filterGroup>\n&lt;/filterGroups>
 
       </content>
@@ -115,6 +118,11 @@
         excludedTriggers="STARTUP"
         option="-perspective"
         value="bndtools.perspective"/>
+    <setupTask
+        xsi:type="setup:EclipseIniTask"
+        option="-Dorg.eclipse.oomph.setup.donate"
+        value="=false"
+        vm="true"/>
   </setupTask>
   <setupTask
       xsi:type="setup:VariableTask"
@@ -123,11 +131,11 @@
       name="bndtools-release"
       label="bndtools-release">
     <choice
-        value="https://bndtools.org/bndtools.p2.repo/7.0.0/"
+        value="https://bndtools.org/bndtools.p2.repo/7.0.0"
         label="rel 7.0.0"/>
     <choice
-        value="https://bndtools.org/bndtools.p2.repo/6.4.1/"
-        label="rel 6.41"/>
+        value="https://bndtools.org/bndtools.p2.repo/6.4.1"
+        label="rel 6.4.1"/>
     <choice
         value="https://bndtools.jfrog.io/bndtools/update-latest"
         label="release (JFrog)"/>
@@ -136,7 +144,7 @@
         label="snapshot (JFrog)"/>
   </setupTask>
   <stream name="master"
-      label="Master">
+      label="master">
     <setupTask
         xsi:type="setup:EclipseIniTask"
         disabled="true"
@@ -194,13 +202,9 @@
       </setupTask>
     </setupTask>
     <setupTask
-        xsi:type="projects:ProjectsImportTask">
+        xsi:type="maven:MavenImportTask">
       <sourceLocator
-          rootFolder="${git.clone.bnd.location}"
-          locateNestedProjects="true">
-        <excludedPath>bndtools.test</excludedPath>
-        <excludedPath>bndtools.core.test/resource</excludedPath>
-      </sourceLocator>
+          rootFolder="${git.clone.bnd.location}/maven-plugins"/>
     </setupTask>
     <setupTask
         xsi:type="setup:CompoundTask"
@@ -233,6 +237,15 @@
           xsi:type="setup:PreferenceTask"
           key="/instance/org.eclipse.egit.ui/commit_dialog_signed_off_by"
           value="true"/>
+    </setupTask>
+    <setupTask
+        xsi:type="projects_1.0:ProjectsImportTask">
+      <sourceLocator
+          rootFolder="${git.clone.bnd.location}"
+          locateNestedProjects="true">
+        <excludedPath>bndtools.test</excludedPath>
+        <excludedPath>bndtools.core.test/resource</excludedPath>
+      </sourceLocator>
     </setupTask>
   </stream>
   <stream name="next"
@@ -294,18 +307,6 @@
       </setupTask>
     </setupTask>
     <setupTask
-        xsi:type="projects:ProjectsImportTask">
-      <sourceLocator
-          rootFolder="${git.clone.bnd.location}"
-          locateNestedProjects="true">
-        <excludedPath>biz.aQute.bndlib.tests</excludedPath>
-        <excludedPath>biz.aQute.repository</excludedPath>
-        <excludedPath>bndtools.test</excludedPath>
-        <excludedPath>bndtools.core.test</excludedPath>
-        <excludedPath>maven-plugins</excludedPath>
-      </sourceLocator>
-    </setupTask>
-    <setupTask
         xsi:type="maven:MavenImportTask">
       <sourceLocator
           rootFolder="${git.clone.bnd.location}/maven-plugins"/>
@@ -341,6 +342,18 @@
           xsi:type="setup:PreferenceTask"
           key="/instance/org.eclipse.egit.ui/commit_dialog_signed_off_by"
           value="true"/>
+    </setupTask>
+    <setupTask
+        xsi:type="projects_1.0:ProjectsImportTask">
+      <sourceLocator
+          rootFolder="${git.clone.bnd.location}"
+          locateNestedProjects="true">
+        <excludedPath>biz.aQute.bndlib.tests</excludedPath>
+        <excludedPath>biz.aQute.repository</excludedPath>
+        <excludedPath>bndtools.test</excludedPath>
+        <excludedPath>bndtools.core.test</excludedPath>
+        <excludedPath>maven-plugins</excludedPath>
+      </sourceLocator>
     </setupTask>
   </stream>
   <logicalProjectContainer
