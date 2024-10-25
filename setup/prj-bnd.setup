@@ -6,7 +6,7 @@
     xmlns:git="http://www.eclipse.org/oomph/setup/git/1.0"
     xmlns:jdt="http://www.eclipse.org/oomph/setup/jdt/1.0"
     xmlns:maven="http://www.eclipse.org/oomph/setup/maven/1.0"
-    xmlns:projects="http://www.eclipse.org/oomph/setup/projects/1.0"
+    xmlns:projects_1.0="http://www.eclipse.org/oomph/setup/projects/1.0"
     xmlns:setup="http://www.eclipse.org/oomph/setup/1.0"
     xmlns:setup.p2="http://www.eclipse.org/oomph/setup/p2/1.0"
     xsi:schemaLocation="http://www.eclipse.org/oomph/setup/git/1.0 https://raw.githubusercontent.com/eclipse-oomph/oomph/master/setups/models/Git.ecore http://www.eclipse.org/oomph/setup/jdt/1.0 https://raw.githubusercontent.com/eclipse-oomph/oomph/master/setups/models/JDT.ecore http://www.eclipse.org/oomph/setup/maven/1.0 https://raw.githubusercontent.com/eclipse-oomph/oomph/master/setups/models/Maven.ecore"
@@ -286,7 +286,7 @@
           value="true"/>
     </setupTask>
     <setupTask
-        xsi:type="projects:ProjectsImportTask">
+        xsi:type="projects_1.0:ProjectsImportTask">
       <sourceLocator
           rootFolder="${git.clone.bnd.location}"
           locateNestedProjects="true">
@@ -396,7 +396,7 @@
           value="true"/>
     </setupTask>
     <setupTask
-        xsi:type="projects:ProjectsImportTask">
+        xsi:type="projects_1.0:ProjectsImportTask">
       <sourceLocator
           rootFolder="${git.clone.bnd.location}"
           locateNestedProjects="true">
@@ -408,8 +408,5 @@
       </sourceLocator>
     </setupTask>
   </stream>
-  <logicalProjectContainer
-      xsi:type="setup:Project"
-      href="https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/refs/heads/master/setup/catalog_bndtools.setup#/"/>
   <description>bndtools/bnd provides cool stuff.</description>
 </setup:Project>

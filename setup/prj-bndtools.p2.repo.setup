@@ -222,8 +222,5 @@
           value="true"/>
     </setupTask>
   </stream>
-  <logicalProjectContainer
-      xsi:type="setup:Project"
-      href="https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/refs/heads/master/setup/prj-bnd.setup#/"/>
   <description>bndtools/bnd provides cool stuff.</description>
 </setup:Project>
