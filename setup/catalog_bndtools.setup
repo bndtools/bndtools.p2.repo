@@ -6,7 +6,7 @@
     xmlns:setup="http://www.eclipse.org/oomph/setup/1.0"
     xmlns:setup.p2="http://www.eclipse.org/oomph/setup/p2/1.0"
     name="bndtools"
-    label="bndtools">
+    label="bndtools Projects">
   <setupTask
       xsi:type="setup:InstallationTask"
       id="installation"/>
@@ -411,7 +411,7 @@
       </setupTask>
     </setupTask>
   </setupTask>
-  <project href="https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/refs/heads/master/setup/prj-bnd.setup#/"/>
-  <project href="https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/refs/heads/master/setup/prj-bndtools.p2.repo.setup#/"/>
+  <project href="https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/master/setup/prj-bnd.setup#/"/>
+  <project href="https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/master/setup/prj-bndtools.p2.repo.setup#/"/>
   <description>bndtools provides cool products.</description>
 </setup:ProductCatalog>
