@@ -4,7 +4,7 @@
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:setup="http://www.eclipse.org/oomph/setup/1.0"
-    label="bnd">
+    label="cfg-bndtools">
   <installation
       name="bndtools.installation"
       label="bndtools Installation">
@@ -34,6 +34,25 @@
       <choice
           value="https://bndtools.jfrog.io/bndtools/update-snapshot"
           label="snapshot (JFrog)"/>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:VariableTask"
+        name="eclipse.git.authentication.style"
+        value="anonymous"
+        defaultValue="anonymous"
+        label="Eclipse Git Authentication Style">
+      <annotation
+          source="http://www.eclipse.org/oomph/setup/GlobalVariable"/>
+      <choice
+          value="anonymous"
+          label="Anonymous Authentication"/>
+      <choice
+          value="ssh"
+          label="SSH Authentication"/>
+      <choice
+          value="credentials"
+          label="Credentials Authentication"/>
+      <description>Choose the style of authentication used to access Eclipse Git clones</description>
     </setupTask>
     <stream
         href="prj-bnd.setup#//@streams[name='next']"/>

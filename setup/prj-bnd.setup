@@ -6,17 +6,12 @@
     xmlns:git="http://www.eclipse.org/oomph/setup/git/1.0"
     xmlns:jdt="http://www.eclipse.org/oomph/setup/jdt/1.0"
     xmlns:maven="http://www.eclipse.org/oomph/setup/maven/1.0"
-    xmlns:projects_1.0="http://www.eclipse.org/oomph/setup/projects/1.0"
+    xmlns:projects="http://www.eclipse.org/oomph/setup/projects/1.0"
     xmlns:setup="http://www.eclipse.org/oomph/setup/1.0"
     xmlns:setup.p2="http://www.eclipse.org/oomph/setup/p2/1.0"
     xsi:schemaLocation="http://www.eclipse.org/oomph/setup/git/1.0 https://raw.githubusercontent.com/eclipse-oomph/oomph/master/setups/models/Git.ecore http://www.eclipse.org/oomph/setup/jdt/1.0 https://raw.githubusercontent.com/eclipse-oomph/oomph/master/setups/models/JDT.ecore http://www.eclipse.org/oomph/setup/maven/1.0 https://raw.githubusercontent.com/eclipse-oomph/oomph/master/setups/models/Maven.ecore"
-    name="bndtools"
-    label="bndtools/bnd">
-  <annotation
-      source="ConfigurationReference">
-    <reference
-        href="https://cdn.klib.io/oomph/setups-github/BndConfiguration.setup#/"/>
-  </annotation>
+    name="bnd"
+    label="bnd">
   <setupTask
       xsi:type="setup:ResourceCreationTask"
       id="ResCrea_org.eclipse.jdt.ui"
@@ -27,20 +22,38 @@
     <content>
       &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>
       &lt;section name=&quot;Workbench&quot;>
-      	&lt;section name=&quot;org.eclipse.jdt.internal.ui.packageview.PackageExplorerPart&quot;>
-      		&lt;item value=&quot;true&quot; key=&quot;group_libraries&quot;/>
-      		&lt;item value=&quot;false&quot; key=&quot;linkWithEditor&quot;/>
-      		&lt;item value=&quot;2&quot; key=&quot;layout&quot;/>
-      		&lt;item value=&quot;2&quot; key=&quot;rootMode&quot;/>
-      		&lt;item value=&quot;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;&amp;#x0D;&amp;#x0A;&amp;lt;packageExplorer configured=&amp;quot;true&amp;quot; group_libraries=&amp;quot;1&amp;quot; layout=&amp;quot;2&amp;quot; linkWithEditor=&amp;quot;0&amp;quot; rootMode=&amp;quot;2&amp;quot; sortWorkingSets=&amp;quot;false&amp;quot; workingSetName=&amp;quot;&amp;quot;&amp;gt;&amp;#x0D;&amp;#x0A;&amp;lt;localWorkingSetManager&amp;gt;&amp;#x0D;&amp;#x0A;&amp;lt;workingSet editPageId=&amp;quot;org.eclipse.jdt.internal.ui.OthersWorkingSet&amp;quot; factoryID=&amp;quot;org.eclipse.ui.internal.WorkingSetFactory&amp;quot; id=&amp;quot;1382792884467_1&amp;quot; label=&amp;quot;Other Projects&amp;quot; name=&amp;quot;Other Projects&amp;quot;/&amp;gt;&amp;#x0D;&amp;#x0A;&amp;lt;/localWorkingSetManager&amp;gt;&amp;#x0D;&amp;#x0A;&amp;lt;activeWorkingSet workingSetName=&amp;quot;Other Projects&amp;quot;/&amp;gt;&amp;#x0D;&amp;#x0A;&amp;lt;allWorkingSets workingSetName=&amp;quot;Other Projects&amp;quot;/&amp;gt;&amp;#x0D;&amp;#x0A;&amp;lt;/packageExplorer&amp;gt;&quot; key=&quot;memento&quot;/>
-      	&lt;/section>
+      &lt;section name=&quot;org.eclipse.jdt.internal.ui.packageview.PackageExplorerPart&quot;>
+      &lt;item value=&quot;true&quot; key=&quot;group_libraries&quot;/>
+      &lt;item value=&quot;false&quot; key=&quot;linkWithEditor&quot;/>
+      &lt;item value=&quot;2&quot; key=&quot;layout&quot;/>
+      &lt;item value=&quot;2&quot; key=&quot;rootMode&quot;/>
+      &lt;item value=&quot;&amp;lt;?xml version=&amp;quot;1.0&amp;quot;
+      encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;&amp;#x0D;&amp;#x0A;&amp;lt;packageExplorer
+      configured=&amp;quot;true&amp;quot; group_libraries=&amp;quot;1&amp;quot;
+      layout=&amp;quot;2&amp;quot; linkWithEditor=&amp;quot;0&amp;quot;
+      rootMode=&amp;quot;2&amp;quot; sortWorkingSets=&amp;quot;false&amp;quot;
+      workingSetName=&amp;quot;&amp;quot;&amp;gt;&amp;#x0D;&amp;#x0A;&amp;lt;localWorkingSetManager&amp;gt;&amp;#x0D;&amp;#x0A;&amp;lt;workingSet
+      editPageId=&amp;quot;org.eclipse.jdt.internal.ui.OthersWorkingSet&amp;quot;
+      factoryID=&amp;quot;org.eclipse.ui.internal.WorkingSetFactory&amp;quot;
+      id=&amp;quot;1382792884467_1&amp;quot; label=&amp;quot;Other Projects&amp;quot;
+      name=&amp;quot;Other
+      Projects&amp;quot;/&amp;gt;&amp;#x0D;&amp;#x0A;&amp;lt;/localWorkingSetManager&amp;gt;&amp;#x0D;&amp;#x0A;&amp;lt;activeWorkingSet
+      workingSetName=&amp;quot;Other
+      Projects&amp;quot;/&amp;gt;&amp;#x0D;&amp;#x0A;&amp;lt;allWorkingSets
+      workingSetName=&amp;quot;Other
+      Projects&amp;quot;/&amp;gt;&amp;#x0D;&amp;#x0A;&amp;lt;/packageExplorer&amp;gt;&quot;
+      key=&quot;memento&quot;/>
+      &lt;/section>
       &lt;/section>
 
     </content>
   </setupTask>
   <setupTask
       xsi:type="setup.p2:P2Task">
-    <description>Install the tools needed in the IDE to work with the source code for ${scope.project.label}</description>
+    <description>
+      Install the tools needed in the IDE to work with the source code for
+      ${scope.project.label}
+    </description>
   </setupTask>
   <setupTask
       xsi:type="git:GitCloneTask"
@@ -98,7 +111,36 @@
         targetURL="${workspace.location|uri}/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.ui.ide.prefs">
       <content>
         WORKSPACE_NAME=bnd-${bndtools-release|uriLastSegment}-branch-${scope.project.stream.label}
-        org.eclipse.ui.internal.views.markers.CachedMarkerBuilderorg.eclipse.ui.views.ProblemView=&lt;?xml version\=&quot;1.0&quot; encoding\=&quot;UTF-8&quot;?>\n&lt;filterGroups andFilters\=&quot;false&quot; markerLimit\=&quot;250&quot; markerLimitEnabled\=&quot;true&quot;>\n&lt;filterGroup IMemento.internal.id\=&quot;org.eclipse.ui.ide.projectErrorsWarningsGrouping&quot; enabled\=&quot;true&quot; filterLimit\=&quot;-1&quot; scope\=&quot;3&quot;>\n&lt;fieldFilter IMemento.internal.id\=&quot;org.eclipse.ui.ide.severityAndDescriptionField&quot; containsModifier\=&quot;CONTAINS&quot; containsText\=&quot;&quot; selectedSeverities\=&quot;6&quot;/>\n&lt;fieldFilter IMemento.internal.id\=&quot;org.eclipse.ui.ide.markerType&quot;/>\n&lt;/filterGroup>\n&lt;filterGroup IMemento.internal.id\=&quot;org.eclipse.ui.ide.selectedErrorsWarningsGrouping&quot; enabled\=&quot;false&quot; filterLimit\=&quot;-1&quot; scope\=&quot;2&quot;>\n&lt;fieldFilter IMemento.internal.id\=&quot;org.eclipse.ui.ide.severityAndDescriptionField&quot; containsModifier\=&quot;CONTAINS&quot; containsText\=&quot;&quot; selectedSeverities\=&quot;6&quot;/>\n&lt;fieldFilter IMemento.internal.id\=&quot;org.eclipse.ui.ide.markerType&quot;/>\n&lt;/filterGroup>\n&lt;filterGroup IMemento.internal.id\=&quot;org.eclipse.ui.ide.selectedWarningsGrouping&quot; enabled\=&quot;false&quot; filterLimit\=&quot;-1&quot; scope\=&quot;2&quot;>\n&lt;fieldFilter IMemento.internal.id\=&quot;org.eclipse.ui.ide.severityAndDescriptionField&quot; containsModifier\=&quot;CONTAINS&quot; containsText\=&quot;&quot; selectedSeverities\=&quot;2&quot;/>\n&lt;fieldFilter IMemento.internal.id\=&quot;org.eclipse.ui.ide.markerType&quot;/>\n&lt;/filterGroup>\n&lt;filterGroup IMemento.internal.id\=&quot;org.eclipse.ui.ide.errorsFilter&quot; enabled\=&quot;false&quot; filterLimit\=&quot;-1&quot; scope\=&quot;0&quot;>\n&lt;fieldFilter IMemento.internal.id\=&quot;org.eclipse.ui.ide.severityAndDescriptionField&quot; containsModifier\=&quot;CONTAINS&quot; containsText\=&quot;&quot; selectedSeverities\=&quot;4&quot;/>\n&lt;fieldFilter IMemento.internal.id\=&quot;org.eclipse.ui.ide.markerType&quot;/>\n&lt;/filterGroup>\n&lt;/filterGroups>
+        org.eclipse.ui.internal.views.markers.CachedMarkerBuilderorg.eclipse.ui.views.ProblemView=&lt;?xml
+        version\=&quot;1.0&quot; encoding\=&quot;UTF-8&quot;?>\n&lt;filterGroups
+        andFilters\=&quot;false&quot; markerLimit\=&quot;250&quot;
+        markerLimitEnabled\=&quot;true&quot;>\n&lt;filterGroup
+        IMemento.internal.id\=&quot;org.eclipse.ui.ide.projectErrorsWarningsGrouping&quot;
+        enabled\=&quot;true&quot; filterLimit\=&quot;-1&quot; scope\=&quot;3&quot;>\n&lt;fieldFilter
+        IMemento.internal.id\=&quot;org.eclipse.ui.ide.severityAndDescriptionField&quot;
+        containsModifier\=&quot;CONTAINS&quot; containsText\=&quot;&quot;
+        selectedSeverities\=&quot;6&quot;/>\n&lt;fieldFilter
+        IMemento.internal.id\=&quot;org.eclipse.ui.ide.markerType&quot;/>\n&lt;/filterGroup>\n&lt;filterGroup
+        IMemento.internal.id\=&quot;org.eclipse.ui.ide.selectedErrorsWarningsGrouping&quot;
+        enabled\=&quot;false&quot; filterLimit\=&quot;-1&quot;
+        scope\=&quot;2&quot;>\n&lt;fieldFilter
+        IMemento.internal.id\=&quot;org.eclipse.ui.ide.severityAndDescriptionField&quot;
+        containsModifier\=&quot;CONTAINS&quot; containsText\=&quot;&quot;
+        selectedSeverities\=&quot;6&quot;/>\n&lt;fieldFilter
+        IMemento.internal.id\=&quot;org.eclipse.ui.ide.markerType&quot;/>\n&lt;/filterGroup>\n&lt;filterGroup
+        IMemento.internal.id\=&quot;org.eclipse.ui.ide.selectedWarningsGrouping&quot;
+        enabled\=&quot;false&quot; filterLimit\=&quot;-1&quot;
+        scope\=&quot;2&quot;>\n&lt;fieldFilter
+        IMemento.internal.id\=&quot;org.eclipse.ui.ide.severityAndDescriptionField&quot;
+        containsModifier\=&quot;CONTAINS&quot; containsText\=&quot;&quot;
+        selectedSeverities\=&quot;2&quot;/>\n&lt;fieldFilter
+        IMemento.internal.id\=&quot;org.eclipse.ui.ide.markerType&quot;/>\n&lt;/filterGroup>\n&lt;filterGroup
+        IMemento.internal.id\=&quot;org.eclipse.ui.ide.errorsFilter&quot; enabled\=&quot;false&quot;
+        filterLimit\=&quot;-1&quot; scope\=&quot;0&quot;>\n&lt;fieldFilter
+        IMemento.internal.id\=&quot;org.eclipse.ui.ide.severityAndDescriptionField&quot;
+        containsModifier\=&quot;CONTAINS&quot; containsText\=&quot;&quot;
+        selectedSeverities\=&quot;4&quot;/>\n&lt;fieldFilter
+        IMemento.internal.id\=&quot;org.eclipse.ui.ide.markerType&quot;/>\n&lt;/filterGroup>\n&lt;/filterGroups>
 
       </content>
     </setupTask>
@@ -152,8 +194,10 @@
         value="=https://raw.githubusercontent.com/bndtools/bnd/master/.../BndtoolsBnd.setup->${git.clone.bnd.location|uri}/.../BndtoolsBnd.setup"
         vm="true">
       <description>
-        Set an Oomph redirection system property to redirect the logical location of this setup to its physical location in the Git clone.
-        Before enabling this task, replace '...' with the repository path of this setup's containing project.
+        Set an Oomph redirection system property to redirect the logical location of this setup to
+        its physical location in the Git clone.
+        Before enabling this task, replace '...' with the repository path of this setup's containing
+        project.
       </description>
     </setupTask>
     <setupTask
@@ -197,7 +241,10 @@
           version="JavaSE-17"
           location="${jre.location-17}"
           name="JRE for JavaSE-17">
-        <description>Define the JRE needed to compile and run the Java projects of ${scope.project.label}</description>
+        <description>
+          Define the JRE needed to compile and run the Java projects of
+          ${scope.project.label}
+        </description>
         <defaultExecutionEnvironment>JavaSE-17</defaultExecutionEnvironment>
       </setupTask>
     </setupTask>
@@ -239,7 +286,7 @@
           value="true"/>
     </setupTask>
     <setupTask
-        xsi:type="projects_1.0:ProjectsImportTask">
+        xsi:type="projects:ProjectsImportTask">
       <sourceLocator
           rootFolder="${git.clone.bnd.location}"
           locateNestedProjects="true">
@@ -249,7 +296,7 @@
     </setupTask>
   </stream>
   <stream name="next"
-      label="Next">
+      label="next">
     <setupTask
         xsi:type="setup:EclipseIniTask"
         disabled="true"
@@ -257,8 +304,10 @@
         value="=https://raw.githubusercontent.com/bndtools/bnd/master/.../BndtoolsBnd.setup->${git.clone.bnd.location|uri}/.../BndtoolsBnd.setup"
         vm="true">
       <description>
-        Set an Oomph redirection system property to redirect the logical location of this setup to its physical location in the Git clone.
-        Before enabling this task, replace '...' with the repository path of this setup's containing project.
+        Set an Oomph redirection system property to redirect the logical location of this setup to
+        its physical location in the Git clone.
+        Before enabling this task, replace '...' with the repository path of this setup's containing
+        project.
       </description>
     </setupTask>
     <setupTask
@@ -302,7 +351,10 @@
           version="JavaSE-17"
           location="${jre.location-17}"
           name="JRE for JavaSE-17">
-        <description>Define the JRE needed to compile and run the Java projects of ${scope.project.label}</description>
+        <description>
+          Define the JRE needed to compile and run the Java projects of
+          ${scope.project.label}
+        </description>
         <defaultExecutionEnvironment>JavaSE-17</defaultExecutionEnvironment>
       </setupTask>
     </setupTask>
@@ -344,7 +396,7 @@
           value="true"/>
     </setupTask>
     <setupTask
-        xsi:type="projects_1.0:ProjectsImportTask">
+        xsi:type="projects:ProjectsImportTask">
       <sourceLocator
           rootFolder="${git.clone.bnd.location}"
           locateNestedProjects="true">
@@ -357,7 +409,7 @@
     </setupTask>
   </stream>
   <logicalProjectContainer
-      xsi:type="setup:ProjectCatalog"
-      href="index:/org.eclipse.setup#//@projectCatalogs[name='com.github']"/>
+      xsi:type="setup:Project"
+      href="https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/refs/heads/master/setup/catalog_bndtools.setup#/"/>
   <description>bndtools/bnd provides cool stuff.</description>
 </setup:Project>

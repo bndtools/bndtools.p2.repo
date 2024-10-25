@@ -10,7 +10,7 @@
     xmlns:setup.p2="http://www.eclipse.org/oomph/setup/p2/1.0"
     xsi:schemaLocation="http://www.eclipse.org/oomph/setup/git/1.0 https://raw.githubusercontent.com/eclipse-oomph/oomph/master/setups/models/Git.ecore http://www.eclipse.org/oomph/setup/jdt/1.0 https://raw.githubusercontent.com/eclipse-oomph/oomph/master/setups/models/JDT.ecore http://www.eclipse.org/oomph/setup/projects/1.0 index:/models/Projects.ecore"
     name="bndtools.p2.repo"
-    label="bndtools/bndtools.p2.repo">
+    label="bndtools.p2.repo">
   <annotation
       source="ConfigurationReference">
     <reference
@@ -223,7 +223,7 @@
     </setupTask>
   </stream>
   <logicalProjectContainer
-      xsi:type="setup:ProjectCatalog"
-      href="index:/org.eclipse.setup#//@projectCatalogs[name='com.github']"/>
+      xsi:type="setup:Project"
+      href="https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/refs/heads/master/setup/prj-bnd.setup#/"/>
   <description>bndtools/bnd provides cool stuff.</description>
 </setup:Project>
