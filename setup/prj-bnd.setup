@@ -408,5 +408,8 @@
       </sourceLocator>
     </setupTask>
   </stream>
+  <logicalProjectContainer
+      xsi:type="setup:ProjectCatalog"
+      href="index:/org.eclipse.setup#//@projectCatalogs[name='redirectable']"/>
   <description>bndtools/bnd provides cool stuff.</description>
 </setup:Project>
