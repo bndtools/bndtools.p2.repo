@@ -412,6 +412,6 @@
     </setupTask>
   </setupTask>
   <description>bndtools provides cool products.</description>
-  <project href="https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/master/setup/prj-bnd.setup#/"/>
-  <project href="https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/master/setup/prj-bndtools.p2.repo.setup#/"/>
+  <project href="./prj-bnd.setup#/"/>
+  <project href="./prj-bndtools.p2.repo.setup#/"/>
 </setup:ProductCatalog>
