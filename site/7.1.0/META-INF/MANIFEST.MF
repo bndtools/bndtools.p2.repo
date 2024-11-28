@@ -1,0 +1,32 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: org.bndtools.p2
+Bundle-Copyright: Copyright (c) Neil Bartlett (2009, 2024) and others.
+  All Rights Reserved.
+Bundle-Developers: pkriens; email=Peter.Kriens@aQute.biz; name="Peter 
+ Kriens"; organization=Bndtools; organizationUrl=https://github.com/bn
+ dtools; roles="architect,developer"; timezone=1, bjhargrave; name="BJ
+  Hargrave"; email="bj@hargrave.dev"; url="https://github.com/bjhargra
+ ve"; organization="IBM"; organizationUrl="https://developer.ibm.com";
+  roles="developer"; timezone="America/New_York", rotty3000; name="Ray
+  Augé"; email="raymond.auge@liferay.com"; url="https://rotty3000.git
+ hub.io"; organization="Liferay Inc."; organizationUrl="https://www.li
+ feray.com"; roles="developer"; timezone="America/New_York"
+Bundle-DocURL: https://bndtools.org/
+Bundle-License: "(Apache-2.0 OR EPL-2.0)";description="This program an
+ d the accompanying materials are made available under the terms of th
+ e Apache License, Version 2.0, or the Eclipse Public License 2.0.";li
+ nk="https://opensource.org/licenses/Apache-2.0,https://opensource.org
+ /licenses/EPL-2.0"
+Bundle-ManifestVersion: 2
+Bundle-Name: org.bndtools.p2
+Bundle-SCM: url=https://github.com/bndtools/bnd,connection=scm:git:htt
+ ps://github.com/bndtools/bnd.git,developerConnection=scm:git:git@gith
+ ub.com:bndtools/bnd.git,tag=7.1.0
+Bundle-SymbolicName: org.bndtools.p2
+Bundle-Vendor: Bndtools https://bndtools.org/
+Bundle-Version: 7.1.0.202411251545
+Git-Descriptor: 7.0.0.DEV-1660-g47e504d78
+Git-SHA: 47e504d7881ba466703c55a8dca7b0578561582d
+Private-Package: features,plugins
+SPDX-License-Identifier: (Apache-2.0 OR EPL-2.0)
+
