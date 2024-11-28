@@ -169,8 +169,8 @@
       name="bndtools-release"
       label="bndtools-release">
     <choice
-        value="https://bndtools.org/bndtools.p2.repo/7.0.0/"
-        label="rel 7.0.0"/>
+        value="https://bndtools.org/bndtools.p2.repo/7.1.0/"
+        label="rel 7.1.0"/>
     <choice
         value="https://bndtools.org/bndtools.p2.repo/6.4.1/"
         label="rel 6.41"/>
