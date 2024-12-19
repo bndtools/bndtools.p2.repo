@@ -6,8 +6,8 @@
     xmlns:setup="http://www.eclipse.org/oomph/setup/1.0"
     label="My">
   <installation
-      name="my.installation"
-      label="My Installation">
+      name="bnd.installation"
+      label="bnd Installation">
     <productVersion
         href="index:/org.eclipse.setup#//@productCatalogs[name='org.eclipse.products']/@products[name='epp.package.java']/@versions[name='latest.released']"/>
     <description>The My installation provides cool stuff.</description>
