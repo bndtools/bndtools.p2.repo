@@ -11,7 +11,8 @@
     xmlns:setup.p2="http://www.eclipse.org/oomph/setup/p2/1.0"
     xsi:schemaLocation="http://www.eclipse.org/oomph/setup/git/1.0 https://raw.githubusercontent.com/eclipse-oomph/oomph/master/setups/models/Git.ecore http://www.eclipse.org/oomph/setup/jdt/1.0 https://raw.githubusercontent.com/eclipse-oomph/oomph/master/setups/models/JDT.ecore http://www.eclipse.org/oomph/setup/maven/1.0 https://raw.githubusercontent.com/eclipse-oomph/oomph/master/setups/models/Maven.ecore"
     name="bnd"
-    label="bnd">
+    label="bnd"
+    logicalProjectContainer="/">
   <setupTask
       xsi:type="setup:ResourceCreationTask"
       id="ResCrea_org.eclipse.jdt.ui"
@@ -54,27 +55,6 @@
       Install the tools needed in the IDE to work with the source code for
       ${scope.project.label}
     </description>
-  </setupTask>
-  <setupTask
-      xsi:type="git:GitCloneTask"
-      id="git.clone.bnd"
-      remoteURI="bndtools/bnd">
-    <annotation
-        source="http://www.eclipse.org/oomph/setup/InducedChoices">
-      <detail
-          key="inherit">
-        <value>github.remoteURIs</value>
-      </detail>
-      <detail
-          key="label">
-        <value>${scope.project.label} Github repository</value>
-      </detail>
-      <detail
-          key="target">
-        <value>remoteURI</value>
-      </detail>
-    </annotation>
-    <description>${scope.project.label}</description>
   </setupTask>
   <setupTask
       xsi:type="setup:CompoundTask"
@@ -286,6 +266,27 @@
           value="true"/>
     </setupTask>
     <setupTask
+        xsi:type="git:GitCloneTask"
+        id="git.clone.bnd"
+        remoteURI="bndtools/bnd">
+      <annotation
+          source="http://www.eclipse.org/oomph/setup/InducedChoices">
+        <detail
+            key="inherit">
+          <value>github.remoteURIs</value>
+        </detail>
+        <detail
+            key="label">
+          <value>${scope.project.label} Github repository</value>
+        </detail>
+        <detail
+            key="target">
+          <value>remoteURI</value>
+        </detail>
+      </annotation>
+      <description>${scope.project.label}</description>
+    </setupTask>
+    <setupTask
         xsi:type="projects_1.0:ProjectsImportTask">
       <sourceLocator
           rootFolder="${git.clone.bnd.location}"
@@ -396,6 +397,27 @@
           value="true"/>
     </setupTask>
     <setupTask
+        xsi:type="git:GitCloneTask"
+        id="git.clone.bnd"
+        remoteURI="bndtools/bnd">
+      <annotation
+          source="http://www.eclipse.org/oomph/setup/InducedChoices">
+        <detail
+            key="inherit">
+          <value>github.remoteURIs</value>
+        </detail>
+        <detail
+            key="label">
+          <value>${scope.project.label} Github repository</value>
+        </detail>
+        <detail
+            key="target">
+          <value>remoteURI</value>
+        </detail>
+      </annotation>
+      <description>${scope.project.label}</description>
+    </setupTask>
+    <setupTask
         xsi:type="projects_1.0:ProjectsImportTask">
       <sourceLocator
           rootFolder="${git.clone.bnd.location}"
@@ -408,8 +430,5 @@
       </sourceLocator>
     </setupTask>
   </stream>
-  <logicalProjectContainer
-      xsi:type="setup:Project"
-      href="catalog.bndtools.projects.setup#//@projects[name='bnd']"/>
   <description>bndtools/bnd provides cool stuff.</description>
 </setup:Project>
