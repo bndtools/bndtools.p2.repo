@@ -11,8 +11,7 @@
     xmlns:setup.p2="http://www.eclipse.org/oomph/setup/p2/1.0"
     xsi:schemaLocation="http://www.eclipse.org/oomph/setup/git/1.0 https://raw.githubusercontent.com/eclipse-oomph/oomph/master/setups/models/Git.ecore http://www.eclipse.org/oomph/setup/jdt/1.0 https://raw.githubusercontent.com/eclipse-oomph/oomph/master/setups/models/JDT.ecore http://www.eclipse.org/oomph/setup/maven/1.0 https://raw.githubusercontent.com/eclipse-oomph/oomph/master/setups/models/Maven.ecore"
     name="bnd"
-    label="bnd"
-    logicalProjectContainer="/">
+    label="bnd">
   <setupTask
       xsi:type="setup:ResourceCreationTask"
       id="ResCrea_org.eclipse.jdt.ui"
@@ -165,6 +164,27 @@
         value="https://bndtools.jfrog.io/bndtools/update-snapshot"
         label="snapshot (JFrog)"/>
   </setupTask>
+  <setupTask
+      xsi:type="git:GitCloneTask"
+      id="git.clone.bnd"
+      remoteURI="bndtools/bnd">
+    <annotation
+        source="http://www.eclipse.org/oomph/setup/InducedChoices">
+      <detail
+          key="inherit">
+        <value>github.remoteURIs</value>
+      </detail>
+      <detail
+          key="label">
+        <value>${scope.project.label} Github repository</value>
+      </detail>
+      <detail
+          key="target">
+        <value>remoteURI</value>
+      </detail>
+    </annotation>
+    <description>${scope.project.label}</description>
+  </setupTask>
   <stream name="master"
       label="master">
     <setupTask
@@ -264,27 +284,6 @@
           xsi:type="setup:PreferenceTask"
           key="/instance/org.eclipse.egit.ui/commit_dialog_signed_off_by"
           value="true"/>
-    </setupTask>
-    <setupTask
-        xsi:type="git:GitCloneTask"
-        id="git.clone.bnd"
-        remoteURI="bndtools/bnd">
-      <annotation
-          source="http://www.eclipse.org/oomph/setup/InducedChoices">
-        <detail
-            key="inherit">
-          <value>github.remoteURIs</value>
-        </detail>
-        <detail
-            key="label">
-          <value>${scope.project.label} Github repository</value>
-        </detail>
-        <detail
-            key="target">
-          <value>remoteURI</value>
-        </detail>
-      </annotation>
-      <description>${scope.project.label}</description>
     </setupTask>
     <setupTask
         xsi:type="projects_1.0:ProjectsImportTask">
@@ -395,27 +394,6 @@
           xsi:type="setup:PreferenceTask"
           key="/instance/org.eclipse.egit.ui/commit_dialog_signed_off_by"
           value="true"/>
-    </setupTask>
-    <setupTask
-        xsi:type="git:GitCloneTask"
-        id="git.clone.bnd"
-        remoteURI="bndtools/bnd">
-      <annotation
-          source="http://www.eclipse.org/oomph/setup/InducedChoices">
-        <detail
-            key="inherit">
-          <value>github.remoteURIs</value>
-        </detail>
-        <detail
-            key="label">
-          <value>${scope.project.label} Github repository</value>
-        </detail>
-        <detail
-            key="target">
-          <value>remoteURI</value>
-        </detail>
-      </annotation>
-      <description>${scope.project.label}</description>
     </setupTask>
     <setupTask
         xsi:type="projects_1.0:ProjectsImportTask">
