@@ -31,7 +31,7 @@ vmargs="-vmargs -Duser.home=$(pwd)/.oomph/user.home -Doomph.setup.user.home.redi
 
 # bndtools.p2.repo
 "/Applications/Eclipse Installer.app/Contents/MacOS/eclipse-inst" \
-    file:///$(pwd)/setup/config_bndtools.p2.repo.setup ${vmargs} &
+    file:///$(pwd)/setup/config.bndtools.p2.repo.setup ${vmargs} &
 
 ```
 

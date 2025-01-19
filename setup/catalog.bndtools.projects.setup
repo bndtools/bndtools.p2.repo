@@ -188,6 +188,7 @@
       <description>Choose from the available Github URIs</description>
     </setupTask>
   </setupTask>
+<!--
   <setupTask
       xsi:type="setup:CompoundTask"
       name="eclipse.ini">
@@ -196,6 +197,7 @@
         option="-Doomph.redirection.myProjectCatalog"
         value="=index:/redirectable.projects.setup->https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/master/setup/catalog.bndtools.projects.setup"/>
   </setupTask>
+-->
   <project href="project.bnd.setup#/"/>
   <project href="project.bndtools.p2.repo.setup#/"/>
   <description>catalog.bndtools.projects provides cool projects.</description>
