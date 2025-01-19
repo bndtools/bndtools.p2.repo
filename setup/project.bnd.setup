@@ -187,6 +187,7 @@
   </setupTask>
   <stream name="master"
       label="master">
+<!--
     <setupTask
         xsi:type="setup:EclipseIniTask"
         disabled="true"
@@ -200,6 +201,7 @@
         project.
       </description>
     </setupTask>
+-->
     <setupTask
         xsi:type="setup:CompoundTask"
         name="bndtools">
@@ -297,6 +299,7 @@
   </stream>
   <stream name="next"
       label="next">
+<!--
     <setupTask
         xsi:type="setup:EclipseIniTask"
         disabled="true"
@@ -310,6 +313,7 @@
         project.
       </description>
     </setupTask>
+-->
     <setupTask
         xsi:type="setup:CompoundTask"
         name="bndtools">
