@@ -35,12 +35,15 @@ jobs:
         uses: actions/configure-pages@v5
       - name: dynamically set CURR_DATE environment variable
         run: echo "CURR_DATE=$(date +%Y%m%d-%H%M%S)" >> $GITHUB_ENV
-      - name: Test MY_DATE variable
-        run: echo ${{ env.CURR_DATE }}
+      - name: Replace string in HTML
+        run: |
+          target_string="###CURR-DATE###" # Replace this with your placeholder
+          html_file="site/index.html" # Specify the HTML file path
+          current_date="$(date +%Y%m%d-%H%M%S)"
+          sed -i "s/${target_string}/${current_date}/g" $html_file
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload entire repository
           path: 'site'
       - name: Deploy to GitHub Pages
         id: deployment
