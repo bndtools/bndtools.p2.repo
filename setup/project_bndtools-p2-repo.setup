@@ -278,6 +278,6 @@
   </stream>
   <logicalProjectContainer
       xsi:type="setup:Project"
-      href="catalog.bndtools.projects.setup#//@projects[name='bnd']"/>
+      href="catalog_projects-bndtools.setup#//@projects[name='bnd']"/>
   <description>bndtools/bndtools.p2.repo provides cool stuff.</description>
 </setup:Project>

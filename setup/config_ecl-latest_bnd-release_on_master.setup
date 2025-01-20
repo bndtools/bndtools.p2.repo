@@ -36,7 +36,7 @@
           label="snapshot (JFrog)"/>
     </setupTask>
     <stream
-        href="catalog.bndtools.projects.setup#//@projects[name='bnd']/@streams[name='next']"/>
+        href="catalog_projects-bndtools.setup#//@projects[name='bnd']/@streams[name='master']"/>
     <description>The My workspace provides cool stuff.</description>
   </workspace>
   <description>The My configuration provides cool stuff.</description>

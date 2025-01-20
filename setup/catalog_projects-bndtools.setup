@@ -188,17 +188,17 @@
       <description>Choose from the available Github URIs</description>
     </setupTask>
   </setupTask>
-<!--
   <setupTask
       xsi:type="setup:CompoundTask"
       name="eclipse.ini">
     <setupTask
         xsi:type="setup:EclipseIniTask"
-        option="-Doomph.redirection.myProjectCatalog"
-        value="=index:/redirectable.projects.setup->https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/master/setup/catalog.bndtools.projects.setup"/>
+        option="-Dorg.eclipse.oomph.setup.donate"
+        value="=false"
+        vm="true"/>
   </setupTask>
--->
-  <project href="project.bnd.setup#/"/>
-  <project href="project.bndtools.p2.repo.setup#/"/>
+  <project href="user:/catalog_projects-bndtools.setup?name='user.project',label='&lt;User>',description='A container project for local user projects that are virtual members of the project catalog'#/"/>
+  <project href="https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/master/setup/project_bnd.setup#/"/>
+  <project href="https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/master/setup/project_bndtools-p2-repo.setup#/"/>
   <description>catalog.bndtools.projects provides cool projects.</description>
 </setup:ProjectCatalog>

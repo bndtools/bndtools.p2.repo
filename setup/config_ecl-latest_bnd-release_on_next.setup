@@ -6,8 +6,8 @@
     xmlns:setup="http://www.eclipse.org/oomph/setup/1.0"
     label="My">
   <installation
-      name="bnd.installation"
-      label="bnd Installation">
+      name="my.installation"
+      label="My Installation">
     <productVersion
         href="index:/org.eclipse.setup#//@productCatalogs[name='org.eclipse.products']/@products[name='epp.package.java']/@versions[name='latest.released']"/>
     <description>The My installation provides cool stuff.</description>
@@ -20,7 +20,7 @@
         id="bndtools-release"
         type="URI"
         name="bndtools-release"
-        value="https://bndtools.jfrog.io/bndtools/update-snapshot"
+        value="https://bndtools.org/bndtools.p2.repo/7.1.0"
         label="bndtools-release">
       <choice
           value="https://bndtools.org/bndtools.p2.repo/7.1.0"
@@ -36,7 +36,7 @@
           label="snapshot (JFrog)"/>
     </setupTask>
     <stream
-        href="catalog.bndtools.projects.setup#//@projects[name='bnd']/@streams[name='master']"/>
+        href="catalog_projects-bndtools.setup#//@projects[name='bnd']/@streams[name='next']"/>
     <description>The My workspace provides cool stuff.</description>
   </workspace>
   <description>The My configuration provides cool stuff.</description>

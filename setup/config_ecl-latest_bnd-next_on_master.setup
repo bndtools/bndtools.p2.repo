@@ -4,23 +4,23 @@
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:setup="http://www.eclipse.org/oomph/setup/1.0"
-    label="My">
+    label="config.bnd.installation">
   <installation
-      name="my.installation"
-      label="My Installation">
+      name="bnd.installation"
+      label="bnd Installation">
     <productVersion
         href="index:/org.eclipse.setup#//@productCatalogs[name='org.eclipse.products']/@products[name='epp.package.java']/@versions[name='latest.released']"/>
     <description>The My installation provides cool stuff.</description>
   </installation>
   <workspace
-      name="my.workspace"
-      label="My Workspace">
+      name="bnd.workspace"
+      label="bnd Workspace">
     <setupTask
         xsi:type="setup:VariableTask"
         id="bndtools-release"
         type="URI"
         name="bndtools-release"
-        value="https://bndtools.org/bndtools.p2.repo/7.1.0"
+        value="https://bndtools.jfrog.io/bndtools/update-snapshot"
         label="bndtools-release">
       <choice
           value="https://bndtools.org/bndtools.p2.repo/7.1.0"
@@ -36,7 +36,7 @@
           label="snapshot (JFrog)"/>
     </setupTask>
     <stream
-        href="catalog.bndtools.projects.setup#//@projects[name='bndtools.p2.repo']/@streams[name='master']"/>
+        href="catalog_projects-bndtools.setup#//@projects[name='bnd']/@streams[name='master']"/>
     <description>The My workspace provides cool stuff.</description>
   </workspace>
   <description>The My configuration provides cool stuff.</description>
