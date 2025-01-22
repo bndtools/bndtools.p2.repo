@@ -49,31 +49,58 @@
         table th,
         td {
             border: 1px solid #000000;
+            padding: 10px;
+            text-align: center;
         }
     </style>
 </head>
 
 <body>
+
     <h1>bndtools - oomph - setups</h1>
 
-    <p>Select eclipse and bndtools version (release/snapshot). </br>
+    <h2>pre-requisites eclipse-installer and URL handler registration</h2>
+    <p>
+        <b>IMPORTANT: this is only required once on your machine - afterwards you can directly use the table below</b>
+    </p>
+    <p>
+        To use the oomph/eclipse-installer for the installation of the bndtools development environment, you can click
+    </p>
+    <a title="Click to open the Eclipse Installer Auto Launch documentation or drag into your running installer"
+        href="https://www.eclipse.org/setups/installer/?url=https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/master/setup/config_ecl-latest_bnd-release_on_master.setup&show=true">
+        <img src="https://img.shields.io/static/v1?logo=eclipseide&label=eclipse%20%2B%20bndtools%20release%20%20&message=bndtools%20:%20master&style=for-the-badge&logoColor=white&labelColor=963508&color=gray"
+            alt="eclipse + bnd release on bndtools next" />
+    </a>
 
-    <table class="table" border: 1px>
+    <h2>oomph / eclipse-installer setup links</h2>
+
+    <ol>
+        <li>select eclipse IDE and the installed bndtools version by label color ( <img
+                src="https://img.shields.io/badge/release-963508" /> / <img
+                src="https://img.shields.io/badge/snapshot-orange" /> )</li>
+        <li>select github branch of bndtools checkout by label color ( <img
+                src="https://img.shields.io/badge/master-gray" /> / <img
+                src="https://img.shields.io/badge/next-lightgray" /> )</li>
+    </ol>
+
+    <p>
+    <table class="table">
         <thead>
             <tr>
                 <th scope="col">PURPOSE</th>
                 <th scope="col">ECLIPSE VERSION</th>
                 <th scope="col">BNDTOOLS VERSION</th>
-                <th scope="col">SOURCE BRANCH</th>
+                <th scope="col">GITHUB BRANCH</th>
                 <th scope="col">OOMPH LINK</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <th scope="row">bugfix release</th>
-                <td>latest</td>
-                <td>Rel 7.1.0</td>
-                <td>master</td>
+                <td><a href="https://www.eclipse.org/downloads/packages/release/2024-12/r/eclipse-ide-java-developers">latest
+                        Eclipse Java Developer</a></td>
+                <td><a href="https://github.com/bndtools/bnd/wiki/Changes-in-7.1.0">release 7.1.0</a></td>
+                <td><a href="https://github.com/bndtools/bnd/tree/master">bnd/master</a></td>
                 <td><a
                         href="eclipse+installer:https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/master/setup/config_ecl-latest_bnd-release_on_master.setup">
                         <img src="https://img.shields.io/static/v1?logo=eclipseide&label=eclipse%20%2B%20bndtools%20release%20%20&message=bndtools%20:%20master&style=for-the-badge&logoColor=white&labelColor=963508&color=gray"
@@ -82,9 +109,10 @@
             </tr>
             <tr>
                 <th scope="row">bugfix release</th>
-                <td>latest</td>
-                <td>latest SNAPSHOT</td>
-                <td>master</td>
+                <td><a href="https://www.eclipse.org/downloads/packages/release/2024-12/r/eclipse-ide-java-developers">latest
+                        Eclipse Java Developer</a></td>
+                <td><a href="https://bndtools.jfrog.io/bndtools/update-snapshot">latest SNAPSHOT build</a></td>
+                <td><a href="https://github.com/bndtools/bnd/tree/master">bnd/master</a></td>
                 <td><a
                         href="eclipse+installer:https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/master/setup/config_ecl-latest_bnd-next_on_master.setup">
                         <img src="https://img.shields.io/static/v1?logo=eclipseide&label=eclipse%20%2B%20bndtools%20snapshot&message=bndtools%20:%20master&style=for-the-badge&logoColor=white&labelColor=orange&color=gray"
@@ -92,10 +120,11 @@
                 </td>
             </tr>
             <tr>
-                <th scope="row">feature dev</th>
-                <td>latest</td>
-                <td>Rel 7.1.0</td>
-                <td>next</td>
+                <th scope="row">feature development</th>
+                <td><a href="https://www.eclipse.org/downloads/packages/release/2024-12/r/eclipse-ide-java-developers">latest
+                        Eclipse Java Developer</a></td>
+                <td><a href="https://github.com/bndtools/bnd/wiki/Changes-in-7.1.0">release 7.1.0</a></td>
+                <td><a href="https://github.com/bndtools/bnd/tree/next">bnd/next</a></td>
                 <td><a
                         href="eclipse+installer:https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/master/setup/config_ecl-latest_bnd-next_on_next.setup">
                         <img src="https://img.shields.io/static/v1?logo=eclipseide&label=eclipse%20%2B%20bndtools%20release%20%20&message=bndtools%20:%20next&style=for-the-badge&logoColor=white&labelColor=963508&color=lightgray"
@@ -103,42 +132,33 @@
                 </td>
             </tr>
             <tr>
-                <th scope="row">feature dev</th>
-                <td>latest</td>
-                <td>latest SNAPSHOT</td>
-                <td>next</td>
+                <th scope="row">feature development</th>
+                <td><a href="https://www.eclipse.org/downloads/packages/release/2024-12/r/eclipse-ide-java-developers">latest
+                        Eclipse Java Developer</a></td>
+                <td><a href="https://bndtools.jfrog.io/bndtools/update-snapshot">latest SNAPSHOT build</a></td>
+                <td><a href="https://github.com/bndtools/bnd/tree/next">bnd/next</a></td>
                 <td><a
                         href="eclipse+installer:https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/master/setup/config_ecl-latest_bnd-next_on_next.setup">
-                        <img src="https://img.shields.io/static/v1?logo=eclipseide&label=eclipse%20%2B%20bndtools%20snapshot&message=bndtools%20:%next&style=for-the-badge&logoColor=white&labelColor=orange&color=lightgray"
+                        <img src="https://img.shields.io/static/v1?logo=eclipseide&label=eclipse%20%2B%20bndtools%20snapshot&message=bndtools%20:next&style=for-the-badge&logoColor=white&labelColor=orange&color=lightgray"
                             alt="eclipse - bnd snapshot on branch next" /></a>
                 </td>
             </tr>
         </tbody>
     </table>
+    </p>
 
-
-    <!-- Button to toggle the expandable section -->
-    <!--
-            <button class="toggle-btn" onclick="toggleContent()">display terminal instructions</button>
-    <div id="expandableContent">
-        <small>
-            <pre><code id="oomph">"/Applications/Eclipse Installer.app/Contents/MacOS/eclipse-inst" \
-    https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/master/setup/config_ecl-latest_bnd-release_on_master.setup</code></pre>
-        </small>
-        <button class="copy-btn" onclick="copyToClipboard('oomph')">copy oomph command</button>
-    </div>
--->
-    <h2>p2 repository</h2>
-    <div>
-        <a href="p2.html">provided repos</a>
-    </div>
-
-    <h2>oomph config for this repo</h2>
+    <h2>oomph configuration for this repo</h2>
     <div><a
             href="eclipse+installer:https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/master/setup/config_ecl-latest_bndtools-p2-repo.setup">
-            <img src="https://img.shields.io/static/v1?logo=eclipseide&label=eclipse%20%2B%20bndtools.p2.repo&message=branch%20:%20master&style=for-the-badge&logoColor=white&labelColor=orange&color=lightgray"
+            <img src="https://img.shields.io/static/v1?logo=eclipseide&label=eclipse%20%2B%20bndtools.p2.repo&message=branch%20:%20master&style=for-the-badge&logoColor=white&labelColor=963508&color=gray"
                 alt="eclipse on bndtools.p2.repo branch next" /></a>
     </div>
+
+    <h2>p2 repository</h2>
+    <div>
+        <a href="p2.html">provided bndtools version p2 repo details</a>
+    </div>
+
     <p><small>last updated: <b>###CURR-DATE###</b></small></p>
     <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
