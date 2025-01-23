@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<setup:Product
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:setup="http://www.eclipse.org/oomph/setup/1.0"
+    xmlns:setup.p2="http://www.eclipse.org/oomph/setup/p2/1.0"
+    name="z.park.product"
+    label="z_PARK_product">
+  <annotation
+      source="http://www.eclipse.org/oomph/setup/BrandingInfo">
+    <detail
+        key="folderName">
+      <value>eclipse</value>
+    </detail>
+    <detail
+        key="folderName.macosx">
+      <value>Eclipse</value>
+    </detail>
+  </annotation>
+  <setupTask
+      xsi:type="setup.p2:P2Task"
+      label="issue-NEGATIVE_REQ_org.apache.commons.logging">
+    <requirement
+        name="org.apache.commons.logging"
+        versionRange="[1.2.0.v20180409-1502,1.2.0.v20180409-1502]"
+        optional="true"
+        max="0"/>
+  </setupTask>
+  <version name="2025-03"
+      label="2025-03"
+      requiredJavaVersion="1.8">
+    <setupTask
+        xsi:type="setup.p2:P2Task"
+        label="${scope.product.label} (${scope.product.version.label})">
+      <requirement
+          name="org.eclipse.platform.ide"/>
+      <requirement
+          name="org.eclipse.platform.feature.group"/>
+      <requirement
+          name="org.eclipse.rcp.feature.group"/>
+      <requirement
+          name="z.park.product.feature.group"/>
+      <repository
+          url="https://download.eclipse.org/releases/2025-03"/>
+    </setupTask>
+    <description>z_PARK_product for 2025-03.</description>
+  </version>
+  <description>z_PARK_product provides cool stuff.</description>
+</setup:Product>
