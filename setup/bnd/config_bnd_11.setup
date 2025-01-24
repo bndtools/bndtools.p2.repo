@@ -4,17 +4,17 @@
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:setup="http://www.eclipse.org/oomph/setup/1.0"
-    label="My">
+    label="epp java dev + bnd snapshot on github repo `bnd/master`">
   <installation
-      name="my.installation"
-      label="My Installation">
+      name="bnd.installation"
+      label="bnd installation">
     <productVersion
         href="index:/org.eclipse.setup#//@productCatalogs[name='org.eclipse.products']/@products[name='epp.package.java']/@versions[name='latest.released']"/>
     <description>The My installation provides cool stuff.</description>
   </installation>
   <workspace
-      name="my.workspace"
-      label="My Workspace">
+      name="bnd.workspace"
+      label="bnd Workspace">
     <setupTask
         xsi:type="setup:VariableTask"
         id="bndtools-release"
@@ -36,7 +36,7 @@
           label="snapshot (JFrog)"/>
     </setupTask>
     <stream
-        href="catalog_projects-bndtools.setup#//@projects[name='bnd']/@streams[name='next']"/>
+        href="catalog_projects-bnd.setup#//@projects[name='bnd']/@streams[name='next']"/>
     <description>The My workspace provides cool stuff.</description>
   </workspace>
   <description>The My configuration provides cool stuff.</description>

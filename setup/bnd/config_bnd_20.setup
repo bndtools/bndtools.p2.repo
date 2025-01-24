@@ -4,7 +4,7 @@
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:setup="http://www.eclipse.org/oomph/setup/1.0"
-    label="config.bnd.installation">
+    label="epp java dev + bnd release on github repo `bnd/next`">
   <installation
       name="bnd.installation"
       label="bnd Installation">
@@ -36,7 +36,7 @@
           label="snapshot (JFrog)"/>
     </setupTask>
     <stream
-        href="catalog_projects-bndtools.setup#//@projects[name='bnd']/@streams[name='master']"/>
+        href="catalog_projects-bnd.setup#//@projects[name='bnd']/@streams[name='next']"/>
     <description>The My workspace provides cool stuff.</description>
   </workspace>
   <description>The My configuration provides cool stuff.</description>
