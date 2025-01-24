@@ -41,6 +41,7 @@ jobs:
           html_file="site/index.html" # Specify the HTML file path
           current_date="$(date +%Y%m%d-%H%M%S)"
           sed -i "s/${target_string}/${current_date}/g" $html_file
+          sed -i "s/###GIT-SHA###/${GITHUB_SHA}/g" $html_file
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
