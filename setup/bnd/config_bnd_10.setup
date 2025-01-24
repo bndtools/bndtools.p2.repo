@@ -4,12 +4,12 @@
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:setup="http://www.eclipse.org/oomph/setup/1.0"
-    label="Eclipse_Platform_Latest_with_bnd-release_ON_bnd/master">
+    label="My">
   <installation
       name="my.installation"
       label="My Installation">
     <productVersion
-        href="index:/org.eclipse.setup#//@productCatalogs[name='org.eclipse.products']/@products[name='org.eclipse.platform.ide']/@versions[name='latest.released']"/>
+        href="index:/org.eclipse.setup#//@productCatalogs[name='org.eclipse.products']/@products[name='epp.package.java']/@versions[name='latest.released']"/>
     <description>The My installation provides cool stuff.</description>
   </installation>
   <workspace
@@ -21,22 +21,9 @@
         type="URI"
         name="bndtools-release"
         value="https://bndtools.org/bndtools.p2.repo/7.1.0"
-        label="bndtools-release">
-      <choice
-          value="https://bndtools.org/bndtools.p2.repo/7.1.0"
-          label="rel 7.1.0"/>
-      <choice
-          value="https://bndtools.org/bndtools.p2.repo/6.4.1"
-          label="rel 6.4.1"/>
-      <choice
-          value="https://bndtools.jfrog.io/bndtools/update-latest"
-          label="release (JFrog)"/>
-      <choice
-          value="https://bndtools.jfrog.io/bndtools/update-snapshot"
-          label="snapshot (JFrog)"/>
-    </setupTask>
+        label="bndtools-release"/>
     <stream
-        href="catalog_projects-bndtools.setup#//@projects[name='bnd']/@streams[name='master']"/>
+        href="project_bnd.setup#//@streams[name='master']"/>
     <description>The My workspace provides cool stuff.</description>
   </workspace>
   <description>The My configuration provides cool stuff.</description>

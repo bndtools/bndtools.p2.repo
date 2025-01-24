@@ -1,0 +1,19 @@
+# ecf oomph setups
+
+the following document describes the oomph setup files for ECF - Eclipse Communication Framework
+
+## file description
+
+| filename/content | content | oomph URL | oomph file URL(*) |
+|---|---|---|---|
+| [config_ecf_10.setup](config_ecf_10.setup) | empty workspace with ecf + bnd | [launch][url-config-10] | [launch local][file-url-config-10] |
+
+(*) requires local available repository inside following location `C:/IDEfix/bndtools-p2-repo-master/git/bndtools.p2.repo`
+
+[url-config-10]: eclipse+installer:https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/master/setup/ecf/config_ecf_10.setup
+
+[file-url-config-10]: eclipse+installer:file:///C:/IDEfix/bndtools-p2-repo-master/git/bndtools.p2.repo/setup/ecf/config_ecf_10.setup
+
+## notes
+
+* only project and configurations referencing them are provided currently

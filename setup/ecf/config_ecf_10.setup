@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<setup:Configuration
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:setup="http://www.eclipse.org/oomph/setup/1.0"
+    xmlns:setup.p2="http://www.eclipse.org/oomph/setup/p2/1.0"
+    label="Eclipse_Platform_Latest_with_bnd-release_ON_bnd/master">
+  <installation
+      name="my.installation"
+      label="My Installation">
+    <setupTask
+        xsi:type="setup.p2:P2Task"
+        label="avoid-org.apache.commons.logging_1.2.0.v20180409-1502">
+      <requirement
+          name="org.apache.commons.logging"
+          versionRange="[1.2.0.v20180409-1502,1.2.0.v20180409-1502]"
+          optional="true"
+          max="0"/>
+    </setupTask>
+    <productVersion
+        href="index:/org.eclipse.setup#//@productCatalogs[name='org.eclipse.products']/@products[name='epp.package.java']/@versions[name='latest.released']"/>
+    <description>The My installation provides cool stuff.</description>
+  </installation>
+  <workspace
+      name="my.workspace"
+      label="My Workspace">
+    <stream
+        href="project_ecf_10.setup#//@streams[name='ecf_3.15.3']"/>
+    <description>The My workspace provides cool stuff.</description>
+  </workspace>
+  <description>The My configuration provides cool stuff.</description>
+</setup:Configuration>

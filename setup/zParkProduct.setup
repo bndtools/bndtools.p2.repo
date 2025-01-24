@@ -46,5 +46,21 @@
     </setupTask>
     <description>z_PARK_product for 2025-03.</description>
   </version>
+  <version name="park"
+      label="park">
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="ECF">
+      <setupTask
+          xsi:type="setup.p2:P2Task"
+          label="ECF Bndtools Support"
+          licenseConfirmationDisabled="true">
+        <requirement
+            name="org.eclipse.ecf.remoteservices.tooling.bndtools.feature.feature.group"/>
+        <repository
+            url="https://download.eclipse.org/rt/ecf/3.14.41/site.p2"/>
+      </setupTask>
+    </setupTask>
+  </version>
   <description>z_PARK_product provides cool stuff.</description>
 </setup:Product>

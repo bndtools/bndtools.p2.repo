@@ -5,19 +5,16 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:git="http://www.eclipse.org/oomph/setup/git/1.0"
     xmlns:jdt="http://www.eclipse.org/oomph/setup/jdt/1.0"
+    xmlns:maven="http://www.eclipse.org/oomph/setup/maven/1.0"
     xmlns:projects="http://www.eclipse.org/oomph/setup/projects/1.0"
     xmlns:setup="http://www.eclipse.org/oomph/setup/1.0"
     xmlns:setup.p2="http://www.eclipse.org/oomph/setup/p2/1.0"
-    xsi:schemaLocation="http://www.eclipse.org/oomph/setup/git/1.0 https://raw.githubusercontent.com/eclipse-oomph/oomph/master/setups/models/Git.ecore http://www.eclipse.org/oomph/setup/jdt/1.0 https://raw.githubusercontent.com/eclipse-oomph/oomph/master/setups/models/JDT.ecore http://www.eclipse.org/oomph/setup/projects/1.0 index:/models/Projects.ecore"
-    name="bndtools.p2.repo"
-    label="bndtools.p2.repo">
-  <annotation
-      source="ConfigurationReference">
-    <reference
-        href="https://cdn.klib.io/oomph/setups-github/BndConfiguration.setup#/"/>
-  </annotation>
+    xsi:schemaLocation="http://www.eclipse.org/oomph/setup/git/1.0 https://raw.githubusercontent.com/eclipse-oomph/oomph/master/setups/models/Git.ecore http://www.eclipse.org/oomph/setup/jdt/1.0 https://raw.githubusercontent.com/eclipse-oomph/oomph/master/setups/models/JDT.ecore http://www.eclipse.org/oomph/setup/maven/1.0 https://raw.githubusercontent.com/eclipse-oomph/oomph/master/setups/models/Maven.ecore http://www.eclipse.org/oomph/setup/projects/1.0 https://raw.githubusercontent.com/eclipse-oomph/oomph/master/setups/models/Projects.ecore"
+    name="bnd"
+    label="bnd">
   <setupTask
       xsi:type="setup:ResourceCreationTask"
+      id="ResCrea_org.eclipse.jdt.ui"
       excludedTriggers="STARTUP MANUAL"
       targetURL="${workspace.location|uri}/.metadata/.plugins/org.eclipse.jdt.ui/dialog_settings.xml"
       encoding="UTF-8">
@@ -59,27 +56,6 @@
     </description>
   </setupTask>
   <setupTask
-      xsi:type="git:GitCloneTask"
-      id="git.clone.bndtools.p2.repo"
-      remoteURI="bndtools/bndtools.p2.repo">
-    <annotation
-        source="http://www.eclipse.org/oomph/setup/InducedChoices">
-      <detail
-          key="inherit">
-        <value>github.remoteURIs</value>
-      </detail>
-      <detail
-          key="label">
-        <value>${scope.project.label} Github repository</value>
-      </detail>
-      <detail
-          key="target">
-        <value>remoteURI</value>
-      </detail>
-    </annotation>
-    <description>${scope.project.label}</description>
-  </setupTask>
-  <setupTask
       xsi:type="setup:CompoundTask"
       name="preferences">
     <setupTask
@@ -100,6 +76,7 @@
     </setupTask>
     <setupTask
         xsi:type="setup:ResourceCreationTask"
+        id="ResCrea_org.eclipse.ui.prefs"
         targetURL="${workspace.location|uri}/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.ui.prefs">
       <content>
         defaultPerspectiveId=bndtools.perspective
@@ -109,9 +86,10 @@
     </setupTask>
     <setupTask
         xsi:type="setup:ResourceCreationTask"
+        id="ResCrea_org.eclipse.ui.ide.prefs"
         targetURL="${workspace.location|uri}/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.ui.ide.prefs">
       <content>
-        WORKSPACE_NAME=bndtools.p2.repo-${scope.project.stream.label}
+        WORKSPACE_NAME=bnd-${bndtools-release|uriLastSegment}-branch-${scope.project.stream.label}
         org.eclipse.ui.internal.views.markers.CachedMarkerBuilderorg.eclipse.ui.views.ProblemView=&lt;?xml
         version\=&quot;1.0&quot; encoding\=&quot;UTF-8&quot;?>\n&lt;filterGroups
         andFilters\=&quot;false&quot; markerLimit\=&quot;250&quot;
@@ -161,6 +139,11 @@
         excludedTriggers="STARTUP"
         option="-perspective"
         value="bndtools.perspective"/>
+    <setupTask
+        xsi:type="setup:EclipseIniTask"
+        option="-Dorg.eclipse.oomph.setup.donate"
+        value="=false"
+        vm="true"/>
   </setupTask>
   <setupTask
       xsi:type="setup:VariableTask"
@@ -169,11 +152,14 @@
       name="bndtools-release"
       label="bndtools-release">
     <choice
-        value="https://bndtools.org/bndtools.p2.repo/7.1.0/"
+        value="https://bndtools.org/bndtools.p2.repo/7.1.0"
         label="rel 7.1.0"/>
     <choice
-        value="https://bndtools.org/bndtools.p2.repo/6.4.1/"
-        label="rel 6.41"/>
+        value="https://bndtools.org/bndtools.p2.repo/7.0.0"
+        label="rel 7.0.0"/>
+    <choice
+        value="https://bndtools.org/bndtools.p2.repo/6.4.1"
+        label="rel 6.4.1"/>
     <choice
         value="https://bndtools.jfrog.io/bndtools/update-latest"
         label="release (JFrog)"/>
@@ -181,23 +167,29 @@
         value="https://bndtools.jfrog.io/bndtools/update-snapshot"
         label="snapshot (JFrog)"/>
   </setupTask>
+  <setupTask
+      xsi:type="git:GitCloneTask"
+      id="git.clone.bnd"
+      remoteURI="bndtools/bnd">
+    <annotation
+        source="http://www.eclipse.org/oomph/setup/InducedChoices">
+      <detail
+          key="inherit">
+        <value>github.remoteURIs</value>
+      </detail>
+      <detail
+          key="label">
+        <value>${scope.project.label} Github repository</value>
+      </detail>
+      <detail
+          key="target">
+        <value>remoteURI</value>
+      </detail>
+    </annotation>
+    <description>${scope.project.label}</description>
+  </setupTask>
   <stream name="master"
       label="master">
-<!--
-    <setupTask
-        xsi:type="setup:EclipseIniTask"
-        disabled="true"
-        option="-Doomph.redirection.bndtools"
-        value="=https://raw.githubusercontent.com/bndtools/bnd/master/.../BndtoolsBnd.setup->${git.clone.bnd.location|uri}/.../BndtoolsBnd.setup"
-        vm="true">
-      <description>
-        Set an Oomph redirection system property to redirect the logical location of this setup to
-        its physical location in the Git clone.
-        Before enabling this task, replace '...' with the repository path of this setup's containing
-        project.
-      </description>
-    </setupTask>
--->
     <setupTask
         xsi:type="setup:CompoundTask"
         name="bndtools">
@@ -219,6 +211,15 @@
         name="JRE">
       <setupTask
           xsi:type="setup.p2:P2Task"
+          label="JRE17">
+        <requirement
+            name="a.jre.org.eclipse.justj.openjdk.hotspot.jre.full"
+            versionRange="[17.0.0,17.0.0]"/>
+        <repository
+            url="https://download.eclipse.org/justj/jres/17/updates/release"/>
+      </setupTask>
+      <setupTask
+          xsi:type="setup.p2:P2Task"
           label="JRE21">
         <requirement
             name="org.eclipse.justj.openjdk.hotspot.jre.full.feature.group"/>
@@ -238,10 +239,9 @@
       </setupTask>
     </setupTask>
     <setupTask
-        xsi:type="projects:ProjectsImportTask">
+        xsi:type="maven:MavenImportTask">
       <sourceLocator
-          rootFolder="${git.clone.bndtools.p2.repo.location}"
-          locateNestedProjects="true"/>
+          rootFolder="${git.clone.bnd.location}/maven-plugins"/>
     </setupTask>
     <setupTask
         xsi:type="setup:CompoundTask"
@@ -275,9 +275,118 @@
           key="/instance/org.eclipse.egit.ui/commit_dialog_signed_off_by"
           value="true"/>
     </setupTask>
+    <setupTask
+        xsi:type="projects:ProjectsImportTask">
+      <sourceLocator
+          rootFolder="${git.clone.bnd.location}"
+          locateNestedProjects="true">
+        <excludedPath>bndtools.test</excludedPath>
+        <excludedPath>bndtools.core.test/resource</excludedPath>
+      </sourceLocator>
+    </setupTask>
+  </stream>
+  <stream name="next"
+      label="next">
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="bndtools">
+      <setupTask
+          xsi:type="setup.p2:P2Task"
+          label="bndtools">
+        <requirement
+            name="bndtools.main.feature.feature.group"/>
+        <requirement
+            name="bndtools.m2e.feature.feature.group"/>
+        <requirement
+            name="bndtools.pde.feature.feature.group"/>
+        <repository
+            url="${bndtools-release}"/>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="JRE">
+      <setupTask
+          xsi:type="setup.p2:P2Task"
+          label="JRE17">
+        <requirement
+            name="a.jre.org.eclipse.justj.openjdk.hotspot.jre.full"
+            versionRange="[17.0.0,17.0.0]"/>
+        <repository
+            url="https://download.eclipse.org/justj/jres/17/updates/release"/>
+      </setupTask>
+      <setupTask
+          xsi:type="setup.p2:P2Task"
+          label="JRE21">
+        <requirement
+            name="org.eclipse.justj.openjdk.hotspot.jre.full.feature.group"/>
+        <repository
+            url="https://download.eclipse.org/justj/jres/21/updates/release"/>
+      </setupTask>
+      <setupTask
+          xsi:type="jdt:JRETask"
+          version="JavaSE-17"
+          location="${jre.location-17}"
+          name="JRE for JavaSE-17">
+        <description>
+          Define the JRE needed to compile and run the Java projects of
+          ${scope.project.label}
+        </description>
+        <defaultExecutionEnvironment>JavaSE-17</defaultExecutionEnvironment>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="maven:MavenImportTask">
+      <sourceLocator
+          rootFolder="${git.clone.bnd.location}/maven-plugins"/>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="org.eclipse.jdt.core">
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.codegen.targetPlatform"
+          value="17"/>
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.compliance"
+          value="17"/>
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.enablePreviewFeatures"
+          value="disabled"/>
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.reportPreviewFeatures"
+          value="warning"/>
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.source"
+          value="17"/>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="org.eclipse.egit.ui">
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.egit.ui/commit_dialog_signed_off_by"
+          value="true"/>
+    </setupTask>
+    <setupTask
+        xsi:type="projects:ProjectsImportTask">
+      <sourceLocator
+          rootFolder="${git.clone.bnd.location}"
+          locateNestedProjects="true">
+        <excludedPath>biz.aQute.bndlib.tests</excludedPath>
+        <excludedPath>biz.aQute.repository</excludedPath>
+        <excludedPath>bndtools.test</excludedPath>
+        <excludedPath>bndtools.core.test</excludedPath>
+        <excludedPath>maven-plugins</excludedPath>
+      </sourceLocator>
+    </setupTask>
   </stream>
   <logicalProjectContainer
       xsi:type="setup:Project"
       href="catalog_projects-bndtools.setup#//@projects[name='bnd']"/>
-  <description>bndtools/bndtools.p2.repo provides cool stuff.</description>
+  <description>bndtools/bnd provides cool stuff.</description>
 </setup:Project>
