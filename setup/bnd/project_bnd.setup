@@ -386,7 +386,7 @@
     </setupTask>
   </stream>
   <logicalProjectContainer
-      xsi:type="setup:Project"
-      href="catalog_projects-bndtools.setup#//@projects[name='bnd']"/>
+      xsi:type="setup:ProjectCatalog"
+      href="index:/org.eclipse.setup#//@projectCatalogs[name='catalog.bndtools.projects']"/>
   <description>bndtools/bnd provides cool stuff.</description>
 </setup:Project>
