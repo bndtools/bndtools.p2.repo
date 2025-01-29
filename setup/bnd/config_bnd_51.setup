@@ -15,7 +15,7 @@
       name="bnd.workspace"
       label="bnd Workspace">
     <stream
-        href="project_bnd.setup#//@streams[name='empty']"/>
+        href="project_bnd_workspace.setup#//@streams[name='empty']"/>
     <description>The My workspace provides cool stuff.</description>
   </workspace>
   <description>The My configuration provides cool stuff.</description>

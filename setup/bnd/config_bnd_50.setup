@@ -2,7 +2,6 @@
 <setup:Configuration
     xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:setup="http://www.eclipse.org/oomph/setup/1.0"
     label="empty bnd workspace">
   <installation
@@ -15,28 +14,8 @@
   <workspace
       name="bnd.workspace"
       label="bnd Workspace">
-    <setupTask
-        xsi:type="setup:VariableTask"
-        id="bndtools-release"
-        type="URI"
-        name="bndtools-release"
-        value="https://bndtools.org/bndtools.p2.repo/7.1.0"
-        label="bndtools-release">
-      <choice
-          value="https://bndtools.org/bndtools.p2.repo/7.1.0"
-          label="rel 7.1.0"/>
-      <choice
-          value="https://bndtools.org/bndtools.p2.repo/6.4.1"
-          label="rel 6.4.1"/>
-      <choice
-          value="https://bndtools.jfrog.io/bndtools/update-latest"
-          label="release (JFrog)"/>
-      <choice
-          value="https://bndtools.jfrog.io/bndtools/update-snapshot"
-          label="snapshot (JFrog)"/>
-    </setupTask>
     <stream
-        href="project_bnd.setup#//@streams[name='none']"/>
+        href="project_bnd_workspace.setup#//@streams[name='none']"/>
     <description>The My workspace provides cool stuff.</description>
   </workspace>
   <description>The My configuration provides cool stuff.</description>
