@@ -211,8 +211,10 @@
       label="empty">
     <setupTask
         xsi:type="setup:VariableTask"
+        id="project-workspace"
         type="FOLDER"
-        name="project-workspace"/>
+        name="project-workspace"
+        storageURI="scope://Workspace"/>
     <setupTask
         xsi:type="setup:CompoundTask"
         name="bndtools">

@@ -11,11 +11,11 @@
 
 ## bnd-based project/workspace setups
 
-| Project/file URL \* | [Eclipse EPP](https://www.eclipse.org/downloads/packages/) | brief description | URL link |
-|---|---|---|---|
-| [empty bnd][file-url-config-bnd-50]  | EPP Java Dev | empty bnd workspace  | [config_bnd_50.setup][url-config-bnd-50] |
-| [import bnd][file-url-config-bnd-51] | EPP Java Dev | import bnd workspace | [config_bnd_51.setup][url-config-bnd-51] |
-| [empty ecf][file-url-config-ecf-10]  | EPP Java Dev | empty ECF workspace  | [config_ecf_10.setup][url-config-ecf-10] |
+| Project/file URL \* | [Eclipse EPP](https://www.eclipse.org/downloads/packages/) |
+|---|---|---|
+| [empty bnd][url-config-bnd-50] / [file\*][file-url-config-bnd-50]  | EPP Java Dev + bnd on empty bnd workspace        |
+| [import bnd][url-config-bnd-51] / [file\*][file-url-config-bnd-51] | EPP Java Dev + bnd on import bnd workspace       |
+| [empty ecf][url-config-ecf-10] / [file\*][file-url-config-ecf-10]  | EPP Java Dev + bnd + ecf on empty ECF workspace  |
 
 (*) requires local available repository inside following location `C:/IDEfix/bndtools-p2-repo-master/git/bndtools.p2.repo`
 
