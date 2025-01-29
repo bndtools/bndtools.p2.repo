@@ -199,5 +199,6 @@
   </setupTask>
   <project href="user:/catalog_projects-bnd.setup?name='user.project',label='&lt;User>',description='A container project for local user projects that are virtual members of the project catalog'#/"/>
   <project href="https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/master/setup/bnd/project_bnd.setup#/"/>
+  <project href="https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/master/setup/bnd/project_bnd_workspace.setup#/"/>
   <description>catalog.bndtools.projects provides cool projects.</description>
 </setup:ProjectCatalog>
