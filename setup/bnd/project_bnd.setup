@@ -426,6 +426,29 @@
         <defaultExecutionEnvironment>JavaSE-21</defaultExecutionEnvironment>
       </setupTask>
     </setupTask>
+    <setupTask
+        xsi:type="setup:VariableTask"
+        id="bndtools-release"
+        type="URI"
+        name="bndtools-release"
+        value="https://bndtools.org/bndtools.p2.repo/7.1.0"
+        label="bndtools-release">
+      <choice
+          value="https://bndtools.org/bndtools.p2.repo/7.1.0"
+          label="rel 7.1.0"/>
+      <choice
+          value="https://bndtools.org/bndtools.p2.repo/7.0.0"
+          label="rel 7.0.0"/>
+      <choice
+          value="https://bndtools.org/bndtools.p2.repo/6.4.1"
+          label="rel 6.4.1"/>
+      <choice
+          value="https://bndtools.jfrog.io/bndtools/update-latest"
+          label="release (JFrog)"/>
+      <choice
+          value="https://bndtools.jfrog.io/bndtools/update-snapshot"
+          label="snapshot (JFrog)"/>
+    </setupTask>
   </stream>
   <stream name="empty"
       label="empty">
@@ -477,6 +500,29 @@
       <sourceLocator
           rootFolder="${project-workspace.location}"
           locateNestedProjects="true"/>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:VariableTask"
+        id="bndtools-release"
+        type="URI"
+        name="bndtools-release"
+        value="https://bndtools.org/bndtools.p2.repo/7.1.0"
+        label="bndtools-release">
+      <choice
+          value="https://bndtools.org/bndtools.p2.repo/7.1.0"
+          label="rel 7.1.0"/>
+      <choice
+          value="https://bndtools.org/bndtools.p2.repo/7.0.0"
+          label="rel 7.0.0"/>
+      <choice
+          value="https://bndtools.org/bndtools.p2.repo/6.4.1"
+          label="rel 6.4.1"/>
+      <choice
+          value="https://bndtools.jfrog.io/bndtools/update-latest"
+          label="release (JFrog)"/>
+      <choice
+          value="https://bndtools.jfrog.io/bndtools/update-snapshot"
+          label="snapshot (JFrog)"/>
     </setupTask>
   </stream>
   <logicalProjectContainer
