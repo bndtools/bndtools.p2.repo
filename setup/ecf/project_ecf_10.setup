@@ -39,8 +39,8 @@
         value="https://bndtools.jfrog.io/bndtools/update-snapshot"
         label="snapshot (JFrog)"/>
   </setupTask>
-  <stream name="ecf_3.15.3"
-      label="ecf_3.15.3">
+  <stream name="ecf_3.15.5"
+      label="ecf_3.15.5">
     <setupTask
         xsi:type="setup:CompoundTask"
         name="bndtools">
@@ -59,7 +59,7 @@
     </setupTask>
     <setupTask
         xsi:type="setup:CompoundTask"
-        name="ecf_3.15.3">
+        name="ecf_3.15.5">
       <setupTask
           xsi:type="setup:CompoundTask"
           name="org.bndtools.templating.gitrepo">
@@ -75,24 +75,12 @@
         <requirement
             name="org.eclipse.ecf.remoteservices.tooling.bndtools.feature.feature.group"/>
         <repository
-            url="https://download.eclipse.org/rt/ecf/3.15.3/site.p2/"/>
-      </setupTask>
-      <setupTask
-          xsi:type="setup.p2:P2Task"
-          label="grpc-RemoteServicesProvider">
-        <requirement
-            name="org.eclipse.ecf.examples.grpc.feature.feature.group"/>
-        <requirement
-            name="org.eclipse.ecf.provider.grpc.feature.feature.group"/>
-        <requirement
-            name="org.eclipse.ecf.provider.grpc.tooling.feature.feature.group"/>
-        <repository
-            url="https://raw.githubusercontent.com/ECF/grpc-RemoteServicesProvider/master/build/"/>
+            url="https://download.eclipse.org/rt/ecf/3.15.5/site.p2/"/>
       </setupTask>
     </setupTask>
   </stream>
-  <stream name="ecf-3.15.3_bnd-7.1.0"
-      label="ecf-3.15.3_bnd-7.1.0">
+  <stream name="ecf-3.15.5_bnd-7.1.0"
+      label="ecf-3.15.5_bnd-7.1.0">
     <setupTask
         xsi:type="setup:CompoundTask"
         name="bnd-7.1.0">
@@ -111,7 +99,7 @@
     </setupTask>
     <setupTask
         xsi:type="setup:CompoundTask"
-        name="ecf_3.15.3">
+        name="ecf_3.15.5">
       <setupTask
           xsi:type="setup:CompoundTask"
           name="org.bndtools.templating.gitrepo">
@@ -127,19 +115,7 @@
         <requirement
             name="org.eclipse.ecf.remoteservices.tooling.bndtools.feature.feature.group"/>
         <repository
-            url="https://download.eclipse.org/rt/ecf/3.15.3/site.p2/"/>
-      </setupTask>
-      <setupTask
-          xsi:type="setup.p2:P2Task"
-          label="grpc-RemoteServicesProvider">
-        <requirement
-            name="org.eclipse.ecf.examples.grpc.feature.feature.group"/>
-        <requirement
-            name="org.eclipse.ecf.provider.grpc.feature.feature.group"/>
-        <requirement
-            name="org.eclipse.ecf.provider.grpc.tooling.feature.feature.group"/>
-        <repository
-            url="https://raw.githubusercontent.com/ECF/grpc-RemoteServicesProvider/master/build/"/>
+            url="https://download.eclipse.org/rt/ecf/3.15.5/site.p2/"/>
       </setupTask>
     </setupTask>
   </stream>
@@ -180,18 +156,6 @@
             name="org.eclipse.ecf.remoteservices.tooling.bndtools.feature.feature.group"/>
         <repository
             url="https://download.eclipse.org/rt/ecf/3.15.3/site.p2/"/>
-      </setupTask>
-      <setupTask
-          xsi:type="setup.p2:P2Task"
-          label="grpc-RemoteServicesProvider">
-        <requirement
-            name="org.eclipse.ecf.examples.grpc.feature.feature.group"/>
-        <requirement
-            name="org.eclipse.ecf.provider.grpc.feature.feature.group"/>
-        <requirement
-            name="org.eclipse.ecf.provider.grpc.tooling.feature.feature.group"/>
-        <repository
-            url="https://raw.githubusercontent.com/ECF/grpc-RemoteServicesProvider/master/build/"/>
       </setupTask>
     </setupTask>
   </stream>
