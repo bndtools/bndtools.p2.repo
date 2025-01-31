@@ -26,7 +26,7 @@
       name="my.workspace"
       label="My Workspace">
     <stream
-        href="project_ecf_10.setup#//@streams[name='ecf_3.15.3']"/>
+        href="project_ecf_10.setup#//@streams[name='ecf_3.15.5']"/>
     <description>The My workspace provides cool stuff.</description>
   </workspace>
   <description>The My configuration provides cool stuff.</description>
