@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+li<?xml version="1.0" encoding="UTF-8"?>
 <setup:Configuration
     xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
@@ -27,7 +27,7 @@
       label="My Workspace">
     <stream
         href="project_ecf_10.setup#//@streams[name='ecf_3.15.5']"/>
-    <description>The My workspace provides cool stuff.</description>
+    <description>ECF Remote Services</description>
   </workspace>
   <description>The My configuration provides cool stuff.</description>
 </setup:Configuration>
