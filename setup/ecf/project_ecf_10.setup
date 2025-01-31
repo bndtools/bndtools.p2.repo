@@ -73,7 +73,7 @@
           label="ECF Bndtools Support"
           licenseConfirmationDisabled="true">
         <requirement
-            name="org.eclipse.ecf.remoteservices.tooling.bndtools.feature.feature.group"/>
+            name="org.eclipse.ecf.remoteservice.sdk.bndtools.feature.feature.group"/>
         <repository
             url="https://download.eclipse.org/rt/ecf/3.15.5/site.p2/"/>
       </setupTask>
@@ -113,7 +113,7 @@
           label="ECF Bndtools Support"
           licenseConfirmationDisabled="true">
         <requirement
-            name="org.eclipse.ecf.remoteservices.tooling.bndtools.feature.feature.group"/>
+            name="org.eclipse.ecf.remoteservice.sdk.bndtools.feature.feature.group"/>
         <repository
             url="https://download.eclipse.org/rt/ecf/3.15.5/site.p2/"/>
       </setupTask>
@@ -153,7 +153,7 @@
           label="ECF Bndtools Support"
           licenseConfirmationDisabled="true">
         <requirement
-            name="org.eclipse.ecf.remoteservices.tooling.bndtools.feature.feature.group"/>
+            name="org.eclipse.ecf.remoteservice.sdk.bndtools.feature.feature.group"/>
         <repository
             url="https://download.eclipse.org/rt/ecf/3.15.5/site.p2/"/>
       </setupTask>
