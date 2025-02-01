@@ -6,7 +6,7 @@ the following document describes the oomph setup files for ECF - Eclipse Communi
 
 | filename/content | content | oomph URL | oomph file URL(*) |
 |---|---|---|---|
-| [config_ecf_10.setup](config_ecf_10.setup) | empty workspace with ecf + bnd | [launch][url-ecf-config-10] | [launch local][file-url-ecf-config-10] |
+| [config_ecf_10.setup](config_ecf_10.setup) | empty workspace with ecf + bnd | [launch](url-ecf-config-10) | [launch local][file-url-ecf-config-10] |
 
 (*) requires local available repository inside following location `C:/IDEfix/bndtools-p2-repo-master/git/bndtools.p2.repo`
 
