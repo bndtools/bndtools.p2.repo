@@ -16,7 +16,5 @@ the following document describes the oomph setup files for ECF - Eclipse Communi
 ## notes
 
 * only project and configurations referencing them are provided currently
-<div><a href="eclipse+installer:https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/master/setup/ecf/config_ecf_10.setup">
-    <img src="https://img.shields.io/static/v1?logo=eclipseide&label=Bndtools%20%2B%20ECF Remote Services&message=branch%20:%20master&style=for-the-badge&logoColor=white&labelColor=963508&color=gray"
-        alt="bndtools remote services development" /></a>
-</div>
+<a href="eclipse+installer:https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/master/setup/bnd/config_bnd_10.setup">
+                        <img src="https://img.shields.io/static/v1?logo=eclipseide&amp;label=Eclipse%20Java%20Developer%20%2B%20bndtools%20release%20%20&amp;message=bnd%20:%20master&amp;style=for-the-badge&amp;logoColor=white&amp;labelColor=963508&amp;color=gray" alt="epp java dev + bnd release on bndtools master"></a>
