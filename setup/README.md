@@ -9,13 +9,13 @@
 | [stable development `bnd/next`][url-config-bnd-20]     | [EPP Java Dev](https://www.eclipse.org/downloads/packages/) + [bnd release](https://github.com/bndtools/bnd/wiki/Changes-in-7.1.0) on [github repo](https://github.com/bndtools/bnd/)           |
 | [snapshot development `bnd/next`][url-config-bnd-21]   | [EPP Java Dev](https://www.eclipse.org/downloads/packages/) + [bnd snapshot](https://github.com/bndtools/bnd/wiki/Changes-in-7.2.0) on [github repo](https://github.com/bndtools/bnd/tree/next) |
 
-## bnd-based project/workspace setups
+## bnd-based project/workspace setups based on [Eclipse EPP](https://www.eclipse.org/downloads/packages/) + bnd release
 
-| Project/file URL \* | [Eclipse EPP](https://www.eclipse.org/downloads/packages/) |
+| Project/file URL \* | brief description |
 |---|---|
-| [empty bnd][url-config-bnd-50] / [file\*][file-url-config-bnd-50]  | EPP Java Dev + bnd on empty bnd workspace        |
-| [import bnd][url-config-bnd-51] / [file\*][file-url-config-bnd-51] | EPP Java Dev + bnd on import bnd workspace       |
-| [empty ecf][url-config-ecf-10] / [file\*][file-url-config-ecf-10]  | EPP Java Dev + bnd + ecf on empty ECF workspace  |
+| [empty bnd][url-config-bnd-50] / [file\*][file-url-config-bnd-50]  | empty eclipse workspace |
+| [import bnd][url-config-bnd-51] / [file\*][file-url-config-bnd-51] | ask directly for workspace to import |
+| [empty ecf][url-config-ecf-10] / [file\*][file-url-config-ecf-10]  | empty eclipse workspace with ecf tooling configured |
 
 (*) requires local available repository inside following location `C:/IDEfix/bndtools-p2-repo-master/git/bndtools.p2.repo`
 

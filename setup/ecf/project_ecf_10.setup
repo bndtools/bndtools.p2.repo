@@ -39,6 +39,46 @@
         value="https://bndtools.jfrog.io/bndtools/update-snapshot"
         label="snapshot (JFrog)"/>
   </setupTask>
+  <stream name="ecf_latest"
+      label="ecf_latest">
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="bndtools">
+      <setupTask
+          xsi:type="setup.p2:P2Task"
+          label="bndtools">
+        <requirement
+            name="bndtools.main.feature.feature.group"/>
+        <requirement
+            name="bndtools.m2e.feature.feature.group"/>
+        <requirement
+            name="bndtools.pde.feature.feature.group"/>
+        <repository
+            url="${bndtools-release}"/>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="ecf latest">
+      <setupTask
+          xsi:type="setup:CompoundTask"
+          name="org.bndtools.templating.gitrepo">
+        <setupTask
+            xsi:type="setup:PreferenceTask"
+            key="/instance/org.bndtools.templating.gitrepo/githubRepos"
+            value="ECF/bndtools.workspace"/>
+      </setupTask>
+      <setupTask
+          xsi:type="setup.p2:P2Task"
+          label="ECF Bndtools Support"
+          licenseConfirmationDisabled="true">
+        <requirement
+            name="org.eclipse.ecf.remoteservice.sdk.bndtools.feature.feature.group"/>
+        <repository
+            url="https://download.eclipse.org/rt/ecf/latest/site.p2/"/>
+      </setupTask>
+    </setupTask>
+  </stream>
   <stream name="ecf_3.15.5"
       label="ecf_3.15.5">
     <setupTask
