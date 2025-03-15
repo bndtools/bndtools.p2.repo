@@ -79,8 +79,8 @@
       </setupTask>
     </setupTask>
   </stream>
-  <stream name="ecf_3.15.5"
-      label="ecf_3.15.5">
+  <stream name="ecf_3.15.7"
+      label="ecf_3.15.7">
     <setupTask
         xsi:type="setup:CompoundTask"
         name="bndtools">
@@ -99,7 +99,7 @@
     </setupTask>
     <setupTask
         xsi:type="setup:CompoundTask"
-        name="ecf_3.15.5">
+        name="ecf_3.15.7">
       <setupTask
           xsi:type="setup:CompoundTask"
           name="org.bndtools.templating.gitrepo">
@@ -119,8 +119,8 @@
       </setupTask>
     </setupTask>
   </stream>
-  <stream name="ecf-3.15.5_bnd-7.1.0"
-      label="ecf-3.15.5_bnd-7.1.0">
+  <stream name="ecf-3.15.7_bnd-7.1.0"
+      label="ecf-3.15.7_bnd-7.1.0">
     <setupTask
         xsi:type="setup:CompoundTask"
         name="bnd-7.1.0">
@@ -139,7 +139,7 @@
     </setupTask>
     <setupTask
         xsi:type="setup:CompoundTask"
-        name="ecf_3.15.5">
+        name="ecf_3.15.7">
       <setupTask
           xsi:type="setup:CompoundTask"
           name="org.bndtools.templating.gitrepo">
@@ -155,7 +155,7 @@
         <requirement
             name="org.eclipse.ecf.remoteservice.sdk.bndtools.feature.feature.group"/>
         <repository
-            url="https://download.eclipse.org/rt/ecf/3.15.5/site.p2/"/>
+            url="https://download.eclipse.org/rt/ecf/3.15.7/site.p2/"/>
       </setupTask>
     </setupTask>
   </stream>
@@ -195,7 +195,7 @@
         <requirement
             name="org.eclipse.ecf.remoteservice.sdk.bndtools.feature.feature.group"/>
         <repository
-            url="https://download.eclipse.org/rt/ecf/3.15.5/site.p2/"/>
+            url="https://download.eclipse.org/rt/ecf/3.15.7/site.p2/"/>
       </setupTask>
     </setupTask>
   </stream>
