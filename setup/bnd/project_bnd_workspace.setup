@@ -236,7 +236,7 @@
         label="branch name"/>
     <setupTask
         xsi:type="git:GitCloneTask"
-        id="git.clone.repo"
+        id="github.clone.repo"
         remoteURI="${github_org_project}"
         checkoutBranch="${branch}">
       <annotation
@@ -259,7 +259,7 @@
     <setupTask
         xsi:type="projects:ProjectsImportTask">
       <sourceLocator
-          rootFolder="${git.clone.repo}"
+          rootFolder="${github.clone.repo.location}"
           locateNestedProjects="true"/>
     </setupTask>
   </stream>
