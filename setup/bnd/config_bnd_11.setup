@@ -20,7 +20,7 @@
         id="bndtools-release"
         type="URI"
         name="bndtools-release"
-        value="https://bndtools.org/bndtools.p2.repo/7.1.0"
+        value="https://bndtools.jfrog.io/bndtools/update-snapshot"
         label="bndtools-release">
       <choice
           value="https://bndtools.org/bndtools.p2.repo/7.1.0"
@@ -36,7 +36,7 @@
           label="snapshot (JFrog)"/>
     </setupTask>
     <stream
-        href="catalog_projects-bnd.setup#//@projects[name='bnd']/@streams[name='next']"/>
+        href="project_bnd.setup#//@streams[name='master']"/>
     <description>The My workspace provides cool stuff.</description>
   </workspace>
   <description>The My configuration provides cool stuff.</description>
