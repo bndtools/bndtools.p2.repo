@@ -166,48 +166,47 @@
         value="https://bndtools.jfrog.io/bndtools/update-snapshot"
         label="snapshot (JFrog)"/>
   </setupTask>
+  <setupTask
+      xsi:type="setup:CompoundTask"
+      name="bndtools">
+    <setupTask
+        xsi:type="setup.p2:P2Task"
+        label="bndtools">
+      <requirement
+          name="bndtools.main.feature.feature.group"/>
+      <requirement
+          name="bndtools.m2e.feature.feature.group"/>
+      <requirement
+          name="bndtools.pde.feature.feature.group"/>
+      <repository
+          url="${bndtools-release}"/>
+    </setupTask>
+  </setupTask>
+  <setupTask
+      xsi:type="setup:CompoundTask"
+      name="JRE">
+    <setupTask
+        xsi:type="setup.p2:P2Task"
+        label="JRE21">
+      <requirement
+          name="org.eclipse.justj.openjdk.hotspot.jre.full.feature.group"/>
+      <repository
+          url="https://download.eclipse.org/justj/jres/21/updates/release"/>
+    </setupTask>
+    <setupTask
+        xsi:type="jdt:JRETask"
+        version="JavaSE-21"
+        location="${jre.location-21}"
+        name="JRE for JavaSE-21">
+      <description>
+        Define the JRE needed to compile and run the Java projects of
+        ${scope.project.label}
+      </description>
+      <defaultExecutionEnvironment>JavaSE-21</defaultExecutionEnvironment>
+    </setupTask>
+  </setupTask>
   <stream name="none"
-      label="none">
-    <setupTask
-        xsi:type="setup:CompoundTask"
-        name="bndtools">
-      <setupTask
-          xsi:type="setup.p2:P2Task"
-          label="bndtools">
-        <requirement
-            name="bndtools.main.feature.feature.group"/>
-        <requirement
-            name="bndtools.m2e.feature.feature.group"/>
-        <requirement
-            name="bndtools.pde.feature.feature.group"/>
-        <repository
-            url="${bndtools-release}"/>
-      </setupTask>
-    </setupTask>
-    <setupTask
-        xsi:type="setup:CompoundTask"
-        name="JRE">
-      <setupTask
-          xsi:type="setup.p2:P2Task"
-          label="JRE21">
-        <requirement
-            name="org.eclipse.justj.openjdk.hotspot.jre.full.feature.group"/>
-        <repository
-            url="https://download.eclipse.org/justj/jres/21/updates/release"/>
-      </setupTask>
-      <setupTask
-          xsi:type="jdt:JRETask"
-          version="JavaSE-21"
-          location="${jre.location-21}"
-          name="JRE for JavaSE-21">
-        <description>
-          Define the JRE needed to compile and run the Java projects of
-          ${scope.project.label}
-        </description>
-        <defaultExecutionEnvironment>JavaSE-21</defaultExecutionEnvironment>
-      </setupTask>
-    </setupTask>
-  </stream>
+      label="none"/>
   <stream name="empty"
       label="empty">
     <setupTask
@@ -216,45 +215,6 @@
         type="FOLDER"
         name="project-workspace"
         storageURI="scope://Workspace"/>
-    <setupTask
-        xsi:type="setup:CompoundTask"
-        name="bndtools">
-      <setupTask
-          xsi:type="setup.p2:P2Task"
-          label="bndtools">
-        <requirement
-            name="bndtools.main.feature.feature.group"/>
-        <requirement
-            name="bndtools.m2e.feature.feature.group"/>
-        <requirement
-            name="bndtools.pde.feature.feature.group"/>
-        <repository
-            url="${bndtools-release}"/>
-      </setupTask>
-    </setupTask>
-    <setupTask
-        xsi:type="setup:CompoundTask"
-        name="JRE">
-      <setupTask
-          xsi:type="setup.p2:P2Task"
-          label="JRE21">
-        <requirement
-            name="org.eclipse.justj.openjdk.hotspot.jre.full.feature.group"/>
-        <repository
-            url="https://download.eclipse.org/justj/jres/21/updates/release"/>
-      </setupTask>
-      <setupTask
-          xsi:type="jdt:JRETask"
-          version="JavaSE-21"
-          location="${jre.location-21}"
-          name="JRE for JavaSE-21">
-        <description>
-          Define the JRE needed to compile and run the Java projects of
-          ${scope.project.label}
-        </description>
-        <defaultExecutionEnvironment>JavaSE-21</defaultExecutionEnvironment>
-      </setupTask>
-    </setupTask>
     <setupTask
         xsi:type="projects:ProjectsImportTask">
       <sourceLocator
