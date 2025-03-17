@@ -226,14 +226,18 @@
     <setupTask
         xsi:type="setup:VariableTask"
         type="URI"
-        name="github_url_org_prj"/>
+        name="github_org_project"
+        storageURI="scope://Workspace"
+        label="github org/project"/>
     <setupTask
         xsi:type="setup:VariableTask"
-        name="branch"/>
+        name="branch"
+        storageURI="scope://Workspace"
+        label="branch name"/>
     <setupTask
         xsi:type="git:GitCloneTask"
         id="git.clone.repo"
-        remoteURI="${github_url_org_prj}"
+        remoteURI="${github_org_project}"
         checkoutBranch="${branch}">
       <annotation
           source="http://www.eclipse.org/oomph/setup/InducedChoices">
