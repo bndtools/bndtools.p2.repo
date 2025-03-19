@@ -8,7 +8,7 @@
     xmlns:projects="http://www.eclipse.org/oomph/setup/projects/1.0"
     xmlns:setup="http://www.eclipse.org/oomph/setup/1.0"
     xmlns:setup.p2="http://www.eclipse.org/oomph/setup/p2/1.0"
-    xsi:schemaLocation="http://www.eclipse.org/oomph/setup/git/1.0 https://raw.githubusercontent.com/eclipse-oomph/oomph/master/setups/models/Git.ecore http://www.eclipse.org/oomph/setup/jdt/1.0 https://raw.githubusercontent.com/eclipse-oomph/oomph/master/setups/models/JDT.ecore http://www.eclipse.org/oomph/setup/projects/1.0 index:/models/Projects.ecore"
+    xsi:schemaLocation="http://www.eclipse.org/oomph/setup/git/1.0 https://raw.githubusercontent.com/eclipse-oomph/oomph/master/setups/models/Git.ecore http://www.eclipse.org/oomph/setup/jdt/1.0 https://raw.githubusercontent.com/eclipse-oomph/oomph/master/setups/models/JDT.ecore http://www.eclipse.org/oomph/setup/projects/1.0 https://raw.githubusercontent.com/eclipse-oomph/oomph/master/setups/models/Projects.ecore"
     name="bndtools.p2.repo"
     label="bndtools.p2.repo">
   <annotation
@@ -183,21 +183,6 @@
   </setupTask>
   <stream name="master"
       label="master">
-<!--
-    <setupTask
-        xsi:type="setup:EclipseIniTask"
-        disabled="true"
-        option="-Doomph.redirection.bndtools"
-        value="=https://raw.githubusercontent.com/bndtools/bnd/master/.../BndtoolsBnd.setup->${git.clone.bnd.location|uri}/.../BndtoolsBnd.setup"
-        vm="true">
-      <description>
-        Set an Oomph redirection system property to redirect the logical location of this setup to
-        its physical location in the Git clone.
-        Before enabling this task, replace '...' with the repository path of this setup's containing
-        project.
-      </description>
-    </setupTask>
--->
     <setupTask
         xsi:type="setup:CompoundTask"
         name="bndtools">
@@ -276,5 +261,8 @@
           value="true"/>
     </setupTask>
   </stream>
+  <logicalProjectContainer
+      xsi:type="setup:ProjectCatalog"
+      href="index:/org.eclipse.setup#//@projectCatalogs[name='com.github']"/>
   <description>bndtools/bndtools.p2.repo provides cool stuff.</description>
 </setup:Project>

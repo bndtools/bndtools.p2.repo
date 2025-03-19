@@ -287,6 +287,6 @@
   </stream>
   <logicalProjectContainer
       xsi:type="setup:ProjectCatalog"
-      href="https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/master/setup/bnd/catalog_projects-bnd.setup#/"/>
+      href="index:/org.eclipse.setup#//@projectCatalogs[name='com.github']"/>
   <description>bndtools/bnd provides cool stuff.</description>
 </setup:Project>

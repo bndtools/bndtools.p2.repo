@@ -9,11 +9,15 @@
     xmlns:setup="http://www.eclipse.org/oomph/setup/1.0"
     xmlns:setup.p2="http://www.eclipse.org/oomph/setup/p2/1.0"
     xsi:schemaLocation="http://www.eclipse.org/oomph/setup/git/1.0 https://raw.githubusercontent.com/eclipse-oomph/oomph/master/setups/models/Git.ecore http://www.eclipse.org/oomph/setup/jdt/1.0 https://raw.githubusercontent.com/eclipse-oomph/oomph/master/setups/models/JDT.ecore http://www.eclipse.org/oomph/setup/projects/1.0 https://raw.githubusercontent.com/eclipse-oomph/oomph/master/setups/models/Projects.ecore"
-    name="bnd.workspace"
-    label="bnd.workspace">
+    name="bndtools.workspace-templates"
+    label="workspace-templates">
+  <annotation
+      source="ConfigurationReference">
+    <reference
+        href="https://cdn.klib.io/oomph/setups-github/BndConfiguration.setup#/"/>
+  </annotation>
   <setupTask
       xsi:type="setup:ResourceCreationTask"
-      id="ResCrea_org.eclipse.jdt.ui"
       excludedTriggers="STARTUP MANUAL"
       targetURL="${workspace.location|uri}/.metadata/.plugins/org.eclipse.jdt.ui/dialog_settings.xml"
       encoding="UTF-8">
@@ -55,6 +59,27 @@
     </description>
   </setupTask>
   <setupTask
+      xsi:type="git:GitCloneTask"
+      id="git.clone.bndtools.p2.repo"
+      remoteURI="bndtools/bndtools.p2.repo">
+    <annotation
+        source="http://www.eclipse.org/oomph/setup/InducedChoices">
+      <detail
+          key="inherit">
+        <value>github.remoteURIs</value>
+      </detail>
+      <detail
+          key="label">
+        <value>${scope.project.label} Github repository</value>
+      </detail>
+      <detail
+          key="target">
+        <value>remoteURI</value>
+      </detail>
+    </annotation>
+    <description>${scope.project.label}</description>
+  </setupTask>
+  <setupTask
       xsi:type="setup:CompoundTask"
       name="preferences">
     <setupTask
@@ -75,7 +100,6 @@
     </setupTask>
     <setupTask
         xsi:type="setup:ResourceCreationTask"
-        id="ResCrea_org.eclipse.ui.prefs"
         targetURL="${workspace.location|uri}/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.ui.prefs">
       <content>
         defaultPerspectiveId=bndtools.perspective
@@ -85,10 +109,9 @@
     </setupTask>
     <setupTask
         xsi:type="setup:ResourceCreationTask"
-        id="ResCrea_org.eclipse.ui.ide.prefs"
         targetURL="${workspace.location|uri}/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.ui.ide.prefs">
       <content>
-        WORKSPACE_NAME=bnd-${bndtools-release|uriLastSegment}-branch-${scope.project.stream.label}
+        WORKSPACE_NAME=bndtools.p2.repo-${scope.project.stream.label}
         org.eclipse.ui.internal.views.markers.CachedMarkerBuilderorg.eclipse.ui.views.ProblemView=&lt;?xml
         version\=&quot;1.0&quot; encoding\=&quot;UTF-8&quot;?>\n&lt;filterGroups
         andFilters\=&quot;false&quot; markerLimit\=&quot;250&quot;
@@ -128,11 +151,6 @@
       name="eclipse.ini">
     <setupTask
         xsi:type="setup:EclipseIniTask"
-        excludedTriggers="STARTUP"
-        option="-perspective"
-        value="bndtools.perspective"/>
-    <setupTask
-        xsi:type="setup:EclipseIniTask"
         option="-Xmx"
         value="2048m"
         vm="true">
@@ -140,9 +158,9 @@
     </setupTask>
     <setupTask
         xsi:type="setup:EclipseIniTask"
-        option="-Dorg.eclipse.oomph.setup.donate"
-        value="=false"
-        vm="true"/>
+        excludedTriggers="STARTUP"
+        option="-perspective"
+        value="bndtools.perspective"/>
   </setupTask>
   <setupTask
       xsi:type="setup:VariableTask"
@@ -151,14 +169,11 @@
       name="bndtools-release"
       label="bndtools-release">
     <choice
-        value="https://bndtools.org/bndtools.p2.repo/7.1.0"
+        value="https://bndtools.org/bndtools.p2.repo/7.1.0/"
         label="rel 7.1.0"/>
     <choice
-        value="https://bndtools.org/bndtools.p2.repo/7.0.0"
-        label="rel 7.0.0"/>
-    <choice
-        value="https://bndtools.org/bndtools.p2.repo/6.4.1"
-        label="rel 6.4.1"/>
+        value="https://bndtools.org/bndtools.p2.repo/6.4.1/"
+        label="rel 6.41"/>
     <choice
         value="https://bndtools.jfrog.io/bndtools/update-latest"
         label="release (JFrog)"/>
@@ -166,105 +181,88 @@
         value="https://bndtools.jfrog.io/bndtools/update-snapshot"
         label="snapshot (JFrog)"/>
   </setupTask>
-  <setupTask
-      xsi:type="setup:CompoundTask"
-      name="bndtools">
+  <stream name="master"
+      label="master">
     <setupTask
-        xsi:type="setup.p2:P2Task"
-        label="bndtools">
-      <requirement
-          name="bndtools.main.feature.feature.group"/>
-      <requirement
-          name="bndtools.m2e.feature.feature.group"/>
-      <requirement
-          name="bndtools.pde.feature.feature.group"/>
-      <repository
-          url="${bndtools-release}"/>
-    </setupTask>
-  </setupTask>
-  <setupTask
-      xsi:type="setup:CompoundTask"
-      name="JRE">
-    <setupTask
-        xsi:type="setup.p2:P2Task"
-        label="JRE21">
-      <requirement
-          name="org.eclipse.justj.openjdk.hotspot.jre.full.feature.group"/>
-      <repository
-          url="https://download.eclipse.org/justj/jres/21/updates/release"/>
+        xsi:type="setup:CompoundTask"
+        name="bndtools">
+      <setupTask
+          xsi:type="setup.p2:P2Task"
+          label="bndtools">
+        <requirement
+            name="bndtools.main.feature.feature.group"/>
+        <requirement
+            name="bndtools.m2e.feature.feature.group"/>
+        <requirement
+            name="bndtools.pde.feature.feature.group"/>
+        <repository
+            url="${bndtools-release}"/>
+      </setupTask>
     </setupTask>
     <setupTask
-        xsi:type="jdt:JRETask"
-        version="JavaSE-21"
-        location="${jre.location-21}"
-        name="JRE for JavaSE-21">
-      <description>
-        Define the JRE needed to compile and run the Java projects of
-        ${scope.project.label}
-      </description>
-      <defaultExecutionEnvironment>JavaSE-21</defaultExecutionEnvironment>
-    </setupTask>
-  </setupTask>
-  <stream name="none"
-      label="none"/>
-  <stream name="empty"
-      label="empty">
-    <setupTask
-        xsi:type="setup:VariableTask"
-        id="project-workspace"
-        type="FOLDER"
-        name="project-workspace"
-        storageURI="scope://Workspace"/>
-    <setupTask
-        xsi:type="projects:ProjectsImportTask">
-      <sourceLocator
-          rootFolder="${project-workspace}"
-          locateNestedProjects="true"/>
-    </setupTask>
-  </stream>
-  <stream name="github">
-    <setupTask
-        xsi:type="setup:VariableTask"
-        type="URI"
-        name="github_org_project"
-        storageURI="scope://Workspace"
-        label="github org/project"/>
-    <setupTask
-        xsi:type="setup:VariableTask"
-        name="branch"
-        storageURI="scope://Workspace"
-        label="branch name"/>
-    <setupTask
-        xsi:type="git:GitCloneTask"
-        id="github.clone.repo"
-        remoteURI="${github_org_project}"
-        checkoutBranch="${branch}">
-      <annotation
-          source="http://www.eclipse.org/oomph/setup/InducedChoices">
-        <detail
-            key="inherit">
-          <value>github.remoteURIs</value>
-        </detail>
-        <detail
-            key="label">
-          <value>${scope.project.label} Github repository</value>
-        </detail>
-        <detail
-            key="target">
-          <value>remoteURI</value>
-        </detail>
-      </annotation>
-      <description>${scope.project.label}</description>
+        xsi:type="setup:CompoundTask"
+        name="JRE">
+      <setupTask
+          xsi:type="setup.p2:P2Task"
+          label="JRE21">
+        <requirement
+            name="org.eclipse.justj.openjdk.hotspot.jre.full.feature.group"/>
+        <repository
+            url="https://download.eclipse.org/justj/jres/21/updates/release"/>
+      </setupTask>
+      <setupTask
+          xsi:type="jdt:JRETask"
+          version="JavaSE-17"
+          location="${jre.location-17}"
+          name="JRE for JavaSE-17">
+        <description>
+          Define the JRE needed to compile and run the Java projects of
+          ${scope.project.label}
+        </description>
+        <defaultExecutionEnvironment>JavaSE-17</defaultExecutionEnvironment>
+      </setupTask>
     </setupTask>
     <setupTask
         xsi:type="projects:ProjectsImportTask">
       <sourceLocator
-          rootFolder="${github.clone.repo.location}"
+          rootFolder="${git.clone.bndtools.p2.repo.location}"
           locateNestedProjects="true"/>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="org.eclipse.jdt.core">
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.codegen.targetPlatform"
+          value="17"/>
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.compliance"
+          value="17"/>
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.enablePreviewFeatures"
+          value="disabled"/>
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.reportPreviewFeatures"
+          value="warning"/>
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.source"
+          value="17"/>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="org.eclipse.egit.ui">
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.egit.ui/commit_dialog_signed_off_by"
+          value="true"/>
     </setupTask>
   </stream>
   <logicalProjectContainer
       xsi:type="setup:ProjectCatalog"
       href="index:/org.eclipse.setup#//@projectCatalogs[name='com.github']"/>
-  <description>bnd.workspace provides cool stuff.</description>
+  <description>bndtools/workspace-templates provides cool stuff.</description>
 </setup:Project>
