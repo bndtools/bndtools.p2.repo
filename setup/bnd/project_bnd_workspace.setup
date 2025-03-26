@@ -218,7 +218,7 @@
     <setupTask
         xsi:type="projects:ProjectsImportTask">
       <sourceLocator
-          rootFolder="${project-workspace}"
+          rootFolder="${project-workspace.location}"
           locateNestedProjects="true"/>
     </setupTask>
   </stream>
