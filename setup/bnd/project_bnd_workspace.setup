@@ -213,8 +213,7 @@
         xsi:type="setup:VariableTask"
         id="project-workspace"
         type="FOLDER"
-        name="project-workspace"
-        storageURI="scope://Workspace"/>
+        name="project-workspace"/>
     <setupTask
         xsi:type="projects:ProjectsImportTask">
       <sourceLocator
@@ -227,12 +226,10 @@
         xsi:type="setup:VariableTask"
         type="URI"
         name="github_org_project"
-        storageURI="scope://Workspace"
         label="github org/project"/>
     <setupTask
         xsi:type="setup:VariableTask"
         name="branch"
-        storageURI="scope://Workspace"
         label="branch name"/>
     <setupTask
         xsi:type="git:GitCloneTask"
