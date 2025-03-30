@@ -229,13 +229,13 @@
         label="github org/project"/>
     <setupTask
         xsi:type="setup:VariableTask"
-        name="branch"
-        label="branch name"/>
+        name="github_branch"
+        label="github branch name"/>
     <setupTask
         xsi:type="git:GitCloneTask"
         id="github.clone.repo"
         remoteURI="${github_org_project}"
-        checkoutBranch="${branch}">
+        checkoutBranch="${github_branch}">
       <annotation
           source="http://www.eclipse.org/oomph/setup/InducedChoices">
         <detail
