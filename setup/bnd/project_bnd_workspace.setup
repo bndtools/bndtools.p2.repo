@@ -226,10 +226,12 @@
         xsi:type="setup:VariableTask"
         type="URI"
         name="github_org_project"
+        storageURI="scope://Workspace"
         label="github org/project"/>
     <setupTask
         xsi:type="setup:VariableTask"
         name="github_branch"
+        storageURI="scope://Workspace"
         label="github branch name"/>
     <setupTask
         xsi:type="git:GitCloneTask"
