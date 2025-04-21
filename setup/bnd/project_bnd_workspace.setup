@@ -212,13 +212,13 @@
     <setupTask
         xsi:type="setup:VariableTask"
         type="FOLDER"
-        name="local_git_project"
+        name="local.git.project"
         storageURI="scope://Workspace"
         label="Local git project"/>
     <setupTask
         xsi:type="projects:ProjectsImportTask">
       <sourceLocator
-          rootFolder="${local_git_project.location}"
+          rootFolder="${local.git.project.location}"
           locateNestedProjects="true"/>
     </setupTask>
   </stream>
