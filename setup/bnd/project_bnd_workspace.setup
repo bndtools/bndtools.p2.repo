@@ -218,7 +218,7 @@
     <setupTask
         xsi:type="projects:ProjectsImportTask">
       <sourceLocator
-          rootFolder="${local.git.project.location}"
+          rootFolder="${local.git.project}"
           locateNestedProjects="true"/>
     </setupTask>
   </stream>
