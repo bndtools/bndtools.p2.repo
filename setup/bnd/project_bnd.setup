@@ -295,14 +295,26 @@
       <workingSet
           name="gradle-plugins">
         <predicate
-            xsi:type="predicates:LocationPredicate"
-            pattern=".*/gradle-plugins/.*"/>
+            xsi:type="predicates:OrPredicate">
+          <operand
+              xsi:type="predicates:LocationPredicate"
+              pattern=".*/gradle-plugins/.*"/>
+          <operand
+              xsi:type="predicates:NamePredicate"
+              pattern="gradle-plugins"/>
+        </predicate>
       </workingSet>
       <workingSet
           name="maven-plugins">
         <predicate
-            xsi:type="predicates:LocationPredicate"
-            pattern=".*/maven-plugins/.*"/>
+            xsi:type="predicates:OrPredicate">
+          <operand
+              xsi:type="predicates:LocationPredicate"
+              pattern=".*/maven-plugins/.*"/>
+          <operand
+              xsi:type="predicates:NamePredicate"
+              pattern="maven-plugins"/>
+        </predicate>
       </workingSet>
       <workingSet
           name="biz.qQute">
