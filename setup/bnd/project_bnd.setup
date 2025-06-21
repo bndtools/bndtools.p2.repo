@@ -6,10 +6,12 @@
     xmlns:git="http://www.eclipse.org/oomph/setup/git/1.0"
     xmlns:jdt="http://www.eclipse.org/oomph/setup/jdt/1.0"
     xmlns:maven="http://www.eclipse.org/oomph/setup/maven/1.0"
+    xmlns:predicates="http://www.eclipse.org/oomph/predicates/1.0"
     xmlns:projects="http://www.eclipse.org/oomph/setup/projects/1.0"
     xmlns:setup="http://www.eclipse.org/oomph/setup/1.0"
     xmlns:setup.p2="http://www.eclipse.org/oomph/setup/p2/1.0"
-    xsi:schemaLocation="http://www.eclipse.org/oomph/setup/git/1.0 https://raw.githubusercontent.com/eclipse-oomph/oomph/master/setups/models/Git.ecore http://www.eclipse.org/oomph/setup/jdt/1.0 https://raw.githubusercontent.com/eclipse-oomph/oomph/master/setups/models/JDT.ecore http://www.eclipse.org/oomph/setup/maven/1.0 https://raw.githubusercontent.com/eclipse-oomph/oomph/master/setups/models/Maven.ecore http://www.eclipse.org/oomph/setup/projects/1.0 https://raw.githubusercontent.com/eclipse-oomph/oomph/master/setups/models/Projects.ecore"
+    xmlns:setup.workingsets="http://www.eclipse.org/oomph/setup/workingsets/1.0"
+    xsi:schemaLocation="http://www.eclipse.org/oomph/setup/git/1.0 https://raw.githubusercontent.com/eclipse-oomph/oomph/master/setups/models/Git.ecore http://www.eclipse.org/oomph/setup/jdt/1.0 https://raw.githubusercontent.com/eclipse-oomph/oomph/master/setups/models/JDT.ecore http://www.eclipse.org/oomph/setup/maven/1.0 https://raw.githubusercontent.com/eclipse-oomph/oomph/master/setups/models/Maven.ecore http://www.eclipse.org/oomph/predicates/1.0 https://raw.githubusercontent.com/eclipse-oomph/oomph/master/setups/models/Predicates.ecore http://www.eclipse.org/oomph/setup/projects/1.0 https://raw.githubusercontent.com/eclipse-oomph/oomph/master/setups/models/Projects.ecore http://www.eclipse.org/oomph/setup/workingsets/1.0 https://raw.githubusercontent.com/eclipse-oomph/oomph/master/setups/models/SetupWorkingSets.ecore"
     name="bnd"
     label="bnd">
   <setupTask
@@ -283,6 +285,40 @@
         <excludedPath>bndtools.test</excludedPath>
         <excludedPath>bndtools.core.test/resources/</excludedPath>
       </sourceLocator>
+    </setupTask>
+    <setupTask
+        xsi:type="setup.workingsets:WorkingSetTask"
+        id="workingsets.oomph">
+      <workingSet
+          name="gradle-plugins">
+        <predicate
+            xsi:type="predicates:LocationPredicate"
+            pattern="*/gradle-plugins/*"/>
+      </workingSet>
+      <workingSet
+          name="maven-plugins">
+        <predicate
+            xsi:type="predicates:LocationPredicate"
+            pattern="*/maven-plugins/*"/>
+      </workingSet>
+      <workingSet
+          name="biz.qQute">
+        <predicate
+            xsi:type="predicates:NamePredicate"
+            pattern="biz\.aQute\..*"/>
+      </workingSet>
+      <workingSet
+          name="bndtools">
+        <predicate
+            xsi:type="predicates:NamePredicate"
+            pattern="bndtools\..*"/>
+      </workingSet>
+      <workingSet
+          name="org.bndtools">
+        <predicate
+            xsi:type="predicates:NamePredicate"
+            pattern="org\.bndtools\..*"/>
+      </workingSet>
     </setupTask>
   </stream>
   <logicalProjectContainer
