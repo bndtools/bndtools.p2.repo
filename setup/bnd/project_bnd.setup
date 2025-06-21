@@ -243,7 +243,8 @@
     <setupTask
         xsi:type="maven:MavenImportTask">
       <sourceLocator
-          rootFolder="${git.clone.bnd.location}/maven-plugins"/>
+          rootFolder="${git.clone.bnd.location}/maven-plugins"
+          locateNestedProjects="true"/>
     </setupTask>
     <setupTask
         xsi:type="setup:CompoundTask"
@@ -285,6 +286,7 @@
         <excludedPath>bndtools.test</excludedPath>
         <excludedPath>bndtools.core.test/resources/</excludedPath>
         <excludedPath>biz.aQute.bndlib.tests</excludedPath>
+        <excludedPath>biz.aQute.repository/testresources/</excludedPath>
       </sourceLocator>
     </setupTask>
     <setupTask
