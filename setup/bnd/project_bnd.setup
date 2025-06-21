@@ -293,13 +293,13 @@
           name="gradle-plugins">
         <predicate
             xsi:type="predicates:LocationPredicate"
-            pattern="*/gradle-plugins/*"/>
+            pattern=".*/gradle-plugins/.*"/>
       </workingSet>
       <workingSet
           name="maven-plugins">
         <predicate
             xsi:type="predicates:LocationPredicate"
-            pattern="*/maven-plugins/*"/>
+            pattern=".*/maven-plugins/.*"/>
       </workingSet>
       <workingSet
           name="biz.qQute">
