@@ -284,6 +284,7 @@
           locateNestedProjects="true">
         <excludedPath>bndtools.test</excludedPath>
         <excludedPath>bndtools.core.test/resources/</excludedPath>
+        <excludedPath>biz.aQute.bndlib.tests</excludedPath>
       </sourceLocator>
     </setupTask>
     <setupTask
