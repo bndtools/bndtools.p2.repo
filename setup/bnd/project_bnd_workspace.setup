@@ -206,7 +206,14 @@
     </setupTask>
   </setupTask>
   <stream name="none"
-      label="none"/>
+      label="none">
+    <setupTask
+        xsi:type="setup:VariableTask"
+        id="installation.id"
+        name="Installation folder name"
+        value=""
+        defaultValue="provide-name"/>
+  </stream>
   <stream name="local-git-repo"
       label="local-git-repo">
     <setupTask
@@ -221,6 +228,11 @@
           rootFolder="${local.git.project}"
           locateNestedProjects="true"/>
     </setupTask>
+    <setupTask
+        xsi:type="setup:VariableTask"
+        id="installation.id"
+        name="Installation folder name"
+        value="${local.git.project|uri|uriLastSegment}"/>
   </stream>
   <stream name="github-repo">
     <setupTask
@@ -262,6 +274,11 @@
           rootFolder="${github.clone.repo.location}"
           locateNestedProjects="true"/>
     </setupTask>
+    <setupTask
+        xsi:type="setup:VariableTask"
+        id="installation.id"
+        name="Installation folder name"
+        value="${github_org_project|lower}"/>
   </stream>
   <logicalProjectContainer
       xsi:type="setup:ProjectCatalog"
