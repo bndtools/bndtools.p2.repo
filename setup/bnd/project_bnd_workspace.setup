@@ -146,6 +146,10 @@
   </setupTask>
   <setupTask
       xsi:type="setup:VariableTask"
+      name="pullrequest"
+      label="PullRequest"/>
+  <setupTask
+      xsi:type="setup:VariableTask"
       id="bndtools-release"
       type="URI"
       name="bndtools-release"
@@ -165,6 +169,9 @@
     <choice
         value="https://bndtools.jfrog.io/bndtools/update-snapshot"
         label="snapshot (JFrog)"/>
+    <choice
+        value="https://bndtools.jfrog.io/artifactory/p2/pr/${pullrequest}/"
+        label="SelectPullRequest"/>
   </setupTask>
   <setupTask
       xsi:type="setup:CompoundTask"
@@ -282,7 +289,7 @@
     <setupTask
         xsi:type="setup:PreferenceTask"
         key="/instance/org.eclipse.ui.ide/WORKSPACE_NAME"
-        value="${github_org_project}"/>
+        value="${github_org_project|gitRepository}"/>
   </stream>
   <logicalProjectContainer
       xsi:type="setup:ProjectCatalog"
