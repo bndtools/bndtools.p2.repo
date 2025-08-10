@@ -13,50 +13,131 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="">
     <style>
+        html {
+            --bg: #fff;
+            --fg: #222;
+            --border: #000;
+            --pre-bg: #f4f4f4;
+            --pre-border: #ddd;
+            --link: #007bff;
+            --table-th-bg: #eee;
+        }
+        @media (prefers-color-scheme: dark) {
+            html {
+                --bg: #181a1b;
+                --fg: #e8e6e3;
+                --border: #444;
+                --pre-bg: #23272e;
+                --pre-border: #333;
+                --link: #4ea1ff;
+                --table-th-bg: #23272e;
+            }
+        }
+        html.dark-mode {
+            --bg: #181a1b;
+            --fg: #e8e6e3;
+            --border: #444;
+            --pre-bg: #23272e;
+            --pre-border: #333;
+            --link: #4ea1ff;
+            --table-th-bg: #23272e;
+        }
+        body {
+            background: var(--bg);
+            color: var(--fg);
+        }
+        a { color: var(--link); }
         pre {
-            background-color: #f4f4f4;
+            background-color: var(--pre-bg);
             padding: 10px;
             border-radius: 5px;
-            border: 1px solid #ddd;
+            border: 1px solid var(--pre-border);
             overflow-x: auto;
             font-size: 10px;
-            /* Small font size */
         }
-
         #expandableContent {
             display: none;
-            /* Initially hidden */
             padding: 10px;
-            border: 1px solid #ddd;
+            border: 1px solid var(--pre-border);
             margin-top: 10px;
         }
-
         .toggle-btn {
-            padding: 2px;
-            font-size: 10px;
-            background-color: #007bff;
+            padding: 6px 12px;
+            font-size: 12px;
+            background-color: var(--link);
             color: white;
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            position: fixed;
+            top: 16px;
+            right: 16px;
+            z-index: 1000;
+            transition: background 0.2s;
         }
-
+        .toggle-btn:hover {
+            background-color: #0056b3;
+        }
         table {
             border-collapse: collapse;
-            border: 1px solid #000000;
+            border: 1px solid var(--border);
         }
-
         table th,
         td {
-            border: 1px solid #000000;
+            border: 1px solid var(--border);
             padding: 10px;
             text-align: center;
         }
+        table th {
+            background: var(--table-th-bg);
+        }
     </style>
+    <script>
+        (function() {
+            function setDarkMode(enabled) {
+                if (enabled) {
+                    document.documentElement.classList.add('dark-mode');
+                } else {
+                    document.documentElement.classList.remove('dark-mode');
+                }
+            }
+            function updateThemeFromStorage() {
+                const mode = localStorage.getItem('theme-mode');
+                if (mode === 'dark') {
+                    setDarkMode(true);
+                } else if (mode === 'light') {
+                    setDarkMode(false);
+                } else {
+                    setDarkMode(window.matchMedia('(prefers-color-scheme: dark)').matches);
+                }
+            }
+            window.toggleDarkMode = function() {
+                const isDark = document.documentElement.classList.toggle('dark-mode');
+                localStorage.setItem('theme-mode', isDark ? 'dark' : 'light');
+                updateToggleText();
+            };
+            function updateToggleText() {
+                var btn = document.getElementById('darkModeToggle');
+                if (!btn) return;
+                const isDark = document.documentElement.classList.contains('dark-mode');
+                btn.textContent = isDark ? '☀ Light Mode' : '🌙 Dark Mode';
+            }
+            document.addEventListener('DOMContentLoaded', function() {
+                updateThemeFromStorage();
+                updateToggleText();
+            });
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function() {
+                if (!localStorage.getItem('theme-mode')) {
+                    updateThemeFromStorage();
+                    updateToggleText();
+                }
+            });
+        })();
+    </script>
 </head>
 
 <body>
-
+    <button id="darkModeToggle" class="toggle-btn" onclick="toggleDarkMode()">🌙 Dark Mode</button>
     <h1>bnd - oomph configurations / setups</h1>
 
     <h2>1. setup oomph / eclipse installer on your machine</h2>

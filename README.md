@@ -8,6 +8,20 @@ purpose of this repo is the provisioning of bndtools release additions
 
 Use the following link to goto the hosted version of this repo [github pages  - http://bndtools.org/bndtools.p2.repo](http://bndtools.org/bndtools.p2.repo)
 
+
+## Local webserver for the site folder
+
+To serve the `site` folder locally on [http://localhost:4001/](http://localhost:4001/), use the included Ruby webserver:
+
+```sh
+cd processing
+ruby server.rb
+```
+
+This requires Ruby (no extra gems needed). Press Ctrl+C to stop the server.
+
+---
+
 ## modify this repository
 
 press on the following link for installation of eclipse ide with this repo checked out for modification

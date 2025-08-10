@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>bnd - oomph setups</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+    <style>
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            overflow-x: auto;
+            font-size: 10px;
+            /* Small font size */
+        }
+
+        #expandableContent {
+            display: none;
+            /* Initially hidden */
+            padding: 10px;
+            border: 1px solid #ddd;
+            margin-top: 10px;
+        }
+
+        .toggle-btn {
+            padding: 2px;
+            font-size: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        table {
+            border-collapse: collapse;
+            border: 1px solid #000000;
+        }
+
+        table th,
+        td {
+            border: 1px solid #000000;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>bnd - oomph configuration / setups</h1>
+
+    <h2>pre-requisites eclipse-installer and URL handler registration</h2>
+    <p>
+        <b>IMPORTANT: this is only required once on your machine - afterwards you can directly use the table below</b>
+    </p>
+    <p>
+        To use the oomph/eclipse-installer for the installation of the bndtools development environment, you can click
+    </p>
+    <a title="Click to open the Eclipse Installer Auto Launch documentation or drag into your running installer"
+        href="https://www.eclipse.org/setups/installer/?url=https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/master/setup/bnd/config_bnd_10.setup&show=true">
+        <img src="https://img.shields.io/static/v1?logo=eclipseide&label=Eclipse%20Java%20Developer%20%2B%20bndtools%20release%20%20&message=bndtools%20:%20master&style=for-the-badge&logoColor=white&labelColor=963508&color=gray"
+            alt="eclipse + bnd release on bndtools next" />
+    </a>
+
+    <h2>oomph / eclipse-installer setup links</h2>
+
+    <ol>
+        <li>select <img src="https://img.shields.io/badge/Eclipse%20IDE-963508?logo=eclipseide" /> and the installed
+            <img src="https://img.shields.io/badge/bndtools-963508" />/<img src="https://img.shields.io/badge/bndtools-orange" /> version by
+            label color ( <img src="https://img.shields.io/badge/release-963508" /> / <img
+                src="https://img.shields.io/badge/snapshot-orange" /> )</li>
+        <li>select <img
+            src="https://img.shields.io/badge/github%20branch-gray" /> of bndtools repo to be checked out by label color ( <img
+                src="https://img.shields.io/badge/master-gray" /> / <img
+                src="https://img.shields.io/badge/next-lightgray" /> )</li>
+    </ol>
+
+    <p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">PURPOSE</th>
+                <th scope="col">ECLIPSE VERS.</th>
+                <th scope="col">BNDTOOLS VERSION</th>
+                <th scope="col">GITHUB BRANCH</th>
+                <th scope="col">OOMPH LINK</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">bugfix release version</th>
+                <td><a href="https://www.eclipse.org/downloads/packages/release/2024-12/r/eclipse-ide-java-developers">Eclipse
+                        Java Dev</a></td>
+                <td><a href="https://github.com/bndtools/bnd/wiki/Changes-in-7.1.0">release 7.1.0</a></td>
+                <td><a href="https://github.com/bndtools/bnd/tree/master">bnd/master</a></td>
+                <td><a
+                        href="eclipse+installer:https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/master/setup/bnd/config_bnd_10.setup">
+                        <img src="https://img.shields.io/static/v1?logo=eclipseide&label=Eclipse%20Java%20Developer%20%2B%20bndtools%20release%20%20&message=bnd%20:%20master&style=for-the-badge&logoColor=white&labelColor=963508&color=gray"
+                            alt="epp java dev + bnd release on bndtools master" /></a>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">bugfix release version</th>
+                <td><a href="https://www.eclipse.org/downloads/packages/release/2024-12/r/eclipse-ide-java-developers">Eclipse
+                        Java Dev</a></td>
+                <td><a href="https://bndtools.jfrog.io/bndtools/update-snapshot">latest SNAPSHOT build</a></td>
+                <td><a href="https://github.com/bndtools/bnd/tree/master">bnd/master</a></td>
+                <td><a
+                        href="eclipse+installer:https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/master/setup/bnd/config_bnd_11.setup">
+                        <img src="https://img.shields.io/static/v1?logo=eclipseide&label=Eclipse%20Java%20Developer%20%2B%20bndtools%20snapshot&message=bnd%20:%20master&style=for-the-badge&logoColor=white&labelColor=orange&color=gray"
+                            alt="epp java dev + bnd snapshot on bndtools master" /></a>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">feature development</th>
+                <td><a href="https://www.eclipse.org/downloads/packages/release/2024-12/r/eclipse-ide-java-developers">Eclipse
+                        Java Dev</a></td>
+                <td><a href="https://github.com/bndtools/bnd/wiki/Changes-in-7.1.0">release 7.1.0</a></td>
+                <td><a href="https://github.com/bndtools/bnd/tree/next">bnd/next</a></td>
+                <td><a
+                        href="eclipse+installer:https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/master/setup/bnd/bnd/config_bnd_20.setup">
+                        <img src="https://img.shields.io/static/v1?logo=eclipseide&label=Eclipse%20Java%20Developer%20%2B%20bndtools%20release%20%20&message=bnd%20:%20next&style=for-the-badge&logoColor=white&labelColor=963508&color=lightgray"
+                            alt="epp java dev + bnd snapshot on bndtools next" alt="latest eclipse - bnd master" /></a>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">feature development</th>
+                <td><a href="https://www.eclipse.org/downloads/packages/release/2024-12/r/eclipse-ide-java-developers">Eclipse
+                        Java Dev</a></td>
+                <td><a href="https://bndtools.jfrog.io/bndtools/update-snapshot">latest SNAPSHOT build</a></td>
+                <td><a href="https://github.com/bndtools/bnd/tree/next">bnd/next</a></td>
+                <td><a
+                        href="eclipse+installer:https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/master/setup/bnd/config_bnd_21.setup">
+                        <img src="https://img.shields.io/static/v1?logo=eclipseide&label=Eclipse%20Java%20Developer%20%2B%20bndtools%20snapshot&message=bnd%20:%20next&style=for-the-badge&logoColor=white&labelColor=orange&color=lightgray"
+                            alt="epp java dev + bnd snapshot on branch next" /></a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    </p>
+
+    <h2>oomph configuration for this repo</h2>
+    <p>
+        to update this repository use the following oomph setup
+    </p>
+    <div><a
+            href="eclipse+installer:https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/master/setup/bndtools.p2.repo/config_bndtools-p2-repo_10.setup">
+            <img src="https://img.shields.io/static/v1?logo=eclipseide&label=Eclipse%20modeling%20tools%20%2B%20bndtools%20release%20&message=%20bndtools.p2.repo%20%2F%20master&style=for-the-badge&logoColor=white&labelColor=963508&color=gray"
+                alt="eclipse on bndtools.p2.repo branch next" /></a>
+    </div>
+
+    <h2>p2 repository</h2>
+    <div>
+        <a href="p2.html">provided bndtools version p2 repo details</a>
+    </div>
+
+    <p><small>last updated: <b>###CURR-DATE###</b> - git-sha: <a href="https://github.com/bndtools/bndtools.p2.repo/tree/###GIT-SHA###"><b>###GIT-SHA###</b></a></small></p>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+    <script>
+        function copyToClipboard(elementId) {
+            var codeElement = document.getElementById(elementId);
+            var range = document.createRange();
+            range.selectNode(codeElement);
+            window.getSelection().removeAllRanges(); // Clear current selection
+            window.getSelection().addRange(range); // Select the code block
+
+            try {
+                document.execCommand('copy');
+                alert('command copied to clipboard! open a terminal and execute it inside. - will launch eclipse installer with oomph setup selected');
+            } catch (err) {
+                alert('Failed to copy code.');
+            }
+
+            window.getSelection().removeAllRanges(); // Unselect after copying
+        }
+        function toggleContent() {
+            var content = document.getElementById('expandableContent');
+            var button = document.querySelector('.toggle-btn');
+
+            // Toggle visibility
+            if (content.style.display === "none") {
+                content.style.display = "block";
+                button.textContent = "hide terminal instructions"; // Change button text
+            } else {
+                content.style.display = "none";
+                button.textContent = "display terminal instructions"; // Change button text
+            }
+        }
+    </script>
+</body>
+
+</html>
