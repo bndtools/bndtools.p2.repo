@@ -146,8 +146,16 @@
   </setupTask>
   <setupTask
       xsi:type="setup:VariableTask"
+      type="INTEGER"
       name="pullrequest"
       label="PullRequest"/>
+  <setupTask
+      xsi:type="setup:VariableTask"
+      type="URI"
+      name="pr.repo.uri"
+      label="PR Repo URI">
+    <description>jar:https://serverurl!/path_in_zip_or_jar/</description>
+  </setupTask>
   <setupTask
       xsi:type="setup:VariableTask"
       id="bndtools-release"
@@ -172,6 +180,9 @@
     <choice
         value="https://bndtools.jfrog.io/artifactory/p2/pr/${pullrequest}/"
         label="SelectPullRequest"/>
+    <choice
+        value="${pr.repo.uri}"
+        label="RepoURL"/>
   </setupTask>
   <setupTask
       xsi:type="setup:CompoundTask"
