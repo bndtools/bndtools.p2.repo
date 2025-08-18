@@ -339,7 +339,8 @@
       </workingSet>
     </setupTask>
   </stream>
-  <stream label="${branch}">
+  <stream name="branch"
+      label="${branch}">
     <setupTask
         xsi:type="setup:CompoundTask"
         name="bndtools">
