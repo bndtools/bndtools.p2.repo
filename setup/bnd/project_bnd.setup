@@ -439,7 +439,7 @@
     </setupTask>
     <setupTask
         xsi:type="setup.workingsets:WorkingSetTask"
-        id="workingsets.oomph">
+        id="workingsets.bnd">
       <workingSet
           name="gradle-plugins">
         <predicate
@@ -482,6 +482,21 @@
             xsi:type="predicates:NamePredicate"
             pattern="org\.bndtools\..*"/>
       </workingSet>
+    </setupTask>
+  </stream>
+  <stream name="local-bnd-git-repo"
+      label="local-bnd-git-repo">
+    <setupTask
+        xsi:type="setup:VariableTask"
+        type="FOLDER"
+        name="local.git.project"
+        storageURI="scope://Workspace"
+        label="Local git project"/>
+    <setupTask
+        xsi:type="projects:ProjectsImportTask">
+      <sourceLocator
+          rootFolder="${local.git.project}"
+          locateNestedProjects="true"/>
     </setupTask>
   </stream>
   <logicalProjectContainer
