@@ -9,7 +9,7 @@
       name="bnd.installation"
       label="bnd installation">
     <productVersion
-        href="index:/org.eclipse.setup#//@productCatalogs[name='org.eclipse.products']/@products[name='epp.package.java']/@versions[name='latest.released']"/>
+        href="index:/org.eclipse.setup#//@productCatalogs[name='org.eclipse.products']/@products[name='epp.package.rcp']/@versions[name='latest.released']"/>
     <description>The My installation provides cool stuff.</description>
   </installation>
   <workspace
