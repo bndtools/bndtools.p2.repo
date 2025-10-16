@@ -190,11 +190,6 @@
     </annotation>
     <description>${scope.project.label}</description>
   </setupTask>
-  <setupTask
-      xsi:type="setup:VariableTask"
-      name="branch"
-      storageURI="scope://Workspace"
-      label="Branch"/>
   <stream name="master"
       label="master">
     <setupTask
@@ -340,7 +335,7 @@
       </workingSet>
     </setupTask>
   </stream>
-  <stream name="branch"
+  <stream name="${branch}"
       label="${branch}">
     <setupTask
         xsi:type="setup:CompoundTask"
@@ -484,6 +479,11 @@
             pattern="org\.bndtools\..*"/>
       </workingSet>
     </setupTask>
+    <setupTask
+        xsi:type="setup:VariableTask"
+        name="branch"
+        storageURI="scope://Workspace"
+        label="Branch"/>
   </stream>
   <stream name="local-bnd-git-repo"
       label="local-bnd-git-repo">
