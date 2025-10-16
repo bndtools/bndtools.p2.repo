@@ -222,7 +222,7 @@
     <setupTask
         xsi:type="maven:MavenImportTask">
       <sourceLocator
-          rootFolder="${git.clone.bnd.location}/maven-plugins"
+          rootFolder="${git.clone.bnd.master.location}/maven-plugins"
           locateNestedProjects="true"/>
     </setupTask>
     <setupTask
@@ -260,7 +260,7 @@
     <setupTask
         xsi:type="projects:ProjectsImportTask">
       <sourceLocator
-          rootFolder="${git.clone.bnd.location}"
+          rootFolder="${git.clone.bnd.master.location}"
           locateNestedProjects="true">
         <excludedPath>bndtools.core.test/resources/</excludedPath>
         <excludedPath>biz.aQute.bndlib.tests/</excludedPath>
@@ -315,7 +315,7 @@
     </setupTask>
     <setupTask
         xsi:type="git:GitCloneTask"
-        id="git.clone.bnd"
+        id="git.clone.bnd.master"
         remoteURI="bndtools/bnd">
       <annotation
           source="http://www.eclipse.org/oomph/setup/InducedChoices">
@@ -388,7 +388,7 @@
     <setupTask
         xsi:type="maven:MavenImportTask">
       <sourceLocator
-          rootFolder="${git.clone.bnd.location}/maven-plugins"
+          rootFolder="${git.clone.bnd.branch.location}/maven-plugins"
           locateNestedProjects="true"/>
     </setupTask>
     <setupTask
@@ -426,7 +426,7 @@
     <setupTask
         xsi:type="projects:ProjectsImportTask">
       <sourceLocator
-          rootFolder="${git.clone.bnd.location}"
+          rootFolder="${git.clone.bnd.branch.location}"
           locateNestedProjects="true">
         <excludedPath>bndtools.core.test/resources/</excludedPath>
         <excludedPath>biz.aQute.bndlib.tests/</excludedPath>
@@ -486,7 +486,7 @@
         label="Branch"/>
     <setupTask
         xsi:type="git:GitCloneTask"
-        id="git.clone.bnd"
+        id="git.clone.bnd.branch"
         remoteURI="bndtools/bnd">
       <annotation
           source="http://www.eclipse.org/oomph/setup/InducedChoices">
@@ -565,7 +565,7 @@
     <setupTask
         xsi:type="maven:MavenImportTask">
       <sourceLocator
-          rootFolder="${git.clone.bnd.location}/maven-plugins"
+          rootFolder="${local.git.project.location}/maven-plugins"
           locateNestedProjects="true"/>
     </setupTask>
     <setupTask
@@ -608,7 +608,7 @@
         label="Local git project"/>
     <setupTask
         xsi:type="setup.workingsets:WorkingSetTask"
-        id="workingsets.bnd">
+        id="workingsets.bnd.local">
       <workingSet
           name="gradle-plugins">
         <predicate
