@@ -565,7 +565,7 @@
     <setupTask
         xsi:type="maven:MavenImportTask">
       <sourceLocator
-          rootFolder="${local.git.project.location}/maven-plugins"
+          rootFolder="${local.git.project}/maven-plugins"
           locateNestedProjects="true"/>
     </setupTask>
     <setupTask
