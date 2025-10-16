@@ -193,6 +193,7 @@
   <setupTask
       xsi:type="setup:VariableTask"
       name="branch"
+      storageURI="scope://Workspace"
       label="Branch"/>
   <stream name="master"
       label="master">
