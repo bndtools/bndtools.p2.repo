@@ -299,12 +299,30 @@
         <predicate
             xsi:type="predicates:NamePredicate"
             pattern="biz\.aQute\..*"/>
+        <predicate
+            xsi:type="predicates:NotPredicate">
+          <operand
+              xsi:type="predicates:NamePredicate"
+              pattern="biz\.aQute\.bndlib\.tests/java8"/>
+        </predicate>
       </workingSet>
       <workingSet
           name="bndtools">
         <predicate
             xsi:type="predicates:NamePredicate"
             pattern="bndtools\..*"/>
+        <predicate
+            xsi:type="predicates:NotPredicate">
+          <operand
+              xsi:type="predicates:NamePredicate"
+              pattern="bndtools.test"/>
+        </predicate>
+        <predicate
+            xsi:type="predicates:NotPredicate">
+          <operand
+              xsi:type="predicates:NamePredicate"
+              pattern="bndtools\.core\.test/resources/workspaces/..*"/>
+        </predicate>
       </workingSet>
       <workingSet
           name="org.bndtools">
