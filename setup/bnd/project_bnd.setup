@@ -303,6 +303,12 @@
               pattern="biz\.aQute\.bndlib\.tests/java8"/>
         </predicate>
         <predicate
+            xsi:type="predicates:NotPredicate">
+          <operand
+              xsi:type="predicates:NamePredicate"
+              pattern="biz\.aQute\.repository/testresources/.*"/>
+        </predicate>
+        <predicate
             xsi:type="predicates:NamePredicate"
             pattern="biz\.aQute\.*"/>
       </workingSet>
