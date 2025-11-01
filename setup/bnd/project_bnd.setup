@@ -298,7 +298,7 @@
           name="biz.qQute">
         <predicate
             xsi:type="predicates:NamePredicate"
-            pattern="biz\.aQute\..*"/>
+            pattern="biz\.aQute\.*"/>
         <predicate
             xsi:type="predicates:NotPredicate">
           <operand
@@ -315,7 +315,7 @@
             xsi:type="predicates:NotPredicate">
           <operand
               xsi:type="predicates:NamePredicate"
-              pattern="bndtools.test"/>
+              pattern="bndtools\.test/.*"/>
         </predicate>
         <predicate
             xsi:type="predicates:NotPredicate">
