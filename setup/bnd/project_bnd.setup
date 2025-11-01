@@ -267,6 +267,7 @@
         <excludedPath>biz.aQute.bndlib.tests/</excludedPath>
         <excludedPath>biz.aQute.repository/testresources/</excludedPath>
         <excludedPath>biz.aQute.bndlib.tests/java8/</excludedPath>
+        <excludedPath>maven-plugins/</excludedPath>
       </sourceLocator>
     </setupTask>
     <setupTask
