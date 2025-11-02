@@ -649,7 +649,7 @@
               xsi:type="predicates:NotPredicate">
             <operand
                 xsi:type="predicates:NamePredicate"
-                pattern="biz.aQute.bnd.gradle"/>
+                pattern="biz\.aQute\.bnd\.gradle"/>
           </operand>
         </predicate>
       </workingSet>
@@ -668,14 +668,20 @@
       <workingSet
           name="gradle-plugins">
         <predicate
-            xsi:type="predicates:NamePredicate"
-            pattern="gradle.*"/>
+            xsi:type="predicates:OrPredicate">
+          <operand
+              xsi:type="predicates:NamePredicate"
+              pattern="gradle.*"/>
+          <operand
+              xsi:type="predicates:NamePredicate"
+              pattern="biz\.aQute\.bnd\.gradle"/>
+        </predicate>
       </workingSet>
       <workingSet
           name="maven-plugins">
         <predicate
-            xsi:type="predicates:LocationPredicate"
-            pattern="maven-plugins/.*"/>
+            xsi:type="predicates:NamePredicate"
+            pattern="maven-plugins"/>
       </workingSet>
     </setupTask>
   </stream>
