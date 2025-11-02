@@ -618,27 +618,6 @@
         xsi:type="setup.workingsets:WorkingSetTask"
         id="workingsets.bnd.local">
       <workingSet
-          name="gradle-plugins">
-        <predicate
-            xsi:type="predicates:OrPredicate">
-          <operand
-              xsi:type="predicates:LocationPredicate"
-              pattern="gradle.*/"/>
-        </predicate>
-      </workingSet>
-      <workingSet
-          name="maven-plugins">
-        <predicate
-            xsi:type="predicates:OrPredicate">
-          <operand
-              xsi:type="predicates:LocationPredicate"
-              pattern=".*/maven-plugins/.*"/>
-          <operand
-              xsi:type="predicates:NamePredicate"
-              pattern="maven-plugins"/>
-        </predicate>
-      </workingSet>
-      <workingSet
           name="biz.qQute">
         <predicate
             xsi:type="predicates:NamePredicate"
@@ -655,6 +634,18 @@
         <predicate
             xsi:type="predicates:NamePredicate"
             pattern="org\.bndtools\..*"/>
+      </workingSet>
+      <workingSet
+          name="gradle-plugins">
+        <predicate
+            xsi:type="predicates:LocationPredicate"
+            pattern="gradle.*/"/>
+      </workingSet>
+      <workingSet
+          name="maven-plugins">
+        <predicate
+            xsi:type="predicates:LocationPredicate"
+            pattern="maven-plugins/.*"/>
       </workingSet>
     </setupTask>
   </stream>
