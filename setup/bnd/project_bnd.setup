@@ -260,13 +260,7 @@
     <setupTask
         xsi:type="projects:ProjectsImportTask">
       <sourceLocator
-          rootFolder="${git.clone.bnd.master.location}"
-          locateNestedProjects="true">
-        <excludedPath>bndtools.core.test/resources/</excludedPath>
-        <excludedPath>bndtools.test/</excludedPath>
-        <excludedPath>biz.aQute.bndlib.tests/</excludedPath>
-        <excludedPath>biz.aQute.repository/testresources/</excludedPath>
-        <excludedPath>biz.aQute.bndlib.tests/java8/</excludedPath>
+          rootFolder="${git.clone.bnd.master.location}">
         <excludedPath>maven-plugins/</excludedPath>
       </sourceLocator>
     </setupTask>
