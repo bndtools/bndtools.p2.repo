@@ -618,12 +618,28 @@
         xsi:type="setup.workingsets:WorkingSetTask"
         id="workingsets.bnd.local">
       <workingSet
-          name="_root"/>
+          name="_root">
+        <predicate
+            xsi:type="predicates:OrPredicate">
+          <operand
+              xsi:type="predicates:NamePredicate"
+              pattern="cnf"/>
+          <operand
+              xsi:type="predicates:NamePredicate"
+              pattern="demo.*"/>
+          <operand
+              xsi:type="predicates:NamePredicate"
+              pattern="dist"/>
+          <operand
+              xsi:type="predicates:NamePredicate"
+              pattern="docs"/>
+        </predicate>
+      </workingSet>
       <workingSet
           name="biz.qQute">
         <predicate
             xsi:type="predicates:NamePredicate"
-            pattern="biz\.aQute\..*"/>
+            pattern=".*aQute\..*"/>
       </workingSet>
       <workingSet
           name="bndtools">
