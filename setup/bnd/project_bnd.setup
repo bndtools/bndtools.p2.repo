@@ -222,8 +222,7 @@
     <setupTask
         xsi:type="maven:MavenImportTask">
       <sourceLocator
-          rootFolder="${git.clone.bnd.master.location}/maven-plugins"
-          locateNestedProjects="true"/>
+          rootFolder="${git.clone.bnd.master.location}/maven-plugins"/>
     </setupTask>
     <setupTask
         xsi:type="setup:CompoundTask"
