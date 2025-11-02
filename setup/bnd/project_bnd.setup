@@ -51,7 +51,8 @@
     </content>
   </setupTask>
   <setupTask
-      xsi:type="setup.p2:P2Task">
+      xsi:type="setup.p2:P2Task"
+      licenseConfirmationDisabled="true">
     <description>
       Install the tools needed in the IDE to work with the source code for
       ${scope.project.label}
@@ -287,9 +288,6 @@
           pattern="maven-plugins"/>
     </workingSet>
   </setupTask>
-  <setupTask
-      xsi:type="setup:CompoundTask"
-      name="pref"/>
   <setupTask
       xsi:type="setup:CompoundTask"
       name="JRE">
