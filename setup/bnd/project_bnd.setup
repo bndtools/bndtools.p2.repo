@@ -623,10 +623,7 @@
             xsi:type="predicates:OrPredicate">
           <operand
               xsi:type="predicates:LocationPredicate"
-              pattern=".*/gradle-plugins/.*"/>
-          <operand
-              xsi:type="predicates:NamePredicate"
-              pattern="gradle-plugins"/>
+              pattern="gradle.*/"/>
         </predicate>
       </workingSet>
       <workingSet
