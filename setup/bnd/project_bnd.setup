@@ -641,13 +641,16 @@
       <workingSet
           name="biz.qQute">
         <predicate
-            xsi:type="predicates:NamePredicate"
-            pattern=".*aQute\..*"/>
-        <predicate
-            xsi:type="predicates:NotPredicate">
+            xsi:type="predicates:AndPredicate">
           <operand
               xsi:type="predicates:NamePredicate"
-              pattern="biz.aQute.bnd.gradle"/>
+              pattern=".*aQute\..*"/>
+          <operand
+              xsi:type="predicates:NotPredicate">
+            <operand
+                xsi:type="predicates:NamePredicate"
+                pattern="biz.aQute.bnd.gradle"/>
+          </operand>
         </predicate>
       </workingSet>
       <workingSet
@@ -672,7 +675,7 @@
           name="maven-plugins">
         <predicate
             xsi:type="predicates:LocationPredicate"
-            pattern="maven-plugins"/>
+            pattern="maven-plugins/.*"/>
       </workingSet>
     </setupTask>
   </stream>
