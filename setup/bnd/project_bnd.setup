@@ -186,7 +186,8 @@
   </setupTask>
   <setupTask
       xsi:type="setup.p2:P2Task"
-      label="bndtools">
+      label="bndtools"
+      licenseConfirmationDisabled="true">
     <requirement
         name="bndtools.main.feature.feature.group"/>
     <requirement
@@ -290,10 +291,11 @@
   </setupTask>
   <setupTask
       xsi:type="setup:CompoundTask"
-      name="JRE">
+      name="JREs">
     <setupTask
         xsi:type="setup.p2:P2Task"
-        label="JRE17">
+        label="JRE17"
+        licenseConfirmationDisabled="true">
       <requirement
           name="a.jre.org.eclipse.justj.openjdk.hotspot.jre.full"
           versionRange="[17.0.0,17.0.0]"/>
@@ -301,8 +303,20 @@
           url="https://download.eclipse.org/justj/jres/17/updates/release"/>
     </setupTask>
     <setupTask
+        xsi:type="jdt:JRETask"
+        version="JavaSE-17"
+        location="${jre.location-17}"
+        name="JRE for JavaSE-17">
+      <description>
+        Define the JRE needed to compile and run the Java projects of
+        ${scope.project.label}
+      </description>
+      <defaultExecutionEnvironment>JavaSE-17</defaultExecutionEnvironment>
+    </setupTask>
+    <setupTask
         xsi:type="setup.p2:P2Task"
-        label="JRE21">
+        label="JRE21"
+        licenseConfirmationDisabled="true">
       <requirement
           name="org.eclipse.justj.openjdk.hotspot.jre.full.feature.group"/>
       <repository
@@ -310,9 +324,29 @@
     </setupTask>
     <setupTask
         xsi:type="jdt:JRETask"
-        version="JavaSE-17"
-        location="${jre.location-17}"
-        name="JRE for JavaSE-17">
+        version="JavaSE-21"
+        location="${jre.location-21}"
+        name="JRE for JavaSE-21">
+      <description>
+        Define the JRE needed to compile and run the Java projects of
+        ${scope.project.label}
+      </description>
+      <defaultExecutionEnvironment>JavaSE-17</defaultExecutionEnvironment>
+    </setupTask>
+    <setupTask
+        xsi:type="setup.p2:P2Task"
+        label="JRE21"
+        licenseConfirmationDisabled="true">
+      <requirement
+          name="org.eclipse.justj.openjdk.hotspot.jre.full.feature.group"/>
+      <repository
+          url="https://download.eclipse.org/justj/jres/25/updates/release"/>
+    </setupTask>
+    <setupTask
+        xsi:type="jdt:JRETask"
+        version="JavaSE-25"
+        location="${jre.location-25}"
+        name="JRE for JavaSE-25">
       <description>
         Define the JRE needed to compile and run the Java projects of
         ${scope.project.label}
@@ -459,12 +493,16 @@
         type="URI"
         name="github_org_project"
         storageURI="scope://Workspace"
-        label="github org/project"/>
+        label="github org/project">
+      <description>provide a github organisation and repository separated by slash</description>
+    </setupTask>
     <setupTask
         xsi:type="setup:VariableTask"
         name="github_branch"
         storageURI="scope://Workspace"
-        label="github branch name"/>
+        label="github branch name">
+      <description>provide branch name</description>
+    </setupTask>
     <setupTask
         xsi:type="git:GitCloneTask"
         id="github.clone.repo"
