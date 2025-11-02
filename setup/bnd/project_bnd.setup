@@ -515,13 +515,17 @@
       <sourceLocator
           rootFolder="${local.git.project}"
           locateNestedProjects="true">
-        <excludedPath>biz.aQute.bndlib.tests/.*</excludedPath>
+        <excludedPath>biz.aQute.bndlib.tests/</excludedPath>
         <excludedPath>biz.aQute.repository/testdata/</excludedPath>
         <excludedPath>biz.aQute.repository/testresources/</excludedPath>
         <excludedPath>bndtools.core.test/resources/</excludedPath>
-        <excludedPath>bndtools.test/.*</excludedPath>
+        <excludedPath>bndtools.test/</excludedPath>
         <excludedPath>maven-plugins/</excludedPath>
       </sourceLocator>
+      <sourceLocator
+          rootFolder="${local.git.project}/biz.aQute.bndlib.tests/"/>
+      <sourceLocator
+          rootFolder="${local.git.project}/bndtools.tests/"/>
     </setupTask>
     <setupTask
         xsi:type="maven:MavenImportTask">
