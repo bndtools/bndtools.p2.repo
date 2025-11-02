@@ -455,6 +455,47 @@
           rootFolder="${local.git.project}/maven-plugins"/>
     </setupTask>
   </stream>
+  <stream name="github-repo">
+    <setupTask
+        xsi:type="setup:VariableTask"
+        type="URI"
+        name="github_org_project"
+        storageURI="scope://Workspace"
+        label="github org/project"/>
+    <setupTask
+        xsi:type="setup:VariableTask"
+        name="github_branch"
+        storageURI="scope://Workspace"
+        label="github branch name"/>
+    <setupTask
+        xsi:type="git:GitCloneTask"
+        id="github.clone.repo"
+        remoteURI="${github_org_project}"
+        checkoutBranch="${github_branch}">
+      <annotation
+          source="http://www.eclipse.org/oomph/setup/InducedChoices">
+        <detail
+            key="inherit">
+          <value>github.remoteURIs</value>
+        </detail>
+        <detail
+            key="label">
+          <value>${scope.project.label} Github repository</value>
+        </detail>
+        <detail
+            key="target">
+          <value>remoteURI</value>
+        </detail>
+      </annotation>
+      <description>${scope.project.label}</description>
+    </setupTask>
+    <setupTask
+        xsi:type="projects:ProjectsImportTask">
+      <sourceLocator
+          rootFolder="${github.clone.repo.location}"
+          locateNestedProjects="true"/>
+    </setupTask>
+  </stream>
   <logicalProjectContainer
       xsi:type="setup:ProjectCatalog"
       href="index:/org.eclipse.setup#//@projectCatalogs[name='com.github']"/>
