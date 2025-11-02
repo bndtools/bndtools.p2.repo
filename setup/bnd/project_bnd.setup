@@ -505,10 +505,23 @@
   <stream name="local-bnd-git-repo"
       label="local-bnd-git-repo">
     <setupTask
+        xsi:type="setup:VariableTask"
+        type="FOLDER"
+        name="local.git.project"
+        storageURI="scope://Workspace"
+        label="Local git project"/>
+    <setupTask
         xsi:type="projects:ProjectsImportTask">
       <sourceLocator
           rootFolder="${local.git.project}"
-          locateNestedProjects="true"/>
+          locateNestedProjects="true">
+        <excludedPath>maven-plugins/</excludedPath>
+      </sourceLocator>
+    </setupTask>
+    <setupTask
+        xsi:type="maven:MavenImportTask">
+      <sourceLocator
+          rootFolder="${local.git.project}/maven-plugins"/>
     </setupTask>
     <setupTask
         xsi:type="setup:CompoundTask"
@@ -559,12 +572,6 @@
       </setupTask>
     </setupTask>
     <setupTask
-        xsi:type="maven:MavenImportTask">
-      <sourceLocator
-          rootFolder="${local.git.project}/maven-plugins"
-          locateNestedProjects="true"/>
-    </setupTask>
-    <setupTask
         xsi:type="setup:CompoundTask"
         name="org.eclipse.jdt.core">
       <setupTask
@@ -596,12 +603,6 @@
           key="/instance/org.eclipse.egit.ui/commit_dialog_signed_off_by"
           value="true"/>
     </setupTask>
-    <setupTask
-        xsi:type="setup:VariableTask"
-        type="FOLDER"
-        name="local.git.project"
-        storageURI="scope://Workspace"
-        label="Local git project"/>
     <setupTask
         xsi:type="setup.workingsets:WorkingSetTask"
         id="workingsets.bnd.local">
