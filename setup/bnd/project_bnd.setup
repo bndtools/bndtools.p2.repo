@@ -618,6 +618,8 @@
         xsi:type="setup.workingsets:WorkingSetTask"
         id="workingsets.bnd.local">
       <workingSet
+          name="_root"/>
+      <workingSet
           name="biz.qQute">
         <predicate
             xsi:type="predicates:NamePredicate"
@@ -639,13 +641,13 @@
           name="gradle-plugins">
         <predicate
             xsi:type="predicates:LocationPredicate"
-            pattern="gradle.*/"/>
+            pattern=".*/gradle.*/.*"/>
       </workingSet>
       <workingSet
           name="maven-plugins">
         <predicate
             xsi:type="predicates:LocationPredicate"
-            pattern="maven-plugins/.*"/>
+            pattern=".*/maven-plugins/.*"/>
       </workingSet>
     </setupTask>
   </stream>
