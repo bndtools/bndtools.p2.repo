@@ -70,60 +70,96 @@
     </setupTask>
     <setupTask
         xsi:type="setup:CompoundTask"
+        name="org.eclipse.egit.ui">
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.egit.ui/commit_dialog_signed_off_by"
+          value="true"/>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="org.eclipse.jdt.core">
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.codegen.targetPlatform"
+          value="17"/>
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.compliance"
+          value="17"/>
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.enablePreviewFeatures"
+          value="disabled"/>
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.reportPreviewFeatures"
+          value="warning"/>
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.source"
+          value="17"/>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
         name="org.eclipse.ui">
       <setupTask
           xsi:type="setup:PreferenceTask"
           key="/instance/org.eclipse.ui/defaultPerspectiveId"
           value="bndtools.perspective"/>
+      <setupTask
+          xsi:type="setup:ResourceCreationTask"
+          id="ResCrea_org.eclipse.ui.prefs"
+          targetURL="${workspace.location|uri}/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.ui.prefs">
+        <content>
+          defaultPerspectiveId=bndtools.perspective
+          showIntro=false
+
+        </content>
+      </setupTask>
     </setupTask>
     <setupTask
-        xsi:type="setup:ResourceCreationTask"
-        id="ResCrea_org.eclipse.ui.prefs"
-        targetURL="${workspace.location|uri}/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.ui.prefs">
-      <content>
-        defaultPerspectiveId=bndtools.perspective
-        showIntro=false
+        xsi:type="setup:CompoundTask"
+        name="org.eclipse.ui.ide">
+      <setupTask
+          xsi:type="setup:ResourceCreationTask"
+          id="ResCrea_org.eclipse.ui.ide.prefs"
+          targetURL="${workspace.location|uri}/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.ui.ide.prefs">
+        <content>
+          WORKSPACE_NAME=bnd-${bndtools-release|uriLastSegment}-branch-${scope.project.stream.label}
+          org.eclipse.ui.internal.views.markers.CachedMarkerBuilderorg.eclipse.ui.views.ProblemView=&lt;?xml
+          version\=&quot;1.0&quot; encoding\=&quot;UTF-8&quot;?>\n&lt;filterGroups
+          andFilters\=&quot;false&quot; markerLimit\=&quot;250&quot;
+          markerLimitEnabled\=&quot;true&quot;>\n&lt;filterGroup
+          IMemento.internal.id\=&quot;org.eclipse.ui.ide.projectErrorsWarningsGrouping&quot;
+          enabled\=&quot;true&quot; filterLimit\=&quot;-1&quot; scope\=&quot;3&quot;>\n&lt;fieldFilter
+          IMemento.internal.id\=&quot;org.eclipse.ui.ide.severityAndDescriptionField&quot;
+          containsModifier\=&quot;CONTAINS&quot; containsText\=&quot;&quot;
+          selectedSeverities\=&quot;6&quot;/>\n&lt;fieldFilter
+          IMemento.internal.id\=&quot;org.eclipse.ui.ide.markerType&quot;/>\n&lt;/filterGroup>\n&lt;filterGroup
+          IMemento.internal.id\=&quot;org.eclipse.ui.ide.selectedErrorsWarningsGrouping&quot;
+          enabled\=&quot;false&quot; filterLimit\=&quot;-1&quot;
+          scope\=&quot;2&quot;>\n&lt;fieldFilter
+          IMemento.internal.id\=&quot;org.eclipse.ui.ide.severityAndDescriptionField&quot;
+          containsModifier\=&quot;CONTAINS&quot; containsText\=&quot;&quot;
+          selectedSeverities\=&quot;6&quot;/>\n&lt;fieldFilter
+          IMemento.internal.id\=&quot;org.eclipse.ui.ide.markerType&quot;/>\n&lt;/filterGroup>\n&lt;filterGroup
+          IMemento.internal.id\=&quot;org.eclipse.ui.ide.selectedWarningsGrouping&quot;
+          enabled\=&quot;false&quot; filterLimit\=&quot;-1&quot;
+          scope\=&quot;2&quot;>\n&lt;fieldFilter
+          IMemento.internal.id\=&quot;org.eclipse.ui.ide.severityAndDescriptionField&quot;
+          containsModifier\=&quot;CONTAINS&quot; containsText\=&quot;&quot;
+          selectedSeverities\=&quot;2&quot;/>\n&lt;fieldFilter
+          IMemento.internal.id\=&quot;org.eclipse.ui.ide.markerType&quot;/>\n&lt;/filterGroup>\n&lt;filterGroup
+          IMemento.internal.id\=&quot;org.eclipse.ui.ide.errorsFilter&quot; enabled\=&quot;false&quot;
+          filterLimit\=&quot;-1&quot; scope\=&quot;0&quot;>\n&lt;fieldFilter
+          IMemento.internal.id\=&quot;org.eclipse.ui.ide.severityAndDescriptionField&quot;
+          containsModifier\=&quot;CONTAINS&quot; containsText\=&quot;&quot;
+          selectedSeverities\=&quot;4&quot;/>\n&lt;fieldFilter
+          IMemento.internal.id\=&quot;org.eclipse.ui.ide.markerType&quot;/>\n&lt;/filterGroup>\n&lt;/filterGroups>
 
-      </content>
-    </setupTask>
-    <setupTask
-        xsi:type="setup:ResourceCreationTask"
-        id="ResCrea_org.eclipse.ui.ide.prefs"
-        targetURL="${workspace.location|uri}/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.ui.ide.prefs">
-      <content>
-        WORKSPACE_NAME=bnd-${bndtools-release|uriLastSegment}-branch-${scope.project.stream.label}
-        org.eclipse.ui.internal.views.markers.CachedMarkerBuilderorg.eclipse.ui.views.ProblemView=&lt;?xml
-        version\=&quot;1.0&quot; encoding\=&quot;UTF-8&quot;?>\n&lt;filterGroups
-        andFilters\=&quot;false&quot; markerLimit\=&quot;250&quot;
-        markerLimitEnabled\=&quot;true&quot;>\n&lt;filterGroup
-        IMemento.internal.id\=&quot;org.eclipse.ui.ide.projectErrorsWarningsGrouping&quot;
-        enabled\=&quot;true&quot; filterLimit\=&quot;-1&quot; scope\=&quot;3&quot;>\n&lt;fieldFilter
-        IMemento.internal.id\=&quot;org.eclipse.ui.ide.severityAndDescriptionField&quot;
-        containsModifier\=&quot;CONTAINS&quot; containsText\=&quot;&quot;
-        selectedSeverities\=&quot;6&quot;/>\n&lt;fieldFilter
-        IMemento.internal.id\=&quot;org.eclipse.ui.ide.markerType&quot;/>\n&lt;/filterGroup>\n&lt;filterGroup
-        IMemento.internal.id\=&quot;org.eclipse.ui.ide.selectedErrorsWarningsGrouping&quot;
-        enabled\=&quot;false&quot; filterLimit\=&quot;-1&quot;
-        scope\=&quot;2&quot;>\n&lt;fieldFilter
-        IMemento.internal.id\=&quot;org.eclipse.ui.ide.severityAndDescriptionField&quot;
-        containsModifier\=&quot;CONTAINS&quot; containsText\=&quot;&quot;
-        selectedSeverities\=&quot;6&quot;/>\n&lt;fieldFilter
-        IMemento.internal.id\=&quot;org.eclipse.ui.ide.markerType&quot;/>\n&lt;/filterGroup>\n&lt;filterGroup
-        IMemento.internal.id\=&quot;org.eclipse.ui.ide.selectedWarningsGrouping&quot;
-        enabled\=&quot;false&quot; filterLimit\=&quot;-1&quot;
-        scope\=&quot;2&quot;>\n&lt;fieldFilter
-        IMemento.internal.id\=&quot;org.eclipse.ui.ide.severityAndDescriptionField&quot;
-        containsModifier\=&quot;CONTAINS&quot; containsText\=&quot;&quot;
-        selectedSeverities\=&quot;2&quot;/>\n&lt;fieldFilter
-        IMemento.internal.id\=&quot;org.eclipse.ui.ide.markerType&quot;/>\n&lt;/filterGroup>\n&lt;filterGroup
-        IMemento.internal.id\=&quot;org.eclipse.ui.ide.errorsFilter&quot; enabled\=&quot;false&quot;
-        filterLimit\=&quot;-1&quot; scope\=&quot;0&quot;>\n&lt;fieldFilter
-        IMemento.internal.id\=&quot;org.eclipse.ui.ide.severityAndDescriptionField&quot;
-        containsModifier\=&quot;CONTAINS&quot; containsText\=&quot;&quot;
-        selectedSeverities\=&quot;4&quot;/>\n&lt;fieldFilter
-        IMemento.internal.id\=&quot;org.eclipse.ui.ide.markerType&quot;/>\n&lt;/filterGroup>\n&lt;/filterGroups>
-
-      </content>
+        </content>
+      </setupTask>
     </setupTask>
   </setupTask>
   <setupTask
@@ -148,6 +184,18 @@
         vm="true"/>
   </setupTask>
   <setupTask
+      xsi:type="setup.p2:P2Task"
+      label="bndtools">
+    <requirement
+        name="bndtools.main.feature.feature.group"/>
+    <requirement
+        name="bndtools.m2e.feature.feature.group"/>
+    <requirement
+        name="bndtools.pde.feature.feature.group"/>
+    <repository
+        url="${bndtools-release}"/>
+  </setupTask>
+  <setupTask
       xsi:type="setup:VariableTask"
       id="bndtools-release"
       type="URI"
@@ -169,146 +217,113 @@
         value="https://bndtools.jfrog.io/bndtools/update-snapshot"
         label="snapshot (JFrog)"/>
   </setupTask>
+  <setupTask
+      xsi:type="setup.workingsets:WorkingSetTask"
+      id="workingsets.bnd">
+    <workingSet
+        name="_root">
+      <predicate
+          xsi:type="predicates:OrPredicate">
+        <operand
+            xsi:type="predicates:NamePredicate"
+            pattern="_root"/>
+        <operand
+            xsi:type="predicates:NamePredicate"
+            pattern="cnf"/>
+        <operand
+            xsi:type="predicates:NamePredicate"
+            pattern="demo.*"/>
+        <operand
+            xsi:type="predicates:NamePredicate"
+            pattern="dist"/>
+        <operand
+            xsi:type="predicates:NamePredicate"
+            pattern="docs"/>
+      </predicate>
+    </workingSet>
+    <workingSet
+        name="biz.qQute">
+      <predicate
+          xsi:type="predicates:AndPredicate">
+        <operand
+            xsi:type="predicates:NamePredicate"
+            pattern=".*aQute\..*"/>
+        <operand
+            xsi:type="predicates:NotPredicate">
+          <operand
+              xsi:type="predicates:NamePredicate"
+              pattern="biz\.aQute\.bnd\.gradle"/>
+        </operand>
+      </predicate>
+    </workingSet>
+    <workingSet
+        name="bndtools">
+      <predicate
+          xsi:type="predicates:NamePredicate"
+          pattern="bndtools\..*"/>
+    </workingSet>
+    <workingSet
+        name="org.bndtools">
+      <predicate
+          xsi:type="predicates:NamePredicate"
+          pattern="org\.bndtools\..*"/>
+    </workingSet>
+    <workingSet
+        name="gradle-plugins">
+      <predicate
+          xsi:type="predicates:OrPredicate">
+        <operand
+            xsi:type="predicates:NamePredicate"
+            pattern="gradle.*"/>
+        <operand
+            xsi:type="predicates:NamePredicate"
+            pattern="biz\.aQute\.bnd\.gradle"/>
+      </predicate>
+    </workingSet>
+    <workingSet
+        name="maven-plugins">
+      <predicate
+          xsi:type="predicates:NamePredicate"
+          pattern="maven-plugins"/>
+    </workingSet>
+  </setupTask>
+  <setupTask
+      xsi:type="setup:CompoundTask"
+      name="pref"/>
+  <setupTask
+      xsi:type="setup:CompoundTask"
+      name="JRE">
+    <setupTask
+        xsi:type="setup.p2:P2Task"
+        label="JRE17">
+      <requirement
+          name="a.jre.org.eclipse.justj.openjdk.hotspot.jre.full"
+          versionRange="[17.0.0,17.0.0]"/>
+      <repository
+          url="https://download.eclipse.org/justj/jres/17/updates/release"/>
+    </setupTask>
+    <setupTask
+        xsi:type="setup.p2:P2Task"
+        label="JRE21">
+      <requirement
+          name="org.eclipse.justj.openjdk.hotspot.jre.full.feature.group"/>
+      <repository
+          url="https://download.eclipse.org/justj/jres/21/updates/release"/>
+    </setupTask>
+    <setupTask
+        xsi:type="jdt:JRETask"
+        version="JavaSE-17"
+        location="${jre.location-17}"
+        name="JRE for JavaSE-17">
+      <description>
+        Define the JRE needed to compile and run the Java projects of
+        ${scope.project.label}
+      </description>
+      <defaultExecutionEnvironment>JavaSE-17</defaultExecutionEnvironment>
+    </setupTask>
+  </setupTask>
   <stream name="master"
       label="master">
-    <setupTask
-        xsi:type="setup:CompoundTask"
-        name="bndtools">
-      <setupTask
-          xsi:type="setup.p2:P2Task"
-          label="bndtools">
-        <requirement
-            name="bndtools.main.feature.feature.group"/>
-        <requirement
-            name="bndtools.m2e.feature.feature.group"/>
-        <requirement
-            name="bndtools.pde.feature.feature.group"/>
-        <repository
-            url="${bndtools-release}"/>
-      </setupTask>
-    </setupTask>
-    <setupTask
-        xsi:type="setup:CompoundTask"
-        name="JRE">
-      <setupTask
-          xsi:type="setup.p2:P2Task"
-          label="JRE17">
-        <requirement
-            name="a.jre.org.eclipse.justj.openjdk.hotspot.jre.full"
-            versionRange="[17.0.0,17.0.0]"/>
-        <repository
-            url="https://download.eclipse.org/justj/jres/17/updates/release"/>
-      </setupTask>
-      <setupTask
-          xsi:type="setup.p2:P2Task"
-          label="JRE21">
-        <requirement
-            name="org.eclipse.justj.openjdk.hotspot.jre.full.feature.group"/>
-        <repository
-            url="https://download.eclipse.org/justj/jres/21/updates/release"/>
-      </setupTask>
-      <setupTask
-          xsi:type="jdt:JRETask"
-          version="JavaSE-17"
-          location="${jre.location-17}"
-          name="JRE for JavaSE-17">
-        <description>
-          Define the JRE needed to compile and run the Java projects of
-          ${scope.project.label}
-        </description>
-        <defaultExecutionEnvironment>JavaSE-17</defaultExecutionEnvironment>
-      </setupTask>
-    </setupTask>
-    <setupTask
-        xsi:type="maven:MavenImportTask">
-      <sourceLocator
-          rootFolder="${git.clone.bnd.master.location}/maven-plugins"/>
-    </setupTask>
-    <setupTask
-        xsi:type="setup:CompoundTask"
-        name="org.eclipse.jdt.core">
-      <setupTask
-          xsi:type="setup:PreferenceTask"
-          key="/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.codegen.targetPlatform"
-          value="17"/>
-      <setupTask
-          xsi:type="setup:PreferenceTask"
-          key="/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.compliance"
-          value="17"/>
-      <setupTask
-          xsi:type="setup:PreferenceTask"
-          key="/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.enablePreviewFeatures"
-          value="disabled"/>
-      <setupTask
-          xsi:type="setup:PreferenceTask"
-          key="/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.reportPreviewFeatures"
-          value="warning"/>
-      <setupTask
-          xsi:type="setup:PreferenceTask"
-          key="/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.source"
-          value="17"/>
-    </setupTask>
-    <setupTask
-        xsi:type="setup:CompoundTask"
-        name="org.eclipse.egit.ui">
-      <setupTask
-          xsi:type="setup:PreferenceTask"
-          key="/instance/org.eclipse.egit.ui/commit_dialog_signed_off_by"
-          value="true"/>
-    </setupTask>
-    <setupTask
-        xsi:type="projects:ProjectsImportTask">
-      <sourceLocator
-          rootFolder="${git.clone.bnd.master.location}">
-        <excludedPath>maven-plugins/</excludedPath>
-      </sourceLocator>
-    </setupTask>
-    <setupTask
-        xsi:type="setup.workingsets:WorkingSetTask"
-        id="workingsets.oomph">
-      <workingSet
-          name="gradle-plugins">
-        <predicate
-            xsi:type="predicates:OrPredicate">
-          <operand
-              xsi:type="predicates:LocationPredicate"
-              pattern=".*/gradle-plugins/.*"/>
-          <operand
-              xsi:type="predicates:NamePredicate"
-              pattern="gradle-plugins"/>
-        </predicate>
-      </workingSet>
-      <workingSet
-          name="maven-plugins">
-        <predicate
-            xsi:type="predicates:OrPredicate">
-          <operand
-              xsi:type="predicates:LocationPredicate"
-              pattern=".*/maven-plugins/.*"/>
-          <operand
-              xsi:type="predicates:NamePredicate"
-              pattern="maven-plugins"/>
-        </predicate>
-      </workingSet>
-      <workingSet
-          name="biz.qQute">
-        <predicate
-            xsi:type="predicates:NamePredicate"
-            pattern="biz\.aQute\.*"/>
-      </workingSet>
-      <workingSet
-          name="bndtools">
-        <predicate
-            xsi:type="predicates:NamePredicate"
-            pattern="bndtools\..*"/>
-      </workingSet>
-      <workingSet
-          name="org.bndtools">
-        <predicate
-            xsi:type="predicates:NamePredicate"
-            pattern="org\.bndtools\..*"/>
-      </workingSet>
-    </setupTask>
     <setupTask
         xsi:type="git:GitCloneTask"
         id="git.clone.bnd.master"
@@ -330,151 +345,32 @@
       </annotation>
       <description>${scope.project.label}</description>
     </setupTask>
-  </stream>
-  <stream name="${branch}"
-      label="${branch}">
     <setupTask
-        xsi:type="setup:CompoundTask"
-        name="bndtools">
-      <setupTask
-          xsi:type="setup.p2:P2Task"
-          label="bndtools">
-        <requirement
-            name="bndtools.main.feature.feature.group"/>
-        <requirement
-            name="bndtools.m2e.feature.feature.group"/>
-        <requirement
-            name="bndtools.pde.feature.feature.group"/>
-        <repository
-            url="${bndtools-release}"/>
-      </setupTask>
-    </setupTask>
-    <setupTask
-        xsi:type="setup:CompoundTask"
-        name="JRE">
-      <setupTask
-          xsi:type="setup.p2:P2Task"
-          label="JRE17">
-        <requirement
-            name="a.jre.org.eclipse.justj.openjdk.hotspot.jre.full"
-            versionRange="[17.0.0,17.0.0]"/>
-        <repository
-            url="https://download.eclipse.org/justj/jres/17/updates/release"/>
-      </setupTask>
-      <setupTask
-          xsi:type="setup.p2:P2Task"
-          label="JRE21">
-        <requirement
-            name="org.eclipse.justj.openjdk.hotspot.jre.full.feature.group"/>
-        <repository
-            url="https://download.eclipse.org/justj/jres/21/updates/release"/>
-      </setupTask>
-      <setupTask
-          xsi:type="jdt:JRETask"
-          version="JavaSE-17"
-          location="${jre.location-17}"
-          name="JRE for JavaSE-17">
-        <description>
-          Define the JRE needed to compile and run the Java projects of
-          ${scope.project.label}
-        </description>
-        <defaultExecutionEnvironment>JavaSE-17</defaultExecutionEnvironment>
-      </setupTask>
+        xsi:type="projects:ProjectsImportTask">
+      <sourceLocator
+          rootFolder="${git.clone.bnd.master.location}">
+        <excludedPath>biz.aQute.bndlib.tests/</excludedPath>
+        <excludedPath>biz.aQute.repository/testdata/</excludedPath>
+        <excludedPath>biz.aQute.repository/testresources/</excludedPath>
+        <excludedPath>bndtools.core.test/resources/</excludedPath>
+        <excludedPath>bndtools.test/</excludedPath>
+        <excludedPath>maven-plugins/</excludedPath>
+      </sourceLocator>
+      <sourceLocator
+          rootFolder="${git.clone.bnd.master.location}/biz.aQute.bndlib.tests/"/>
+      <sourceLocator
+          rootFolder="${git.clone.bnd.master.location}/bndtools.tests/"/>
+      <sourceLocator
+          rootFolder="${git.clone.bnd.master.location}/gradle-plugins/"/>
     </setupTask>
     <setupTask
         xsi:type="maven:MavenImportTask">
       <sourceLocator
-          rootFolder="${git.clone.bnd.branch.location}/maven-plugins"
-          locateNestedProjects="true"/>
+          rootFolder="${git.clone.bnd.master.location}/maven-plugins"/>
     </setupTask>
-    <setupTask
-        xsi:type="setup:CompoundTask"
-        name="org.eclipse.jdt.core">
-      <setupTask
-          xsi:type="setup:PreferenceTask"
-          key="/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.codegen.targetPlatform"
-          value="17"/>
-      <setupTask
-          xsi:type="setup:PreferenceTask"
-          key="/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.compliance"
-          value="17"/>
-      <setupTask
-          xsi:type="setup:PreferenceTask"
-          key="/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.enablePreviewFeatures"
-          value="disabled"/>
-      <setupTask
-          xsi:type="setup:PreferenceTask"
-          key="/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.reportPreviewFeatures"
-          value="warning"/>
-      <setupTask
-          xsi:type="setup:PreferenceTask"
-          key="/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.source"
-          value="17"/>
-    </setupTask>
-    <setupTask
-        xsi:type="setup:CompoundTask"
-        name="org.eclipse.egit.ui">
-      <setupTask
-          xsi:type="setup:PreferenceTask"
-          key="/instance/org.eclipse.egit.ui/commit_dialog_signed_off_by"
-          value="true"/>
-    </setupTask>
-    <setupTask
-        xsi:type="projects:ProjectsImportTask">
-      <sourceLocator
-          rootFolder="${git.clone.bnd.branch.location}"
-          locateNestedProjects="true">
-        <excludedPath>bndtools.core.test/resources/</excludedPath>
-        <excludedPath>biz.aQute.bndlib.tests/</excludedPath>
-        <excludedPath>biz.aQute.repository/testresources/</excludedPath>
-      </sourceLocator>
-    </setupTask>
-    <setupTask
-        xsi:type="setup.workingsets:WorkingSetTask"
-        id="workingsets.bnd">
-      <workingSet
-          name="gradle-plugins">
-        <predicate
-            xsi:type="predicates:OrPredicate">
-          <operand
-              xsi:type="predicates:LocationPredicate"
-              pattern=".*/gradle-plugins/.*"/>
-          <operand
-              xsi:type="predicates:NamePredicate"
-              pattern="gradle-plugins"/>
-        </predicate>
-      </workingSet>
-      <workingSet
-          name="maven-plugins">
-        <predicate
-            xsi:type="predicates:OrPredicate">
-          <operand
-              xsi:type="predicates:LocationPredicate"
-              pattern=".*/maven-plugins/.*"/>
-          <operand
-              xsi:type="predicates:NamePredicate"
-              pattern="maven-plugins"/>
-        </predicate>
-      </workingSet>
-      <workingSet
-          name="biz.qQute">
-        <predicate
-            xsi:type="predicates:NamePredicate"
-            pattern="biz\.aQute\..*"/>
-      </workingSet>
-      <workingSet
-          name="bndtools">
-        <predicate
-            xsi:type="predicates:NamePredicate"
-            pattern="bndtools\..*"/>
-      </workingSet>
-      <workingSet
-          name="org.bndtools">
-        <predicate
-            xsi:type="predicates:NamePredicate"
-            pattern="org\.bndtools\..*"/>
-      </workingSet>
-    </setupTask>
+  </stream>
+  <stream name="${branch}"
+      label="${branch}">
     <setupTask
         xsi:type="setup:VariableTask"
         name="branch"
@@ -500,6 +396,30 @@
         </detail>
       </annotation>
       <description>${scope.project.label}</description>
+    </setupTask>
+    <setupTask
+        xsi:type="projects:ProjectsImportTask">
+      <sourceLocator
+          rootFolder="${git.clone.bnd.branch.location}"
+          locateNestedProjects="true">
+        <excludedPath>biz.aQute.bndlib.tests/</excludedPath>
+        <excludedPath>biz.aQute.repository/testdata/</excludedPath>
+        <excludedPath>biz.aQute.repository/testresources/</excludedPath>
+        <excludedPath>bndtools.core.test/resources/</excludedPath>
+        <excludedPath>bndtools.test/</excludedPath>
+        <excludedPath>maven-plugins/</excludedPath>
+      </sourceLocator>
+      <sourceLocator
+          rootFolder="${git.clone.bnd.branch.location}/biz.aQute.bndlib.tests/"/>
+      <sourceLocator
+          rootFolder="${git.clone.bnd.branch.location}/bndtools.tests/"/>
+      <sourceLocator
+          rootFolder="${git.clone.bnd.branch.location}/gradle-plugins/"/>
+    </setupTask>
+    <setupTask
+        xsi:type="maven:MavenImportTask">
+      <sourceLocator
+          rootFolder="${git.clone.bnd.branch.location}/maven-plugins"/>
     </setupTask>
   </stream>
   <stream name="local-bnd-git-repo"
@@ -533,156 +453,6 @@
         xsi:type="maven:MavenImportTask">
       <sourceLocator
           rootFolder="${local.git.project}/maven-plugins"/>
-    </setupTask>
-    <setupTask
-        xsi:type="setup:CompoundTask"
-        name="bndtools">
-      <setupTask
-          xsi:type="setup.p2:P2Task"
-          label="bndtools">
-        <requirement
-            name="bndtools.main.feature.feature.group"/>
-        <requirement
-            name="bndtools.m2e.feature.feature.group"/>
-        <requirement
-            name="bndtools.pde.feature.feature.group"/>
-        <repository
-            url="${bndtools-release}"/>
-      </setupTask>
-    </setupTask>
-    <setupTask
-        xsi:type="setup:CompoundTask"
-        name="JRE">
-      <setupTask
-          xsi:type="setup.p2:P2Task"
-          label="JRE17">
-        <requirement
-            name="a.jre.org.eclipse.justj.openjdk.hotspot.jre.full"
-            versionRange="[17.0.0,17.0.0]"/>
-        <repository
-            url="https://download.eclipse.org/justj/jres/17/updates/release"/>
-      </setupTask>
-      <setupTask
-          xsi:type="setup.p2:P2Task"
-          label="JRE21">
-        <requirement
-            name="org.eclipse.justj.openjdk.hotspot.jre.full.feature.group"/>
-        <repository
-            url="https://download.eclipse.org/justj/jres/21/updates/release"/>
-      </setupTask>
-      <setupTask
-          xsi:type="jdt:JRETask"
-          version="JavaSE-17"
-          location="${jre.location-17}"
-          name="JRE for JavaSE-17">
-        <description>
-          Define the JRE needed to compile and run the Java projects of
-          ${scope.project.label}
-        </description>
-        <defaultExecutionEnvironment>JavaSE-17</defaultExecutionEnvironment>
-      </setupTask>
-    </setupTask>
-    <setupTask
-        xsi:type="setup:CompoundTask"
-        name="org.eclipse.jdt.core">
-      <setupTask
-          xsi:type="setup:PreferenceTask"
-          key="/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.codegen.targetPlatform"
-          value="17"/>
-      <setupTask
-          xsi:type="setup:PreferenceTask"
-          key="/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.compliance"
-          value="17"/>
-      <setupTask
-          xsi:type="setup:PreferenceTask"
-          key="/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.enablePreviewFeatures"
-          value="disabled"/>
-      <setupTask
-          xsi:type="setup:PreferenceTask"
-          key="/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.reportPreviewFeatures"
-          value="warning"/>
-      <setupTask
-          xsi:type="setup:PreferenceTask"
-          key="/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.source"
-          value="17"/>
-    </setupTask>
-    <setupTask
-        xsi:type="setup:CompoundTask"
-        name="org.eclipse.egit.ui">
-      <setupTask
-          xsi:type="setup:PreferenceTask"
-          key="/instance/org.eclipse.egit.ui/commit_dialog_signed_off_by"
-          value="true"/>
-    </setupTask>
-    <setupTask
-        xsi:type="setup.workingsets:WorkingSetTask"
-        id="workingsets.bnd.local">
-      <workingSet
-          name="_root">
-        <predicate
-            xsi:type="predicates:OrPredicate">
-          <operand
-              xsi:type="predicates:NamePredicate"
-              pattern="_root"/>
-          <operand
-              xsi:type="predicates:NamePredicate"
-              pattern="cnf"/>
-          <operand
-              xsi:type="predicates:NamePredicate"
-              pattern="demo.*"/>
-          <operand
-              xsi:type="predicates:NamePredicate"
-              pattern="dist"/>
-          <operand
-              xsi:type="predicates:NamePredicate"
-              pattern="docs"/>
-        </predicate>
-      </workingSet>
-      <workingSet
-          name="biz.qQute">
-        <predicate
-            xsi:type="predicates:AndPredicate">
-          <operand
-              xsi:type="predicates:NamePredicate"
-              pattern=".*aQute\..*"/>
-          <operand
-              xsi:type="predicates:NotPredicate">
-            <operand
-                xsi:type="predicates:NamePredicate"
-                pattern="biz\.aQute\.bnd\.gradle"/>
-          </operand>
-        </predicate>
-      </workingSet>
-      <workingSet
-          name="bndtools">
-        <predicate
-            xsi:type="predicates:NamePredicate"
-            pattern="bndtools\..*"/>
-      </workingSet>
-      <workingSet
-          name="org.bndtools">
-        <predicate
-            xsi:type="predicates:NamePredicate"
-            pattern="org\.bndtools\..*"/>
-      </workingSet>
-      <workingSet
-          name="gradle-plugins">
-        <predicate
-            xsi:type="predicates:OrPredicate">
-          <operand
-              xsi:type="predicates:NamePredicate"
-              pattern="gradle.*"/>
-          <operand
-              xsi:type="predicates:NamePredicate"
-              pattern="biz\.aQute\.bnd\.gradle"/>
-        </predicate>
-      </workingSet>
-      <workingSet
-          name="maven-plugins">
-        <predicate
-            xsi:type="predicates:NamePredicate"
-            pattern="maven-plugins"/>
-      </workingSet>
     </setupTask>
   </stream>
   <logicalProjectContainer
