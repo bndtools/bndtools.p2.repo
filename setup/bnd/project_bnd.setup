@@ -623,6 +623,9 @@
             xsi:type="predicates:OrPredicate">
           <operand
               xsi:type="predicates:NamePredicate"
+              pattern="_root"/>
+          <operand
+              xsi:type="predicates:NamePredicate"
               pattern="cnf"/>
           <operand
               xsi:type="predicates:NamePredicate"
@@ -657,13 +660,13 @@
           name="gradle-plugins">
         <predicate
             xsi:type="predicates:LocationPredicate"
-            pattern=".*/gradle.*/.*"/>
+            pattern="*/gradle*/*"/>
       </workingSet>
       <workingSet
           name="maven-plugins">
         <predicate
             xsi:type="predicates:LocationPredicate"
-            pattern=".*/maven-plugins/.*"/>
+            pattern="*/maven-plugins/*"/>
       </workingSet>
     </setupTask>
   </stream>
