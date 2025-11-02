@@ -402,7 +402,7 @@
     </setupTask>
   </stream>
   <stream name="${branch}"
-      label="${branch}">
+      label="select-branch">
     <setupTask
         xsi:type="setup:VariableTask"
         name="branch"
@@ -453,6 +453,7 @@
       <sourceLocator
           rootFolder="${git.clone.bnd.branch.location}/maven-plugins"/>
     </setupTask>
+    <description>enter branch from github repo </description>
   </stream>
   <stream name="local-bnd-git-repo"
       label="local-bnd-git-repo">
@@ -487,7 +488,7 @@
           rootFolder="${local.git.project}/maven-plugins"/>
     </setupTask>
   </stream>
-  <stream name="github-repo">
+  <stream name="github-repo-bnd">
     <setupTask
         xsi:type="setup:VariableTask"
         type="URI"
@@ -505,7 +506,7 @@
     </setupTask>
     <setupTask
         xsi:type="git:GitCloneTask"
-        id="github.clone.repo"
+        id="github.clone.repo.bnd"
         remoteURI="${github_org_project}"
         checkoutBranch="${github_branch}">
       <annotation
@@ -528,8 +529,25 @@
     <setupTask
         xsi:type="projects:ProjectsImportTask">
       <sourceLocator
-          rootFolder="${github.clone.repo.location}"
-          locateNestedProjects="true"/>
+          rootFolder="${github.clone.repo.bnd.location}">
+        <excludedPath>biz.aQute.bndlib.tests/</excludedPath>
+        <excludedPath>biz.aQute.repository/testdata/</excludedPath>
+        <excludedPath>biz.aQute.repository/testresources/</excludedPath>
+        <excludedPath>bndtools.core.test/resources/</excludedPath>
+        <excludedPath>bndtools.test/</excludedPath>
+        <excludedPath>maven-plugins/</excludedPath>
+      </sourceLocator>
+      <sourceLocator
+          rootFolder="${github.clone.repo.bnd.location}/biz.aQute.bndlib.tests/"/>
+      <sourceLocator
+          rootFolder="${github.clone.repo.bnd.location}/bndtools.tests/"/>
+      <sourceLocator
+          rootFolder="${github.clone.repo.bnd.location}/gradle-plugins/"/>
+    </setupTask>
+    <setupTask
+        xsi:type="maven:MavenImportTask">
+      <sourceLocator
+          rootFolder="${github.clone.repo.bnd.location}/maven-plugins"/>
     </setupTask>
   </stream>
   <logicalProjectContainer
