@@ -526,6 +526,8 @@
           rootFolder="${local.git.project}/biz.aQute.bndlib.tests/"/>
       <sourceLocator
           rootFolder="${local.git.project}/bndtools.tests/"/>
+      <sourceLocator
+          rootFolder="${local.git.project}/gradle-plugins/"/>
     </setupTask>
     <setupTask
         xsi:type="maven:MavenImportTask">
