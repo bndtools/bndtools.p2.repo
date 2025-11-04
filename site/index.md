@@ -95,5 +95,5 @@ For a detailed overview on EPP packages see [comparison of Eclipse EPP Packages]
 [90]: https://www.eclipse.org/downloads/packages/
 [91]: https://www.eclipse.org/downloads/packages/compare
 
-[95]: /assets/oomph_24x24.png
-[96]: /assets/link_24x24.png
+[95]: {{ site.baseurl }}/assets/oomph_24x24.png
+[96]: {{ site.baseurl }}/assets/link_24x24.png

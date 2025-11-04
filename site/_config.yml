@@ -2,7 +2,7 @@
 title: "oomph setups for bnd"
 description: "Oomph configurations and Eclipse P2 repository for bnd/bndtools"
 baseurl: ""
-url: "http://localhost:4000"
+url: "https://bndtools.org/bndtools.p2.repo/"
 
 # Fix for Ruby 3.4+ FrozenError
 encoding: "utf-8"
