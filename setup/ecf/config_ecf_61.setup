@@ -26,7 +26,7 @@
       name="my.workspace"
       label="My Workspace">
     <stream
-        href="project_ecf_10.setup#//@streams[name='ecf_latest']"/>
+        href="project_ecf.setup#//@streams[name='ecf-3.15.7_bnd-7.1.0']"/>
     <description>ECF Remote Services</description>
   </workspace>
   <description>The My configuration provides cool stuff.</description>

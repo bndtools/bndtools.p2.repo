@@ -198,28 +198,6 @@
         url="${bndtools-release}"/>
   </setupTask>
   <setupTask
-      xsi:type="setup:VariableTask"
-      id="bndtools-release"
-      type="URI"
-      name="bndtools-release"
-      label="bndtools-release">
-    <choice
-        value="https://bndtools.org/bndtools.p2.repo/7.1.0"
-        label="rel 7.1.0"/>
-    <choice
-        value="https://bndtools.org/bndtools.p2.repo/7.0.0"
-        label="rel 7.0.0"/>
-    <choice
-        value="https://bndtools.org/bndtools.p2.repo/6.4.1"
-        label="rel 6.4.1"/>
-    <choice
-        value="https://bndtools.jfrog.io/bndtools/update-latest"
-        label="release (JFrog)"/>
-    <choice
-        value="https://bndtools.jfrog.io/bndtools/update-snapshot"
-        label="snapshot (JFrog)"/>
-  </setupTask>
-  <setupTask
       xsi:type="setup.workingsets:WorkingSetTask"
       id="workingsets.bnd">
     <workingSet
@@ -354,6 +332,46 @@
       <defaultExecutionEnvironment>JavaSE-17</defaultExecutionEnvironment>
     </setupTask>
   </setupTask>
+  <setupTask
+      xsi:type="setup:VariableTask"
+      type="INTEGER"
+      name="pullrequest"
+      label="PullRequest"/>
+  <setupTask
+      xsi:type="setup:VariableTask"
+      type="URI"
+      name="pr.repo.uri"
+      label="PR Repo URI">
+    <description>jar:https://serverurl!/path_in_zip_or_jar/</description>
+  </setupTask>
+  <setupTask
+      xsi:type="setup:VariableTask"
+      id="bndtools-release"
+      type="URI"
+      name="bndtools-release"
+      label="bndtools-release">
+    <choice
+        value="https://bndtools.org/bndtools.p2.repo/7.1.0"
+        label="rel 7.1.0"/>
+    <choice
+        value="https://bndtools.org/bndtools.p2.repo/7.0.0"
+        label="rel 7.0.0"/>
+    <choice
+        value="https://bndtools.org/bndtools.p2.repo/6.4.1"
+        label="rel 6.4.1"/>
+    <choice
+        value="https://bndtools.jfrog.io/bndtools/update-latest"
+        label="release (JFrog)"/>
+    <choice
+        value="https://bndtools.jfrog.io/bndtools/update-snapshot"
+        label="snapshot (JFrog)"/>
+    <choice
+        value="https://bndtools.jfrog.io/artifactory/p2/pr/${pullrequest}/"
+        label="SelectPullRequest"/>
+    <choice
+        value="${pr.repo.uri}"
+        label="RepoURL"/>
+  </setupTask>
   <stream name="master"
       label="master">
     <setupTask
@@ -455,39 +473,6 @@
     </setupTask>
     <description>enter branch from github repo </description>
   </stream>
-  <stream name="local-bnd-git-repo"
-      label="local-bnd-git-repo">
-    <setupTask
-        xsi:type="setup:VariableTask"
-        type="FOLDER"
-        name="local.git.project"
-        storageURI="scope://Workspace"
-        label="Local git project"/>
-    <setupTask
-        xsi:type="projects:ProjectsImportTask">
-      <sourceLocator
-          rootFolder="${local.git.project}"
-          locateNestedProjects="true">
-        <excludedPath>biz.aQute.bndlib.tests/</excludedPath>
-        <excludedPath>biz.aQute.repository/testdata/</excludedPath>
-        <excludedPath>biz.aQute.repository/testresources/</excludedPath>
-        <excludedPath>bndtools.core.test/resources/</excludedPath>
-        <excludedPath>bndtools.test/</excludedPath>
-        <excludedPath>maven-plugins/</excludedPath>
-      </sourceLocator>
-      <sourceLocator
-          rootFolder="${local.git.project}/biz.aQute.bndlib.tests/"/>
-      <sourceLocator
-          rootFolder="${local.git.project}/bndtools.tests/"/>
-      <sourceLocator
-          rootFolder="${local.git.project}/gradle-plugins/"/>
-    </setupTask>
-    <setupTask
-        xsi:type="maven:MavenImportTask">
-      <sourceLocator
-          rootFolder="${local.git.project}/maven-plugins"/>
-    </setupTask>
-  </stream>
   <stream name="github-repo-bnd">
     <setupTask
         xsi:type="setup:VariableTask"
@@ -548,6 +533,39 @@
         xsi:type="maven:MavenImportTask">
       <sourceLocator
           rootFolder="${github.clone.repo.bnd.location}/maven-plugins"/>
+    </setupTask>
+  </stream>
+  <stream name="local-bnd-git-repo"
+      label="local-bnd-git-repo">
+    <setupTask
+        xsi:type="setup:VariableTask"
+        type="FOLDER"
+        name="local.git.project"
+        storageURI="scope://Workspace"
+        label="Local git project"/>
+    <setupTask
+        xsi:type="projects:ProjectsImportTask">
+      <sourceLocator
+          rootFolder="${local.git.project}"
+          locateNestedProjects="true">
+        <excludedPath>biz.aQute.bndlib.tests/</excludedPath>
+        <excludedPath>biz.aQute.repository/testdata/</excludedPath>
+        <excludedPath>biz.aQute.repository/testresources/</excludedPath>
+        <excludedPath>bndtools.core.test/resources/</excludedPath>
+        <excludedPath>bndtools.test/</excludedPath>
+        <excludedPath>maven-plugins/</excludedPath>
+      </sourceLocator>
+      <sourceLocator
+          rootFolder="${local.git.project}/biz.aQute.bndlib.tests/"/>
+      <sourceLocator
+          rootFolder="${local.git.project}/bndtools.tests/"/>
+      <sourceLocator
+          rootFolder="${local.git.project}/gradle-plugins/"/>
+    </setupTask>
+    <setupTask
+        xsi:type="maven:MavenImportTask">
+      <sourceLocator
+          rootFolder="${local.git.project}/maven-plugins"/>
     </setupTask>
   </stream>
   <logicalProjectContainer

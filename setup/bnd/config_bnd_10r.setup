@@ -4,7 +4,7 @@
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:setup="http://www.eclipse.org/oomph/setup/1.0"
-    label="epp java dev + bnd release on github repo `bnd/master`">
+    label="epp + bnd release on github repo `bnd/master`">
   <installation
       name="bnd.installation"
       label="bnd installation">
@@ -20,8 +20,31 @@
         id="bndtools-release"
         type="URI"
         name="bndtools-release"
-        value="https://bndtools.org/bndtools.p2.repo/7.1.0"
-        label="bndtools-release"/>
+        defaultValue="https://bndtools.org/bndtools.p2.repo/7.1.0"
+        storageURI="scope://Installation"
+        label="bndtools-release">
+      <choice
+          value="https://bndtools.org/bndtools.p2.repo/7.1.0"
+          label="rel 7.1.0"/>
+      <choice
+          value="https://bndtools.org/bndtools.p2.repo/7.0.0"
+          label="rel 7.0.0"/>
+      <choice
+          value="https://bndtools.org/bndtools.p2.repo/6.4.1"
+          label="rel 6.4.1"/>
+      <choice
+          value="https://bndtools.jfrog.io/bndtools/update-latest"
+          label="release (JFrog)"/>
+      <choice
+          value="https://bndtools.jfrog.io/bndtools/update-snapshot"
+          label="snapshot (JFrog)"/>
+      <choice
+          value="https://bndtools.jfrog.io/artifactory/p2/pr/${pullrequest}/"
+          label="SelectPullRequest"/>
+      <choice
+          value="${pr.repo.uri}"
+          label="RepoURL"/>
+    </setupTask>
     <stream
         href="project_bnd.setup#//@streams[name='master']"/>
     <description>The My workspace provides cool stuff.</description>

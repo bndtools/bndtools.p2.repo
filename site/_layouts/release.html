@@ -1,0 +1,27 @@
+---
+layout: default
+---
+
+<article class="release">
+
+  <header class="release-header">
+    <h1 class="release-title">{{ page.title | escape }}</h1>
+    {%- if page.version -%}
+    <p class="release-version">Version: {{ page.version }}</p>
+    {%- endif -%}
+    {%- if page.date -%}
+    <p class="release-date">Released: {{ page.date | date: "%B %d, %Y" }}</p>
+    {%- endif -%}
+  </header>
+
+  <div class="release-content">
+    {{ content }}
+  </div>
+
+  {%- if page.download_url -%}
+  <div class="release-download">
+    <a href="{{ page.download_url }}" class="download-btn">Download</a>
+  </div>
+  {%- endif -%}
+
+</article>

@@ -167,19 +167,30 @@
       id="bndtools-release"
       type="URI"
       name="bndtools-release"
+      defaultValue="https://bndtools.jfrog.io/bndtools/update-snapshot"
+      storageURI="scope://Installation"
       label="bndtools-release">
     <choice
-        value="https://bndtools.org/bndtools.p2.repo/7.1.0/"
+        value="https://bndtools.org/bndtools.p2.repo/7.1.0"
         label="rel 7.1.0"/>
     <choice
-        value="https://bndtools.org/bndtools.p2.repo/6.4.1/"
-        label="rel 6.41"/>
+        value="https://bndtools.org/bndtools.p2.repo/7.0.0"
+        label="rel 7.0.0"/>
+    <choice
+        value="https://bndtools.org/bndtools.p2.repo/6.4.1"
+        label="rel 6.4.1"/>
     <choice
         value="https://bndtools.jfrog.io/bndtools/update-latest"
         label="release (JFrog)"/>
     <choice
         value="https://bndtools.jfrog.io/bndtools/update-snapshot"
         label="snapshot (JFrog)"/>
+    <choice
+        value="https://bndtools.jfrog.io/artifactory/p2/pr/${pullrequest}/"
+        label="SelectPullRequest"/>
+    <choice
+        value="${pr.repo.uri}"
+        label="RepoURL"/>
   </setupTask>
   <stream name="master"
       label="master">

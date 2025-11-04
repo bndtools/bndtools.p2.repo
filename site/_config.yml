@@ -1,0 +1,33 @@
+# Jekyll Configuration
+title: "oomph setups for bnd"
+description: "Oomph configurations and Eclipse P2 repository for bnd/bndtools"
+baseurl: ""
+url: "http://localhost:4000"
+
+# Fix for Ruby 3.4+ FrozenError
+encoding: "utf-8"
+webrick:
+  headers:
+    Cache-Control: "no-cache"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+theme: minima
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Exclude files from processing
+exclude:
+  - README.md
+  - LICENSE
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - "*.0/"
+  - "[0-9]*/"

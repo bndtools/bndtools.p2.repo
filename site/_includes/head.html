@@ -1,0 +1,88 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {%- seo -%}
+  <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
+  <link rel="stylesheet" href="{{ "/assets/dark-mode.css" | relative_url }}">
+  {%- feed_meta -%}
+  {%- if jekyll.environment == 'production' and site.google_analytics -%}
+    {%- include google-analytics.html -%}
+  {%- endif -%}
+  
+  <!-- Dark Mode JavaScript (loaded early to prevent flash) -->
+  <script src="{{ "/assets/dark-mode.js" | relative_url }}"></script>
+  
+  <style>
+    .release-version {
+      font-weight: bold;
+      color: var(--link-color);
+    }
+    
+    .release-date {
+      color: var(--text-color);
+      opacity: 0.8;
+      font-style: italic;
+    }
+    
+    .download-btn {
+      background-color: var(--btn-success-bg);
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 15px;
+      display: inline-block;
+      transition: background-color 0.3s ease;
+    }
+    
+    .download-btn:hover {
+      background-color: var(--btn-success-hover);
+      color: white;
+    }
+    
+    /* Fix dark mode table readability with maximum specificity */
+    [data-theme="dark"] table tr:nth-child(odd) td {
+      background-color: #1a1a1a !important;
+    }
+    
+    [data-theme="dark"] table tr:nth-child(even) td {
+      background-color: #333333 !important;
+    }
+    
+    [data-theme="dark"] table tr:nth-child(odd) {
+      background-color: #1a1a1a !important;
+    }
+    
+    [data-theme="dark"] table tr:nth-child(even) {
+      background-color: #333333 !important;
+    }
+    
+    [data-theme="dark"] table tbody tr:nth-child(odd) {
+      background-color: #1a1a1a !important;
+    }
+    
+    [data-theme="dark"] table tbody tr:nth-child(even) {
+      background-color: #333333 !important;
+    }
+    
+    /* Fix dark mode table headers */
+    [data-theme="dark"] table th {
+      background-color: #2d2d2d !important;
+      color: #ffffff !important;
+      border: 1px solid #3d3d3d !important;
+    }
+    
+    [data-theme="dark"] table thead th {
+      background-color: #2d2d2d !important;
+      color: #ffffff !important;
+      border: 1px solid #3d3d3d !important;
+    }
+    
+    [data-theme="dark"] table tr th {
+      background-color: #2d2d2d !important;
+      color: #ffffff !important;
+      border: 1px solid #3d3d3d !important;
+    }
+  </style>
+</head>
