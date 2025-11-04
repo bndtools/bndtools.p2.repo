@@ -199,7 +199,8 @@
         name="bndtools">
       <setupTask
           xsi:type="setup.p2:P2Task"
-          label="bndtools">
+          label="bndtools"
+          licenseConfirmationDisabled="true">
         <requirement
             name="bndtools.main.feature.feature.group"/>
         <requirement
