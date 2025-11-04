@@ -5,10 +5,11 @@ title: "oomph setups for bnd"
 
 # Table of Contents
 
+- [overview on bnd/bndtools setups](#overview-on-bndbndtools-setups)
 - [I want to develop my project with bnd](#i-want-to-develop-my-project-with-bnd)
 - [I want to develop my project with bnd+ecf](#i-want-to-develop-my-project-with-bndecf)
-- [I want to contribute on github organisation `bndtools`](#i-want-to-contribute-on-github-organisation-bndtools)
-    - [repo `bnd`](#github-repo-bnd)
+- [I want to contribute to github organisation `bndtools`](#i-want-to-contribute-to-github-organisation-bndtools)
+    - [github repo `bnd`](#github-repo-bnd)
     - [other bndtools repos](#other-bndtools-repos)
 
 ## overview on bnd/bndtools setups
