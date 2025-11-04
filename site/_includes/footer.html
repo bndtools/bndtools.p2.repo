@@ -30,6 +30,15 @@
       </div>
     </div>
 
+    <div class="footer-build-info">
+      <p style="font-size: 0.8em; color: #666; text-align: center; margin-top: 20px; border-top: 1px solid #eee; padding-top: 10px;">
+        Built on {% assign current_time = 'now' | date: '%Y%m%d-%H%M%S' %}{{ current_time }} | 
+        <a href="{{ site.data.git.remote_url }}/commit/{{ site.data.git.sha }}" target="_blank" style="color: #666;">
+          GIT-SHA: {{ site.data.git.short_sha }}
+        </a>
+      </p>
+    </div>
+
   </div>
 
 </footer>
