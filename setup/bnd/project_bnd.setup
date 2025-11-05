@@ -68,6 +68,10 @@
           xsi:type="setup:PreferenceTask"
           key="/instance/org.eclipse.core.resources/missingNatureMarkerSeverity"
           value="-1"/>
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.core.resources/missingEncodingMarkerSeverity"
+          value="-1"/>
     </setupTask>
     <setupTask
         xsi:type="setup:CompoundTask"
