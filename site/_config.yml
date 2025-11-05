@@ -22,7 +22,7 @@ plugins:
   - jekyll-seo-tag
 
 # Custom button templates
-install_button: '<button class="btn" style="background-color: orange; border: none; color: white; width:100%"><i class="fa fa-download" style="color: white;"></i> Install</button>'
+install_button: '<button class="btn" style="background-color: orange; border: none; color: white; width:100%; cursor: pointer;"><i class="fa fa-download" style="color: white;"></i> Install</button>'
 
 # Exclude files from processing
 exclude:
