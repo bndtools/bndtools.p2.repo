@@ -51,14 +51,6 @@
     </content>
   </setupTask>
   <setupTask
-      xsi:type="setup.p2:P2Task"
-      licenseConfirmationDisabled="true">
-    <description>
-      Install the tools needed in the IDE to work with the source code for
-      ${scope.project.label}
-    </description>
-  </setupTask>
-  <setupTask
       xsi:type="setup:CompoundTask"
       name="preferences">
     <setupTask
@@ -321,26 +313,6 @@
         version="JavaSE-21"
         location="${jre.location-21}"
         name="JRE for JavaSE-21">
-      <description>
-        Define the JRE needed to compile and run the Java projects of
-        ${scope.project.label}
-      </description>
-      <defaultExecutionEnvironment>JavaSE-17</defaultExecutionEnvironment>
-    </setupTask>
-    <setupTask
-        xsi:type="setup.p2:P2Task"
-        label="JRE25"
-        licenseConfirmationDisabled="true">
-      <requirement
-          name="org.eclipse.justj.openjdk.hotspot.jre.full.feature.group"/>
-      <repository
-          url="https://download.eclipse.org/justj/jres/25/updates/release/latest/"/>
-    </setupTask>
-    <setupTask
-        xsi:type="jdt:JRETask"
-        version="JavaSE-25"
-        location="${jre.location-25}"
-        name="JRE for JavaSE-25">
       <description>
         Define the JRE needed to compile and run the Java projects of
         ${scope.project.label}
