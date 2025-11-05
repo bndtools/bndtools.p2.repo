@@ -260,14 +260,8 @@
       <sourceLocator
           rootFolder="${git.clone.bndtools.p2.repo.location|path}">
         <predicate
-            xsi:type="predicates:OrPredicate">
-          <operand
-              xsi:type="predicates:LocationPredicate"
-              pattern=".*workspace-templates/.*?/"/>
-          <operand
-              xsi:type="predicates:LocationPredicate"
-              pattern=".*workspace-templates/.*?/.*?/"/>
-        </predicate>
+            xsi:type="predicates:LocationPredicate"
+            pattern="(.*?)/"/>
       </sourceLocator>
     </setupTask>
     <setupTask

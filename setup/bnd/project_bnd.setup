@@ -317,7 +317,7 @@
     </setupTask>
     <setupTask
         xsi:type="setup.p2:P2Task"
-        label="JRE21"
+        label="JRE25"
         licenseConfirmationDisabled="true">
       <requirement
           name="org.eclipse.justj.openjdk.hotspot.jre.full.feature.group"/>
