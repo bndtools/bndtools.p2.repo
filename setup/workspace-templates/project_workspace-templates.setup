@@ -150,6 +150,22 @@
 
       </content>
     </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="org.eclipse.ui.ide">
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.ui.ide/SHOW_ACTIVE_EDITOR_INFO_IN_TITLE"
+          value="false"/>
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.ui.ide/SHOW_LOCATION"
+          value="true"/>
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.ui.ide/SHOW_PRODUCT_IN_TITLE"
+          value="false"/>
+    </setupTask>
   </setupTask>
   <setupTask
       xsi:type="setup:CompoundTask"
@@ -247,10 +263,10 @@
             xsi:type="predicates:OrPredicate">
           <operand
               xsi:type="predicates:LocationPredicate"
-              pattern="${git.clone.bndtools.p2.repo.location|path}/.*?/"/>
+              pattern=".*workspace-templates/.*?/"/>
           <operand
               xsi:type="predicates:LocationPredicate"
-              pattern="${git.clone.bndtools.p2.repo.location|path}/.*?/.*?/"/>
+              pattern=".*workspace-templates/.*?/.*?/"/>
         </predicate>
       </sourceLocator>
     </setupTask>
