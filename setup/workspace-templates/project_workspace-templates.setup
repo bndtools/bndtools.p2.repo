@@ -257,7 +257,7 @@
     <setupTask
         xsi:type="projects:ProjectsImportTask">
       <sourceLocator
-          rootFolder="${git.clone.bndtools.p2.repo.location|path}"/>
+          rootFolder="${git.clone.bndtools.p2.repo.location}"/>
     </setupTask>
     <setupTask
         xsi:type="setup:CompoundTask"
