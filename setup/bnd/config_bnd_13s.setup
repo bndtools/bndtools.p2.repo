@@ -20,7 +20,8 @@
         id="bndtools-release"
         type="URI"
         name="bndtools-release"
-        defaultValue="https://bndtools.org/bndtools.p2.repo/7.1.0"
+        value="https://bndtools.jfrog.io/bndtools/update-snapshot"
+        defaultValue="https://bndtools.jfrog.io/bndtools/update-snapshot"
         storageURI="scope://Installation"
         label="bndtools-release">
       <choice
@@ -46,7 +47,7 @@
           label="RepoURL"/>
     </setupTask>
     <stream
-        href="project_bnd.setup#//@streams[name='github-repo-bnd']"/>
+        href="project_bnd.setup#//@streams[name='local-bnd-git-repo']"/>
     <description>The My workspace provides cool stuff.</description>
   </workspace>
   <description>The My configuration provides cool stuff.</description>

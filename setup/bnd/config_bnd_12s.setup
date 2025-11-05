@@ -21,10 +21,15 @@
         type="URI"
         name="bndtools-release"
         value="https://bndtools.jfrog.io/bndtools/update-snapshot"
+        defaultValue="https://bndtools.jfrog.io/bndtools/update-snapshot"
+        storageURI="scope://Installation"
         label="bndtools-release">
       <choice
           value="https://bndtools.org/bndtools.p2.repo/7.1.0"
           label="rel 7.1.0"/>
+      <choice
+          value="https://bndtools.org/bndtools.p2.repo/7.0.0"
+          label="rel 7.0.0"/>
       <choice
           value="https://bndtools.org/bndtools.p2.repo/6.4.1"
           label="rel 6.4.1"/>
@@ -34,9 +39,15 @@
       <choice
           value="https://bndtools.jfrog.io/bndtools/update-snapshot"
           label="snapshot (JFrog)"/>
+      <choice
+          value="https://bndtools.jfrog.io/artifactory/p2/pr/${pullrequest}/"
+          label="SelectPullRequest"/>
+      <choice
+          value="${pr.repo.uri}"
+          label="RepoURL"/>
     </setupTask>
     <stream
-        href="project_bnd.setup#//@streams[name='local-bnd-git-repo']"/>
+        href="project_bnd.setup#//@streams[name='github-repo-bnd']"/>
     <description>The My workspace provides cool stuff.</description>
   </workspace>
   <description>The My configuration provides cool stuff.</description>
