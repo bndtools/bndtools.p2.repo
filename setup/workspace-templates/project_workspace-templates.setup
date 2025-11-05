@@ -60,7 +60,7 @@
   </setupTask>
   <setupTask
       xsi:type="git:GitCloneTask"
-      id="git.clone.bndtools.p2.repo"
+      id="git.clone.workspace-templates"
       remoteURI="bndtools/workspace-templates">
     <annotation
         source="http://www.eclipse.org/oomph/setup/InducedChoices">
@@ -257,7 +257,7 @@
     <setupTask
         xsi:type="projects:ProjectsImportTask">
       <sourceLocator
-          rootFolder="${git.clone.bndtools.p2.repo.location}"/>
+          rootFolder="${git.clone.workspace-templates.location}"/>
     </setupTask>
     <setupTask
         xsi:type="setup:CompoundTask"
