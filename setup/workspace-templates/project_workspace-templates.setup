@@ -241,15 +241,16 @@
     </setupTask>
     <setupTask
         xsi:type="projects:ProjectsImportTask">
-      <sourceLocator>
+      <sourceLocator
+          rootFolder="${git.clone.bndtools.p2.repo.location|path}">
         <predicate
             xsi:type="predicates:OrPredicate">
           <operand
               xsi:type="predicates:LocationPredicate"
-              pattern="${git.clone.bndtools.p2.repo.location|path}/.*"/>
+              pattern=".*?/"/>
           <operand
               xsi:type="predicates:LocationPredicate"
-              pattern="${git.clone.bndtools.p2.repo.location|path}/.*?/.*"/>
+              pattern=".*?/.*?/"/>
         </predicate>
       </sourceLocator>
     </setupTask>
