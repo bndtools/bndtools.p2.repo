@@ -244,7 +244,7 @@
       <sourceLocator>
         <predicate
             xsi:type="predicates:LocationPredicate"
-            pattern="^[^/\\]+[/\\][^/\\]+$"/>
+            pattern="${git.clone.bndtools.p2.repo|path}/.*?/.*?/"/>
       </sourceLocator>
     </setupTask>
     <setupTask
