@@ -165,6 +165,18 @@
 
         </content>
       </setupTask>
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.ui.ide/SHOW_ACTIVE_EDITOR_INFO_IN_TITLE"
+          value="false"/>
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.ui.ide/SHOW_LOCATION"
+          value="true"/>
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.ui.ide/SHOW_PRODUCT_IN_TITLE"
+          value="false"/>
     </setupTask>
   </setupTask>
   <setupTask
@@ -282,7 +294,7 @@
           name="a.jre.org.eclipse.justj.openjdk.hotspot.jre.full"
           versionRange="[17.0.0,17.0.0]"/>
       <repository
-          url="https://download.eclipse.org/justj/jres/17/updates/release"/>
+          url="https://download.eclipse.org/justj/jres/17/updates/release/latest/"/>
     </setupTask>
     <setupTask
         xsi:type="jdt:JRETask"
@@ -302,7 +314,7 @@
       <requirement
           name="org.eclipse.justj.openjdk.hotspot.jre.full.feature.group"/>
       <repository
-          url="https://download.eclipse.org/justj/jres/21/updates/release"/>
+          url="https://download.eclipse.org/justj/jres/21/updates/release/latest/"/>
     </setupTask>
     <setupTask
         xsi:type="jdt:JRETask"
@@ -322,7 +334,7 @@
       <requirement
           name="org.eclipse.justj.openjdk.hotspot.jre.full.feature.group"/>
       <repository
-          url="https://download.eclipse.org/justj/jres/25/updates/release"/>
+          url="https://download.eclipse.org/justj/jres/25/updates/release/latest/"/>
     </setupTask>
     <setupTask
         xsi:type="jdt:JRETask"
