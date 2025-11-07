@@ -393,6 +393,7 @@
         <excludedPath>bndtools.core.test/resources/</excludedPath>
         <excludedPath>bndtools.test/</excludedPath>
         <excludedPath>maven-plugins/</excludedPath>
+        <excludedPath>biz.aQute.bnd.gradle/</excludedPath>
       </sourceLocator>
       <sourceLocator
           rootFolder="${git.clone.bnd.master.location}/biz.aQute.bndlib.tests/"/>
@@ -446,6 +447,7 @@
         <excludedPath>bndtools.core.test/resources/</excludedPath>
         <excludedPath>bndtools.test/</excludedPath>
         <excludedPath>maven-plugins/</excludedPath>
+        <excludedPath>biz.aQute.bnd.gradle/</excludedPath>
       </sourceLocator>
       <sourceLocator
           rootFolder="${git.clone.bnd.branch.location}/biz.aQute.bndlib.tests/"/>
@@ -509,6 +511,7 @@
         <excludedPath>bndtools.core.test/resources/</excludedPath>
         <excludedPath>bndtools.test/</excludedPath>
         <excludedPath>maven-plugins/</excludedPath>
+        <excludedPath>biz.aQute.bnd.gradle/</excludedPath>
       </sourceLocator>
       <sourceLocator
           rootFolder="${github.clone.repo.bnd.location}/biz.aQute.bndlib.tests/"/>
@@ -542,6 +545,7 @@
         <excludedPath>bndtools.core.test/resources/</excludedPath>
         <excludedPath>bndtools.test/</excludedPath>
         <excludedPath>maven-plugins/</excludedPath>
+        <excludedPath>biz.aQute.bnd.gradle/</excludedPath>
       </sourceLocator>
       <sourceLocator
           rootFolder="${local.git.project}/biz.aQute.bndlib.tests/"/>
