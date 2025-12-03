@@ -10,7 +10,7 @@ All setups are based on the **eclipse-installer** aka. **oomph**.
 
 <a href="https://www.eclipse.org/setups/installer/" target="_blank">Press here to download, install and register URL protocol handler from **eclipse-installer** as a pre-requisite for all of these setups.</a>
 
-We assume that the locally installed oomph with a registered URL handler for the protocol `eclipse+installer` is available from here onwards.
+We assume that the locally installed oomph with a registered URL handler for the protocol [`eclipse+installer`](eclipse+installer:) is available from here onwards.
 
 To launch the eclipse-installer for a selected setup press the button launch at the beginning of a row.
 
