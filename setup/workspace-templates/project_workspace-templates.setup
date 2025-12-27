@@ -191,6 +191,9 @@
       storageURI="scope://Installation"
       label="bndtools-release">
     <choice
+        value="https://bndtools.org/bndtools.p2.repo/7.2.0"
+        label="rel 7.2.0"/>
+    <choice
         value="https://bndtools.org/bndtools.p2.repo/7.1.0"
         label="rel 7.1.0"/>
     <choice
