@@ -1,0 +1,31 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: org.bndtools.p2
+Bundle-Copyright: Copyright (c) Neil Bartlett (2009, 2025) and others.
+  All Rights Reserved.
+Bundle-Developers: pkriens;email="Peter.Kriens@aQute.biz";name="Peter 
+ Kriens";organization=Bndtools;organizationUrl="https://github.com/bnd
+ tools";roles="architect,developer";timezone=1,bjhargrave;email="bj@ha
+ rgrave.dev";name="BJ Hargrave";organization=IBM;organizationUrl="http
+ s://developer.ibm.com";roles=developer;timezone="America/New_York";ur
+ l="https://github.com/bjhargrave",rotty3000;email="raymond.auge@lifer
+ ay.com";name="Ray Augé";organization="Liferay Inc.";organizationUrl=
+ "https://www.liferay.com";roles=developer;timezone="America/New_York"
+ ;url="https://rotty3000.github.io",chrisrueger;email="chrisrueger@gma
+ il.com";name="Christoph Rueger";organization="Synesty GmbH";organizat
+ ionUrl="https://synesty.com/";roles=developer;timezone="Europe/Berlin
+ ",peterkir;email="peter@klib.io";name="Peter Kirschner";organization=
+ "Kirschners GmbH";organizationUrl="https://peterkir.github.io/";roles
+ =developer;timezone="Europe/Berlin";url="https://peterkir.github.io"
+Bundle-DocURL: https://bndtools.org/
+Bundle-License: (ASL-2.0 or EPL-2.0);file="license.txt";link="https://
+ raw.githubusercontent.com/bndtools/bnd/refs/heads/master/LICENSE"
+Bundle-ManifestVersion: 2
+Bundle-Name: org.bndtools.p2
+Bundle-SCM: url=https://github.com/bndtools/bnd,connection=scm:git:htt
+ ps://github.com/bndtools/bnd.git,developerConnection=scm:git:git@gith
+ ub.com:bndtools/bnd.git,tag=7.2.0
+Bundle-SymbolicName: org.bndtools.p2
+Bundle-Vendor: bnd
+Bundle-Version: 7.2.0.202512261929
+SPDX-License-Identifier: (Apache-2.0 OR EPL-2.0)
+

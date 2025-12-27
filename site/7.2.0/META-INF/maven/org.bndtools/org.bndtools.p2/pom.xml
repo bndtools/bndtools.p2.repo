@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.bndtools</groupId>
+  <artifactId>org.bndtools.p2</artifactId>
+  <version>7.2.0</version>
+  <description>org.bndtools.p2</description>
+  <name>org.bndtools.p2</name>
+  <url>https://bndtools.org/</url>
+  <organization>
+    <name>bnd</name>
+  </organization>
+  <licenses>
+    <license>
+      <name>(ASL-2.0 or EPL-2.0)</name>
+      <url>https://raw.githubusercontent.com/bndtools/bnd/refs/heads/master/LICENSE</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+  <scm>
+    <url>https://github.com/bndtools/bnd</url>
+    <connection>scm:git:https://github.com/bndtools/bnd.git</connection>
+    <developerConnection>scm:git:git@github.com:bndtools/bnd.git</developerConnection>
+    <tag>7.2.0</tag>
+  </scm>
+  <developers>
+    <developer>
+      <id>pkriens</id>
+      <email>Peter.Kriens@aQute.biz</email>
+      <name>Peter Kriens</name>
+      <organization>Bndtools</organization>
+      <organizationUrl>https://github.com/bndtools</organizationUrl>
+      <roles>
+        <role>architect</role>
+        <role>developer</role>
+      </roles>
+      <timezone>1</timezone>
+    </developer>
+    <developer>
+      <id>bjhargrave</id>
+      <name>BJ Hargrave</name>
+      <email>bj@hargrave.dev</email>
+      <url>https://github.com/bjhargrave</url>
+      <organization>IBM</organization>
+      <organizationUrl>https://developer.ibm.com</organizationUrl>
+      <roles>
+        <role>developer</role>
+      </roles>
+      <timezone>America/New_York</timezone>
+    </developer>
+    <developer>
+      <id>rotty3000</id>
+      <name>Ray Augé</name>
+      <email>raymond.auge@liferay.com</email>
+      <url>https://rotty3000.github.io</url>
+      <organization>Liferay Inc.</organization>
+      <organizationUrl>https://www.liferay.com</organizationUrl>
+      <roles>
+        <role>developer</role>
+      </roles>
+      <timezone>America/New_York</timezone>
+    </developer>
+    <developer>
+      <id>chrisrueger</id>
+      <name>Christoph Rueger</name>
+      <email>chrisrueger@gmail.com</email>
+      <organization>Synesty GmbH</organization>
+      <organizationUrl>https://synesty.com/</organizationUrl>
+      <roles>
+        <role>developer</role>
+      </roles>
+      <timezone>Europe/Berlin</timezone>
+    </developer>
+    <developer>
+      <id>peterkir</id>
+      <name>Peter Kirschner</name>
+      <email>peter@klib.io</email>
+      <url>https://peterkir.github.io</url>
+      <organization>Kirschners GmbH</organization>
+      <organizationUrl>https://peterkir.github.io/</organizationUrl>
+      <roles>
+        <role>developer</role>
+      </roles>
+      <timezone>Europe/Berlin</timezone>
+    </developer>
+  </developers>
+</project>
