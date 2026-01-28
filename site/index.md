@@ -51,10 +51,12 @@ Choose what **IDE you want have** and what you **want to do**.
 | ![link][96] ![oomph][95]        | I want to have ...                         | I want to do ...                             |
 |:-------------------------------:|--------------------------------------------|----------------------------------------------|
 | [{{ site.install_button }}][60] | eclipse + **latest ecf** + bnd **release** | start a **new project** in a empty workspace |
+| [{{ site.install_button }}][62] | eclipse + **ecf 3.16.5** + bnd **release** | start a **new project** in a empty workspace |
 | [{{ site.install_button }}][61] | eclipse + **ecf 3.15.7** + bnd **release** | start a **new project** in a empty workspace |
 
 [60]: eclipse+installer:https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/master/setup/ecf/config_ecf_60.setup
 [61]: eclipse+installer:https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/master/setup/ecf/config_ecf_61.setup
+[62]: eclipse+installer:https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/master/setup/ecf/config_ecf_62.setup
 
 ## I want to contribute to github organisation [`bndtools`](https://github.com/bndtools)
 
