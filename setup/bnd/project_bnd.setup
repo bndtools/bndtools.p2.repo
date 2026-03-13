@@ -337,6 +337,7 @@
       id="bndtools-release"
       type="URI"
       name="bndtools-release"
+      storageURI="scope://Installation"
       label="bndtools-release">
     <choice
         value="https://bndtools.org/bndtools.p2.repo/7.1.0"
