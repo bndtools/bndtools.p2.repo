@@ -28,11 +28,11 @@ To launch the eclipse-installer for a selected setup press the button launch at 
 This section contains setups with Eclipse and bnd ([**release**][41] or [**snapshot**][42] versions).
 Choose what you **want to do** and which version you **want to have**.
 
-| I want to ...                                       | ![oomph][95] I want to have eclipse + bnd **release** | ![oomph][95] I want to have eclipse + bnd **snapshot** |
-|-----------------------------------------------------|:-----------------------------------------------------:|:------------------------------------------------------:|
-| start a **new project** in a empty workspace        | [{{ site.install_button }}][50r]                      | [{{ site.install_button }}][50s]                       |
-| import a **existing local git repo**                | [{{ site.install_button }}][51r]                      | [{{ site.install_button }}][51s]                       |
-| import a github repo `organisation/project:branch`  | [{{ site.install_button }}][52r]                      | [{{ site.install_button }}][52s]                       |
+| I want to ...                                       | ![oomph][95] bnd **release**      | ![oomph][95] bnd **snapshot** |
+|-----------------------------------------------------|:---------------------------------:|:------------------------------------------------------:|
+| start a **new project** in a empty workspace        | [{{ site.install_button }}][50r]  | [{{ site.install_button }}][50s]                       |
+| import a **existing local git repo**                | [{{ site.install_button }}][51r]  | [{{ site.install_button }}][51s]                       |
+| import a github repo `organisation/project:branch`  | [{{ site.install_button }}][52r]  | [{{ site.install_button }}][52s]                       |
 
 [50r]: eclipse+installer:https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/master/setup/bnd/config_bnd_50r.setup
 [50s]: eclipse+installer:https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/master/setup/bnd/config_bnd_50s.setup
@@ -45,11 +45,11 @@ Choose what you **want to do** and which version you **want to have**.
 
 [ecf - Eclipse Communication Framework](https://github.com/eclipse-ecf/ecf)
 
-| I want to ...                                       | ![oomph][95] I want to have eclipse + bnd **release** |
-|-----------------------------------------------------|:-----------------------------------------------------:|
-| start a **new project** with **latest ecf**         | [{{ site.install_button }}][60]                       |
-| start a **new project** with **ecf 3.16.5**         | [{{ site.install_button }}][62]                       |
-| start a **new project** with **ecf 3.15.7**         | [{{ site.install_button }}][61]                       |
+| I want to ...                                       | ![oomph][95] with bnd **release** |
+|-----------------------------------------------------|:---------------------------------:|
+| start a **new project** with **latest ecf**         | [{{ site.install_button }}][60]   |
+| start a **new project** with **ecf 3.16.5**         | [{{ site.install_button }}][62]   |
+| start a **new project** with **ecf 3.15.7**         | [{{ site.install_button }}][61]   |
 
 [60]: eclipse+installer:https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/master/setup/ecf/config_ecf_60.setup
 [61]: eclipse+installer:https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/master/setup/ecf/config_ecf_61.setup
@@ -65,12 +65,12 @@ As base IDE for bnd setups we are using the EPP package [Eclipse for Eclipse Com
 
 For a detailed overview on EPP packages see [comparison of Eclipse EPP Packages][91]
 
-| I want to ...                                                   | ![oomph][95] I want to have eclipse + bnd **release** | ![oomph][95] I want to have eclipse + bnd **snapshot** |
-|-----------------------------------------------------------------|:-----------------------------------------------------:|:------------------------------------------------------:|
-| github project `bndtools/bnd` on branch `master`               | [{{ site.install_button }}][10r]                      | [{{ site.install_button }}][10s]                       |
-| github project `bndtools/bnd` with **branch selection**        |                                                       | [{{ site.install_button }}][11s]                       |
-| my github `organisation/project` with **branch selection**     |                                                       | [{{ site.install_button }}][12s]                       |
-| **import of existing local git repo**                          |                                                       | [{{ site.install_button }}][13s]                       |
+| I want to ...                                              | ![oomph][95] bnd **release**     | ![oomph][95] bnd **snapshot**     |
+|------------------------------------------------------------|:--------------------------------:|:---------------------------------:|
+| github project `bndtools/bnd` on branch `master`           | [{{ site.install_button }}][10r] | [{{ site.install_button }}][10s]  |
+| github project `bndtools/bnd` with **branch selection**    |                                  | [{{ site.install_button }}][11s]  |
+| my github `organisation/project` with **branch selection** |                                  | [{{ site.install_button }}][12s]  |
+| **import of existing local git repo**                      |                                  | [{{ site.install_button }}][13s]  |
 
 [10r]: eclipse+installer:https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/master/setup/bnd/config_bnd_10r.setup
 [10s]: eclipse+installer:https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/master/setup/bnd/config_bnd_10s.setup
@@ -80,10 +80,10 @@ For a detailed overview on EPP packages see [comparison of Eclipse EPP Packages]
 
 ### other bndtools [repos](https://github.com/bndtools)
 
-| I want to ...                                        | ![oomph][95] I want to have eclipse + bnd **snapshot** |
-|------------------------------------------------------|:------------------------------------------------------:|
-| repo `bndtools.p2.repo` on branch `master`           | [{{ site.install_button }}][21s]                       |
-| repo `workspace-templates` on branch `master`        | [{{ site.install_button }}][22s]                       |
+| I want to ...                                  | ![oomph][95] with bnd **snapshot** |
+|------------------------------------------------|:----------------------------------:|
+| repo `bndtools.p2.repo` on branch `master`     | [{{ site.install_button }}][21s]   |
+| repo `workspace-templates` on branch `master`  | [{{ site.install_button }}][22s]   |
 
 [21s]: eclipse+installer:https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/master/setup/bndtools.p2.repo/config_bndtools-p2-repo_21s.setup
 [22s]: eclipse+installer:https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/master/setup/workspace-templates/config_workspace-templates_22s.setup
