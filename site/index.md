@@ -19,7 +19,7 @@ To launch the eclipse-installer for a selected setup press the button launch at 
 - [overview on bnd/bndtools setups](#overview-on-bndbndtools-setups)
 - [I want to develop my project with bnd](#i-want-to-develop-my-project-with-bnd)
 - [I want to develop my project with bnd+ecf](#i-want-to-develop-my-project-with-bndecf)
-- [I want to contribute to github organisation `bndtools`](#i-want-to-contribute-to-github-organisation-bndtools)
+- [I want to contribute to github organisation `bndtools`](#i-want-to-contribute-to-bndtools-github-organisation)
     - [github repo `bnd`](#github-repo-bnd)
     - [other bndtools repos](#other-bndtools-repos)
 
@@ -55,7 +55,7 @@ Choose what you **want to do** and which version you **want to have**.
 [61]: eclipse+installer:https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/master/setup/ecf/config_ecf_61.setup
 [62]: eclipse+installer:https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/master/setup/ecf/config_ecf_62.setup
 
-## I want to contribute to github organisation [`bndtools`](https://github.com/bndtools)
+## I want to contribute to [`bndtools`](https://github.com/bndtools) github organisation
 
 This section contains setups used projects/repos inside bndtools.
 
