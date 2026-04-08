@@ -28,11 +28,11 @@ To launch the eclipse-installer for a selected setup press the button launch at 
 This section contains setups with Eclipse and bnd ([**release**][41] or [**snapshot**][42] versions).
 Choose what you **want to do** and which version you **want to have**.
 
-| I want to ...                                       | ![oomph][95] bnd **release**      | ![oomph][95] bnd **snapshot** |
-|-----------------------------------------------------|:---------------------------------:|:------------------------------------------------------:|
-| start a **new project** in a empty workspace        | [{{ site.install_button }}][50r]  | [{{ site.install_button }}][50s]                       |
-| import a **existing local git repo**                | [{{ site.install_button }}][51r]  | [{{ site.install_button }}][51s]                       |
-| import a github repo `organisation/project:branch`  | [{{ site.install_button }}][52r]  | [{{ site.install_button }}][52s]                       |
+| I want to ...                                       | ![oomph][95] bnd **release**      | ![oomph][95] bnd **snapshot**    |
+|-----------------------------------------------------|:---------------------------------:|:--------------------------------:|
+| start a **new project** in a empty workspace        | [{{ site.install_button }}][50r]  | [{{ site.install_button }}][50s] |
+| import a **existing local git repo**                | [{{ site.install_button }}][51r]  | [{{ site.install_button }}][51s] |
+| import a github repo `organisation/project:branch`  | [{{ site.install_button }}][52r]  | [{{ site.install_button }}][52s] |
 
 [50r]: eclipse+installer:https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/master/setup/bnd/config_bnd_50r.setup
 [50s]: eclipse+installer:https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/master/setup/bnd/config_bnd_50s.setup
@@ -45,15 +45,19 @@ Choose what you **want to do** and which version you **want to have**.
 
 [ecf - Eclipse Communication Framework](https://github.com/eclipse-ecf/ecf)
 
-| I want to ...                                       | ![oomph][95] with bnd **release** |
-|-----------------------------------------------------|:---------------------------------:|
-| start a **new project** with **latest ecf**         | [{{ site.install_button }}][60]   |
-| start a **new project** with **ecf 3.16.5**         | [{{ site.install_button }}][62]   |
-| start a **new project** with **ecf 3.15.7**         | [{{ site.install_button }}][61]   |
+| I want to ...                                 | ![oomph][95] bnd **release**      | ![oomph][95] bnd **snapshots**    |
+|-----------------------------------------------|:---------------------------------:|:---------------------------------:|
+| start a **new project** with **latest ecf**   | [{{ site.install_button }}][60r]   | [{{ site.install_button }}][60s]  |
+| start a **new project** with **ecf 3.16.7**   | [{{ site.install_button }}][63r]   | [{{ site.install_button }}][62s]  |
+| start a **new project** with **ecf 3.16.5**   | [{{ site.install_button }}][62r]   | [{{ site.install_button }}][62s]  |
+| start a **new project** with **ecf 3.15.7**   | [{{ site.install_button }}][61r]   | [{{ site.install_button }}][61s]  |
 
-[60]: eclipse+installer:https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/master/setup/ecf/config_ecf_60.setup
-[61]: eclipse+installer:https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/master/setup/ecf/config_ecf_61.setup
-[62]: eclipse+installer:https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/master/setup/ecf/config_ecf_62.setup
+[60r]: eclipse+installer:https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/master/setup/ecf/config_ecf_60r.setup
+[61r]: eclipse+installer:https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/master/setup/ecf/config_ecf_61r.setup
+[62r]: eclipse+installer:https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/master/setup/ecf/config_ecf_62r.setup
+[60s]: eclipse+installer:https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/master/setup/ecf/config_ecf_60s.setup
+[61s]: eclipse+installer:https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/master/setup/ecf/config_ecf_61s.setup
+[62s]: eclipse+installer:https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/master/setup/ecf/config_ecf_62s.setup
 
 ## I want to contribute to [`bndtools`](https://github.com/bndtools) github organisation
 
