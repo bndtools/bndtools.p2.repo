@@ -24,6 +24,15 @@
       value="https://bndtools.jfrog.io/bndtools/update-latest"
       label="bndtools-release">
     <choice
+        value="https://bndtools.org/bndtools.p2.repo/7.2.3"
+        label="rel 7.2.3"/>
+    <choice
+        value="https://bndtools.org/bndtools.p2.repo/7.2.1"
+        label="rel 7.2.1"/>
+    <choice
+        value="https://bndtools.org/bndtools.p2.repo/7.2.0"
+        label="rel 7.2.0"/>
+    <choice
         value="https://bndtools.org/bndtools.p2.repo/7.1.0"
         label="rel 7.1.0"/>
     <choice
@@ -79,6 +88,46 @@
       </setupTask>
     </setupTask>
   </stream>
+  <stream name="ecf_3.16.7"
+      label="">
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="bndtools">
+      <setupTask
+          xsi:type="setup.p2:P2Task"
+          label="bndtools">
+        <requirement
+            name="bndtools.main.feature.feature.group"/>
+        <requirement
+            name="bndtools.m2e.feature.feature.group"/>
+        <requirement
+            name="bndtools.pde.feature.feature.group"/>
+        <repository
+            url="${bndtools-release}"/>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="ecf">
+      <setupTask
+          xsi:type="setup:CompoundTask"
+          name="org.bndtools.templating.gitrepo">
+        <setupTask
+            xsi:type="setup:PreferenceTask"
+            key="/instance/org.bndtools.templating.gitrepo/githubRepos"
+            value="ECF/bndtools.workspace"/>
+      </setupTask>
+      <setupTask
+          xsi:type="setup.p2:P2Task"
+          label="ECF Bndtools Support"
+          licenseConfirmationDisabled="true">
+        <requirement
+            name="org.eclipse.ecf.remoteservice.sdk.bndtools.feature.feature.group"/>
+        <repository
+            url="https://download.eclipse.org/rt/ecf/3.16.7/site.p2/"/>
+      </setupTask>
+    </setupTask>
+  </stream>
   <stream name="ecf_3.16.5"
       label="ecf_3.16.5">
     <setupTask
@@ -99,7 +148,7 @@
     </setupTask>
     <setupTask
         xsi:type="setup:CompoundTask"
-        name="ecf_3.15.7">
+        name="ecf">
       <setupTask
           xsi:type="setup:CompoundTask"
           name="org.bndtools.templating.gitrepo">
@@ -135,46 +184,6 @@
             name="bndtools.pde.feature.feature.group"/>
         <repository
             url="${bndtools-release}"/>
-      </setupTask>
-    </setupTask>
-    <setupTask
-        xsi:type="setup:CompoundTask"
-        name="ecf_3.15.7">
-      <setupTask
-          xsi:type="setup:CompoundTask"
-          name="org.bndtools.templating.gitrepo">
-        <setupTask
-            xsi:type="setup:PreferenceTask"
-            key="/instance/org.bndtools.templating.gitrepo/githubRepos"
-            value="ECF/bndtools.workspace"/>
-      </setupTask>
-      <setupTask
-          xsi:type="setup.p2:P2Task"
-          label="ECF Bndtools Support"
-          licenseConfirmationDisabled="true">
-        <requirement
-            name="org.eclipse.ecf.remoteservice.sdk.bndtools.feature.feature.group"/>
-        <repository
-            url="https://download.eclipse.org/rt/ecf/3.15.7/site.p2/"/>
-      </setupTask>
-    </setupTask>
-  </stream>
-  <stream name="ecf-3.15.7_bnd-7.1.0"
-      label="ecf-3.15.7_bnd-7.1.0">
-    <setupTask
-        xsi:type="setup:CompoundTask"
-        name="bnd-7.1.0">
-      <setupTask
-          xsi:type="setup.p2:P2Task"
-          label="bndtools">
-        <requirement
-            name="bndtools.main.feature.feature.group"/>
-        <requirement
-            name="bndtools.m2e.feature.feature.group"/>
-        <requirement
-            name="bndtools.pde.feature.feature.group"/>
-        <repository
-            url="https://bndtools.org/bndtools.p2.repo/7.1.0"/>
       </setupTask>
     </setupTask>
     <setupTask

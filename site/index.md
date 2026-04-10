@@ -28,32 +28,38 @@ To launch the eclipse-installer for a selected setup press the button launch at 
 This section contains setups with Eclipse and bnd ([**release**][41] or [**snapshot**][42] versions).
 Choose what you **want to do** and which version you **want to have**.
 
-| I want to ...                                       | ![oomph][95] bnd **release**      | ![oomph][95] bnd **snapshot** |
-|-----------------------------------------------------|:---------------------------------:|:------------------------------------------------------:|
-| start a **new project** in a empty workspace        | [{{ site.install_button }}][50r]  | [{{ site.install_button }}][50s]                       |
-| import a **existing local git repo**                | [{{ site.install_button }}][51r]  | [{{ site.install_button }}][51s]                       |
-| import a github repo `organisation/project:branch`  | [{{ site.install_button }}][52r]  | [{{ site.install_button }}][52s]                       |
+| I want to ...                                       | ![oomph][95] bnd **release**      | ![oomph][95] bnd **snapshot**    |
+|------------------------|:---------------------------------:|:--------------------------------:|
+| start a **new project** in a empty workspace        | [{{ site.install_button }}][50r]  | [{{ site.install_button }}][50s] |
+| import a **existing local git repo**                | [{{ site.install_button }}][51r]  | [{{ site.install_button }}][51s] |
+| import a github repo `organisation/project:branch`  | [{{ site.install_button }}][52r]  | [{{ site.install_button }}][52s] |
 
-[50r]: eclipse+installer:https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/master/setup/bnd/config_bnd_50r.setup
-[50s]: eclipse+installer:https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/master/setup/bnd/config_bnd_50s.setup
-[51r]: eclipse+installer:https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/master/setup/bnd/config_bnd_51r.setup
-[51s]: eclipse+installer:https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/master/setup/bnd/config_bnd_51s.setup
-[52r]: eclipse+installer:https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/master/setup/bnd/config_bnd_52r.setup
-[52s]: eclipse+installer:https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/master/setup/bnd/config_bnd_52s.setup
+[50r]: eclipse+installer:{{ site.raw_github_url }}/master/setup/bnd/config_bnd_50r.setup
+[50s]: eclipse+installer:{{ site.raw_github_url }}/master/setup/bnd/config_bnd_50s.setup
+[51r]: eclipse+installer:{{ site.raw_github_url }}/master/setup/bnd/config_bnd_51r.setup
+[51s]: eclipse+installer:{{ site.raw_github_url }}/master/setup/bnd/config_bnd_51s.setup
+[52r]: eclipse+installer:{{ site.raw_github_url }}/master/setup/bnd/config_bnd_52r.setup
+[52s]: eclipse+installer:{{ site.raw_github_url }}/master/setup/bnd/config_bnd_52s.setup
 
-## I want to develop my project with bnd+ecf 
+## I want to develop my project with bnd+ecf
 
 [ecf - Eclipse Communication Framework](https://github.com/eclipse-ecf/ecf)
 
-| I want to ...                                       | ![oomph][95] with bnd **release** |
-|-----------------------------------------------------|:---------------------------------:|
-| start a **new project** with **latest ecf**         | [{{ site.install_button }}][60]   |
-| start a **new project** with **ecf 3.16.5**         | [{{ site.install_button }}][62]   |
-| start a **new project** with **ecf 3.15.7**         | [{{ site.install_button }}][61]   |
+| I want to ...                               | ![oomph][95] bnd **release**.    | ![oomph][95] bnd **snapshots**   |
+|---------------------------------------------|:--------------------------------:|:--------------------------------:|
+| start a **new project** with **latest ecf** | [{{ site.install_button }}][60r] | [{{ site.install_button }}][60s] |
+| start a **new project** with **ecf 3.16.7** | [{{ site.install_button }}][63r] | [{{ site.install_button }}][63s] |
+| start a **new project** with **ecf 3.16.5** | [{{ site.install_button }}][62r] | [{{ site.install_button }}][62s] |
+| start a **new project** with **ecf 3.15.7** | [{{ site.install_button }}][61r] | [{{ site.install_button }}][61s] |
 
-[60]: eclipse+installer:https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/master/setup/ecf/config_ecf_60.setup
-[61]: eclipse+installer:https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/master/setup/ecf/config_ecf_61.setup
-[62]: eclipse+installer:https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/master/setup/ecf/config_ecf_62.setup
+[60r]: eclipse+installer:{{ site.raw_github_url }}/master/setup/ecf/config_ecf_60r.setup
+[61r]: eclipse+installer:{{ site.raw_github_url }}/master/setup/ecf/config_ecf_61r.setup
+[62r]: eclipse+installer:{{ site.raw_github_url }}/master/setup/ecf/config_ecf_62r.setup
+[63r]: eclipse+installer:{{ site.raw_github_url }}/master/setup/ecf/config_ecf_63r.setup
+[60s]: eclipse+installer:{{ site.raw_github_url }}/master/setup/ecf/config_ecf_60s.setup
+[61s]: eclipse+installer:{{ site.raw_github_url }}/master/setup/ecf/config_ecf_61s.setup
+[62s]: eclipse+installer:{{ site.raw_github_url }}/master/setup/ecf/config_ecf_62s.setup
+[63s]: eclipse+installer:{{ site.raw_github_url }}/master/setup/ecf/config_ecf_63s.setup
 
 ## I want to contribute to [`bndtools`](https://github.com/bndtools) github organisation
 
@@ -72,11 +78,11 @@ For a detailed overview on EPP packages see [comparison of Eclipse EPP Packages]
 | my github `organisation/project` with **branch selection** |                                  | [{{ site.install_button }}][12s]  |
 | **import of existing local git repo**                      |                                  | [{{ site.install_button }}][13s]  |
 
-[10r]: eclipse+installer:https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/master/setup/bnd/config_bnd_10r.setup
-[10s]: eclipse+installer:https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/master/setup/bnd/config_bnd_10s.setup
-[11s]: eclipse+installer:https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/master/setup/bnd/config_bnd_11s.setup
-[12s]: eclipse+installer:https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/master/setup/bnd/config_bnd_12s.setup
-[13s]: eclipse+installer:https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/master/setup/bnd/config_bnd_13s.setup
+[10r]: eclipse+installer:{{ site.raw_github_url }}/master/setup/bnd/config_bnd_10r.setup
+[10s]: eclipse+installer:{{ site.raw_github_url }}/master/setup/bnd/config_bnd_10s.setup
+[11s]: eclipse+installer:{{ site.raw_github_url }}/master/setup/bnd/config_bnd_11s.setup
+[12s]: eclipse+installer:{{ site.raw_github_url }}/master/setup/bnd/config_bnd_12s.setup
+[13s]: eclipse+installer:{{ site.raw_github_url }}/master/setup/bnd/config_bnd_13s.setup
 
 ### other bndtools [repos](https://github.com/bndtools)
 
@@ -85,11 +91,11 @@ For a detailed overview on EPP packages see [comparison of Eclipse EPP Packages]
 | repo `bndtools.p2.repo` on branch `master`     | [{{ site.install_button }}][21s]   |
 | repo `workspace-templates` on branch `master`  | [{{ site.install_button }}][22s]   |
 
-[21s]: eclipse+installer:https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/master/setup/bndtools.p2.repo/config_bndtools-p2-repo_21s.setup
-[22s]: eclipse+installer:https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/master/setup/workspace-templates/config_workspace-templates_22s.setup
+[21s]: eclipse+installer:{{ site.raw_github_url }}/master/setup/bndtools.p2.repo/config_bndtools-p2-repo_21s.setup
+[22s]: eclipse+installer:{{ site.raw_github_url }}/master/setup/workspace-templates/config_workspace-templates_22s.setup
 
-[41]: https://github.com/bndtools/bnd/wiki/Changes-in-7.1.0
-[42]: https://github.com/bndtools/bnd/wiki/Changes-in-7.2.0
+[41]: https://github.com/bndtools/bnd/wiki/Changes-in-7.2.1
+[42]: https://github.com/bndtools/bnd/wiki/Changes-in-7.3.0
 
 [90]: https://www.eclipse.org/downloads/packages/
 [91]: https://www.eclipse.org/downloads/packages/compare

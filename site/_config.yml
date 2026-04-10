@@ -34,3 +34,4 @@ exclude:
   - vendor
   - "*.0/"
   - "[0-9]*/"
+raw_github_url: "https://raw.githubusercontent.com/bndtools/bndtools.p2.repo"
