@@ -31,4 +31,4 @@ end
 gem "http_parser.rb", "~> 0.6.0", :platforms => [:jruby]
 
 # Web server - pinned to avoid FrozenError with Ruby 3.4+
-gem "webrick", "~> 1.8.1"
+gem "webrick", "~> 1.9.2"
