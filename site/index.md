@@ -1,7 +1,5 @@
----
 layout: page
 title: "oomph setups for bnd"
----
 
 ## overview on bnd/bndtools setups
 
@@ -16,10 +14,6 @@ To launch the eclipse-installer for a selected setup press the button launch at 
 
 # Table of Contents
 
-- [overview on bnd/bndtools setups](#overview-on-bndbndtools-setups)
-- [I want to develop my project with bnd](#i-want-to-develop-my-project-with-bnd)
-- [I want to develop my project with bnd+ecf](#i-want-to-develop-my-project-with-bndecf)
-- [I want to contribute to github organisation `bndtools`](#i-want-to-contribute-to-bndtools-github-organisation)
     - [github repo `bnd`](#github-repo-bnd)
     - [other bndtools repos](#other-bndtools-repos)
 
