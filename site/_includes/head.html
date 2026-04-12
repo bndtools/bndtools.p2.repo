@@ -10,6 +10,8 @@
   {%- if jekyll.environment == 'production' and site.google_analytics -%}
     {%- include google-analytics.html -%}
   {%- endif -%}
+    <!-- Favicon for all pages -->
+    <link rel="icon" type="image/x-icon" href="{{ '/assets/favicon.ico' | relative_url }}">
   
   <!-- Dark Mode JavaScript (loaded early to prevent flash) -->
   <script src="{{ "/assets/dark-mode.js" | relative_url }}"></script>

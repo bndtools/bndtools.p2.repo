@@ -3,14 +3,18 @@ layout: page
 title: "oomph setups for bnd"
 ---
 
+<!-- Display large bndtools image at the top of the page -->
+<p align="center">
+  <img src="assets/favicon-256.png" alt="bndtools logo" width="180" height="180" align="left" style="margin:5px;" />
+</p>
+
 ## overview on bnd/bndtools setups
 
 This page contains eclipse-installer setups for eclipse with pre-configured bnd/bndtools and configurations.
 All setups are based on the **eclipse-installer** aka. **oomph**.
 
 The oomph setups allow re-using existing eclipse product configurations like latest eclipse release for the setups.
-Further-more they can easily extended with the pre-configured update sites and features can be re-installed.
-On appearance of newer versions on eclipse releaes and features they will be immediately offered as updats.
+Further-more they can be easily extended with the pre-configured update sites and features. On appearance of newer versions of eclipse releaes and features they will be immediately offered as updates.
 
 ### pre-requisite installation of eclipse installer/oomph
 
