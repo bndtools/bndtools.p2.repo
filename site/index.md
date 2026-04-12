@@ -12,15 +12,15 @@ All setups are based on the **eclipse-installer** aka. **oomph**.
 
 We assume that the locally installed oomph with a registered URL handler for the protocol [`eclipse+installer`](eclipse+installer:) is available from here onwards.
 
-To launch the eclipse-installer for a selected setup press the button launch at the beginning of a row.
+To launch the eclipse-installer for a selected setup press either release or snapshot button, depending on the bndtools setup you want.
 
 ## Table of Contents
 
 - [I want to develop my project with bnd](#i-want-to-develop-my-project-with-bnd)
 - [I want to develop my project with bnd+ecf](#i-want-to-develop-my-project-with-bndecf)
 - [I want to contribute to bndtools github organisation](#i-want-to-contribute-to-bndtools-github-organisation)
-    - [github repo bnd](#github-repo-bnd)
-    - [other bndtools repos](#other-bndtools-repos)
+  - [github repo bnd](#github-repo-bnd)
+  - [other bndtools repos](#other-bndtools-repos)
 
 ## I want to develop my project with bnd
 
