@@ -14,9 +14,12 @@ We assume that the locally installed oomph with a registered URL handler for the
 
 To launch the eclipse-installer for a selected setup press the button launch at the beginning of a row.
 
-# Table of Contents
+## Table of Contents
 
-    - [github repo `bnd`](#github-repo-bnd)
+- [I want to develop my project with bnd](#i-want-to-develop-my-project-with-bnd)
+- [I want to develop my project with bnd+ecf](#i-want-to-develop-my-project-with-bndecf)
+- [I want to contribute to bndtools github organisation](#i-want-to-contribute-to-bndtools-github-organisation)
+    - [github repo bnd](#github-repo-bnd)
     - [other bndtools repos](#other-bndtools-repos)
 
 ## I want to develop my project with bnd
