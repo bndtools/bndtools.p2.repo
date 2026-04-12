@@ -1,11 +1,12 @@
 bg_url="https://avatars.githubusercontent.com/u/136694522?s=280&v=4"
-font="/System/Library/Fonts/Supplemental/Arial Bold.ttf"
 
 curl -L "$bg_url" -o bg.png
 
-magick -background none -fill white \
+font="/System/Library/Fonts/Supplemental/Arial Bold.ttf"
+magick -background none \
+  -fill "#8B0000" \
   -font "$font" \
-  -pointsize 260 \
+  -pointsize 100 \
   label:bnd \
   -trim +repage \
   -gravity center \
