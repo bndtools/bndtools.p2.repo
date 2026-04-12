@@ -14,7 +14,8 @@ This page contains eclipse-installer setups for eclipse with pre-configured bnd/
 All setups are based on the **eclipse-installer** aka. **oomph**.
 
 The oomph setups allow re-using existing eclipse product configurations like latest eclipse release for the setups.
-Further-more they can be easily extended with the pre-configured update sites and features. On appearance of newer versions of eclipse releaes and features they will be immediately offered as updates.
+Further-more they can be easily extended with the pre-configured update sites and features. 
+On appearance of newer versions of eclipse releaes and features they will be immediately offered as updates.
 
 ### pre-requisite installation of eclipse installer/oomph
 
