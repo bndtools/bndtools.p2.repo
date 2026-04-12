@@ -16,7 +16,7 @@
       label="bnd Workspace">
     <stream
         href="project_bnd_workspace.setup#//@streams[name='local-git-repo']"/>
-    <description>The My workspace provides cool stuff.</description>
+    <description>bndtools snapshot workspace for importing an existing local git repo.</description>
   </workspace>
-  <description>The My configuration provides cool stuff.</description>
+  <description>bndtools snapshot for importing an existing local git repo.</description>
 </setup:Configuration>

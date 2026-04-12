@@ -48,7 +48,7 @@
     </setupTask>
     <stream
         href="project_bnd.setup#//@streams[name='master']"/>
-    <description>The My workspace provides cool stuff.</description>
+    <description>bndtools snapshot workspace for github project bndtools/bnd on branch master.</description>
   </workspace>
-  <description>The My configuration provides cool stuff.</description>
+  <description>bndtools snapshot for github project bndtools/bnd on branch master.</description>
 </setup:Configuration>

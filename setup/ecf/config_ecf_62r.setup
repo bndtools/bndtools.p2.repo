@@ -34,7 +34,7 @@
         label="bndtools-release"/>
     <stream
         href="project_ecf.setup#//@streams[name='ecf_3.16.5']"/>
-    <description>ECF Remote Services</description>
+    <description>bndtools release workspace for starting a new project with ecf 3.16.5 (ECF Remote Services).</description>
   </workspace>
-  <description>The My configuration provides cool stuff.</description>
+  <description>bndtools release for starting a new project with ecf 3.16.5.</description>
 </setup:Configuration>

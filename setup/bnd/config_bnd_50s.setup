@@ -46,7 +46,7 @@
     </setupTask>
     <stream
         href="project_bnd_workspace.setup#//@streams[name='none']"/>
-    <description>The My workspace provides cool stuff.</description>
+    <description>bndtools snapshot workspace for starting a new project in an empty workspace.</description>
   </workspace>
-  <description>The My configuration provides cool stuff.</description>
+  <description>bndtools snapshot for starting a new project in an empty workspace.</description>
 </setup:Configuration>

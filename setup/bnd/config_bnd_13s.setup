@@ -48,7 +48,7 @@
     </setupTask>
     <stream
         href="project_bnd.setup#//@streams[name='local-bnd-git-repo']"/>
-    <description>The My workspace provides cool stuff.</description>
+    <description>bndtools snapshot workspace for import of existing local git repo (contributor setup).</description>
   </workspace>
-  <description>The My configuration provides cool stuff.</description>
+    <description>bndtools snapshot for import of existing local git repo (contributor setup).</description>
 </setup:Configuration>

@@ -46,7 +46,7 @@
     </setupTask>
     <stream
         href="project_bnd_workspace.setup#//@streams[name='github-repo']"/>
-    <description>The My workspace provides cool stuff.</description>
+    <description>bndtools snapshot workspace for importing a github repo organisation/project:branch.</description>
   </workspace>
-  <description>The My configuration provides cool stuff.</description>
+    <description>bndtools snapshot for importing a github repo organisation/project:branch.</description>
 </setup:Configuration>
