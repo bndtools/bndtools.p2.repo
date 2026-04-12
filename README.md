@@ -17,4 +17,4 @@ This requires Ruby (no extra gems needed). Press Ctrl+C to stop the server.
 
 press on the following link for installation of eclipse ide with this repo checked out for modification
 
-[![eclipse on bndtools.p2.repo branch master](https://img.shields.io/static/v1?logo=eclipseide&label=eclipse%20%2B%20bndtools.p2.repo&message=branch%20:%20master&style=for-the-badge&logoColor=white&labelColor=963508&color=gray)](https://www.eclipse.org/setups/installer/?url=https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/master/setup/config_ecl-latest_bndtools-p2-repo.setup&show=true)
+[![eclipse on bndtools.p2.repo branch master](https://img.shields.io/static/v1?logo=eclipseide&label=eclipse%20%2B%20bndtools.p2.repo&message=branch%20:%20master&style=for-the-badge&logoColor=white&labelColor=963508&color=gray)](https://www.eclipse.org/setups/installer/?url=https://raw.githubusercontent.com/bndtools/bndtools.p2.repo/master/setup/bndtools.p2.repo/config_bndtools-p2-repo_21s.setup&show=true)
