@@ -8,6 +8,12 @@ title: "oomph setups for bnd"
 This page contains eclipse-installer setups for eclipse with pre-configured bnd/bndtools and configurations.
 All setups are based on the **eclipse-installer** aka. **oomph**.
 
+The oomph setups allow re-using existing eclipse product configurations like latest eclipse release for the setups.
+Further-more they can easily extended with the pre-configured update sites and features can be re-installed.
+On appearance of newer versions on eclipse releaes and features they will be immediately offered as updats.
+
+### pre-requisite installation of eclipse installer/oomph
+
 <a href="https://www.eclipse.org/setups/installer/" target="_blank">Press here to download, install and register URL protocol handler from **eclipse-installer** as a pre-requisite for all of these setups.</a>
 
 We assume that the locally installed oomph with a registered URL handler for the protocol [`eclipse+installer`](eclipse+installer:) is available from here onwards.
