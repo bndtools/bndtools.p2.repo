@@ -2,6 +2,7 @@
 <setup:Configuration
     xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:setup="http://www.eclipse.org/oomph/setup/1.0"
     label="import bnd workspace">
   <installation
@@ -14,6 +15,35 @@
   <workspace
       name="bnd.workspace"
       label="bnd Workspace">
+    <setupTask
+        xsi:type="setup:VariableTask"
+        id="bndtools-release"
+        type="URI"
+        name="bndtools-release"
+        defaultValue="https://bndtools.jfrog.io/bndtools/update-snapshot"
+        label="bndtools-release">
+      <choice
+          value="https://bndtools.org/bndtools.p2.repo/7.1.0"
+          label="rel 7.1.0"/>
+      <choice
+          value="https://bndtools.org/bndtools.p2.repo/7.0.0"
+          label="rel 7.0.0"/>
+      <choice
+          value="https://bndtools.org/bndtools.p2.repo/6.4.1"
+          label="rel 6.4.1"/>
+      <choice
+          value="https://bndtools.jfrog.io/bndtools/update-latest"
+          label="release (JFrog)"/>
+      <choice
+          value="https://bndtools.jfrog.io/bndtools/update-snapshot"
+          label="snapshot (JFrog)"/>
+      <choice
+          value="https://bndtools.jfrog.io/artifactory/p2/pr/${pullrequest}/"
+          label="SelectPullRequest"/>
+      <choice
+          value="${pr.repo.uri}"
+          label="RepoURL"/>
+    </setupTask>
     <stream
         href="project_bnd_workspace.setup#//@streams[name='local-git-repo']"/>
     <description>bndtools snapshot workspace for importing an existing local git repo.</description>
