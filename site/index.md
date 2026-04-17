@@ -55,9 +55,10 @@ Choose what you **want to do** and which version you **want to have**.
 
 [ecf - Eclipse Communication Framework](https://github.com/eclipse-ecf/ecf)
 
-| I want to ...                               | ![oomph][95] bnd **release**.    | ![oomph][95] bnd **snapshots**   |
+| I want to ...                               | ![oomph][95] bnd **release**     | ![oomph][95] bnd **snapshots**   |
 |---------------------------------------------|:--------------------------------:|:--------------------------------:|
 | start a **new project** with **latest ecf** | [{{ site.install_button }}][60r] | [{{ site.install_button }}][60s] |
+| start a **new project** with **ecf 3.16.7** | [{{ site.install_button }}][64r] | [{{ site.install_button }}][64s] |
 | start a **new project** with **ecf 3.16.7** | [{{ site.install_button }}][63r] | [{{ site.install_button }}][63s] |
 | start a **new project** with **ecf 3.16.5** | [{{ site.install_button }}][62r] | [{{ site.install_button }}][62s] |
 | start a **new project** with **ecf 3.15.7** | [{{ site.install_button }}][61r] | [{{ site.install_button }}][61s] |
