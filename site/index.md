@@ -81,7 +81,7 @@ As base IDE for bnd setups we are using the EPP package [Eclipse for Eclipse Com
 
 For a detailed overview on EPP packages see [comparison of Eclipse EPP Packages][91]
 
-| I want to ...                                              | ![oomph][95] bnd **release**     | ![oomph][95] bnd **snapshot**     |
+| I want to develop on ...                                   | ![oomph][95] bnd **release**     | ![oomph][95] bnd **snapshot**     |
 |------------------------------------------------------------|:--------------------------------:|:---------------------------------:|
 | github project `bndtools/bnd` on branch `master`           | [{{ site.install_button }}][10r] | [{{ site.install_button }}][10s]  |
 | github project `bndtools/bnd` with **branch selection**    |                                  | [{{ site.install_button }}][11s]  |
@@ -96,7 +96,7 @@ For a detailed overview on EPP packages see [comparison of Eclipse EPP Packages]
 
 ### other bndtools [repos](https://github.com/bndtools)
 
-| I want to ...                                  | ![oomph][95] with bnd **snapshot** |
+| I want to modify the ...                       | ![oomph][95] with bnd **snapshot** |
 |------------------------------------------------|:----------------------------------:|
 | repo `bndtools.p2.repo` on branch `master`     | [{{ site.install_button }}][21s]   |
 | repo `workspace-templates` on branch `master`  | [{{ site.install_button }}][22s]   |
