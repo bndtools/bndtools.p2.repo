@@ -22,4 +22,11 @@
 
     ![alt text](04_update_index.md.png)
 
-Create a signed commit, push it and test the changed entries!
+    Create a signed commit, push! 
+    Wait for [gh action to finish](https://github.com/bndtools/bndtools.p2.repo/actions/workflows/static.yml)
+    
+    Verify the deployed resul  [oomph setups](https://bndtools.org/bndtools.p2.repo/)
+
+    ![alt text](05_final_index.md.png)
+
+    test the updated/changed entries!

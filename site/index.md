@@ -63,6 +63,8 @@ Choose what you **want to do** and which version you **want to have**.
 | start a **new project** with **ecf 3.16.5** | [{{ site.install_button }}][62r] | [{{ site.install_button }}][62s] |
 | start a **new project** with **ecf 3.15.7** | [{{ site.install_button }}][61r] | [{{ site.install_button }}][61s] |
 
+Dev doc: [How to add/update ecf version](doc/ecf/update_ECF.md)
+
 [60r]: eclipse+installer:{{ site.raw_github_url }}/master/setup/ecf/config_ecf_60r.setup
 [61r]: eclipse+installer:{{ site.raw_github_url }}/master/setup/ecf/config_ecf_61r.setup
 [62r]: eclipse+installer:{{ site.raw_github_url }}/master/setup/ecf/config_ecf_62r.setup
