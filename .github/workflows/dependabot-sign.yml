@@ -1,0 +1,77 @@
+# Re-creates Dependabot's unsigned branch commits via the GitHub API so that
+# they are marked as verified/signed by GitHub.  This is required when the
+# repository has "Require signed commits" branch-protection enabled and the
+# "Dependabot on Actions runners" Advanced-Security setting is unavailable.
+#
+# How it works
+# ------------
+# Commits created through the GitHub Git Data API are automatically marked as
+# verified (signed) by GitHub.  This workflow re-creates the HEAD commit of
+# every Dependabot PR using that API, then force-updates the branch reference
+# to the new verified commit SHA.  The commit tree, message, author, and
+# committer are all preserved; only the internal SHA changes.
+#
+# The workflow uses pull_request_target so that GITHUB_TOKEN has the
+# contents:write permission required to update the branch reference.
+# No PR code is ever checked out, so using pull_request_target is safe here.
+name: Sign Dependabot commits
+
+on:
+  pull_request_target:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: write
+
+jobs:
+  sign:
+    runs-on: ubuntu-latest
+    if: github.actor == 'dependabot[bot]'
+    steps:
+      - name: Re-create commit via GitHub API to obtain a verified signature
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const { owner, repo } = context.repo;
+            const headSha  = context.payload.pull_request.head.sha;
+            const branch   = context.payload.pull_request.head.ref;
+
+            // Skip if the commit is already verified (e.g. after a re-run).
+            const { data: commitData } = await github.rest.repos.getCommit({
+              owner, repo, ref: headSha,
+            });
+            if (commitData.commit.verification.verified) {
+              core.info('Commit is already verified – nothing to do.');
+              return;
+            }
+
+            // Fetch the raw commit object so we can preserve every field.
+            const { data: rawCommit } = await github.rest.git.getCommit({
+              owner, repo, commit_sha: headSha,
+            });
+
+            // Re-create the same commit through the API.
+            // GitHub automatically marks API-created commits as verified.
+            const { data: newCommit } = await github.rest.git.createCommit({
+              owner,
+              repo,
+              message:   rawCommit.message,
+              tree:      rawCommit.tree.sha,
+              parents:   rawCommit.parents.map(p => p.sha),
+              author:    rawCommit.author,
+              committer: rawCommit.committer,
+            });
+
+            // Point the Dependabot branch at the new verified commit.
+            await github.rest.git.updateRef({
+              owner,
+              repo,
+              ref:   `heads/${branch}`,
+              sha:   newCommit.sha,
+              force: true,
+            });
+
+            core.info(
+              `Re-signed: ${headSha.slice(0, 7)} → ${newCommit.sha.slice(0, 7)}`
+            );
