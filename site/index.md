@@ -57,23 +57,11 @@ Choose what you **want to do** and which version you **want to have**.
 
 | I want to ...                               | ![oomph][95] bnd **release**     | ![oomph][95] bnd **snapshots**   |
 |---------------------------------------------|:--------------------------------:|:--------------------------------:|
-| start a **new project** with **latest ecf** | [{{ site.install_button }}][60r] | [{{ site.install_button }}][60s] |
 | start a **new project** with **ecf 3.16.8** | [{{ site.install_button }}][64r] | [{{ site.install_button }}][64s] |
-| start a **new project** with **ecf 3.16.7** | [{{ site.install_button }}][63r] | [{{ site.install_button }}][63s] |
-| start a **new project** with **ecf 3.16.5** | [{{ site.install_button }}][62r] | [{{ site.install_button }}][62s] |
-| start a **new project** with **ecf 3.15.7** | [{{ site.install_button }}][61r] | [{{ site.install_button }}][61s] |
 
-Dev doc: [How to add/update ecf version](doc/ecf/update_ECF.md)
+[How to add/update ecf version on this page](doc/ecf/update_ECF.md)
 
-[60r]: eclipse+installer:{{ site.raw_github_url }}/master/setup/ecf/config_ecf_60r.setup
-[61r]: eclipse+installer:{{ site.raw_github_url }}/master/setup/ecf/config_ecf_61r.setup
-[62r]: eclipse+installer:{{ site.raw_github_url }}/master/setup/ecf/config_ecf_62r.setup
-[63r]: eclipse+installer:{{ site.raw_github_url }}/master/setup/ecf/config_ecf_63r.setup
 [64r]: eclipse+installer:{{ site.raw_github_url }}/master/setup/ecf/config_ecf_64r.setup
-[60s]: eclipse+installer:{{ site.raw_github_url }}/master/setup/ecf/config_ecf_60s.setup
-[61s]: eclipse+installer:{{ site.raw_github_url }}/master/setup/ecf/config_ecf_61s.setup
-[62s]: eclipse+installer:{{ site.raw_github_url }}/master/setup/ecf/config_ecf_62s.setup
-[63s]: eclipse+installer:{{ site.raw_github_url }}/master/setup/ecf/config_ecf_63s.setup
 [64s]: eclipse+installer:{{ site.raw_github_url }}/master/setup/ecf/config_ecf_64s.setup
 
 ## I want to contribute to [`bndtools`](https://github.com/bndtools) github organisation
