@@ -22,19 +22,28 @@
         name="bndtools-release"
         value="https://bndtools.jfrog.io/bndtools/update-snapshot"
         label="bndtools-release">
-      <choice
-          value="https://bndtools.org/bndtools.p2.repo/7.1.0"
-          label="rel 7.1.0"/>
-      <choice
-          value="https://bndtools.org/bndtools.p2.repo/6.4.1"
-          label="rel 6.4.1"/>
-      <choice
-          value="https://bndtools.jfrog.io/bndtools/update-latest"
-          label="release (JFrog)"/>
-      <choice
-          value="https://bndtools.jfrog.io/bndtools/update-snapshot"
-          label="snapshot (JFrog)"/>
-    </setupTask>
+          <choice
+        value="https://bndtools.org/bndtools.p2.repo/7.3.0"
+        label="rel 7.3.0"/>
+    <choice
+        value="https://bndtools.org/bndtools.p2.repo/7.2.3"
+        label="rel 7.2.3"/>
+    <choice
+        value="https://bndtools.org/bndtools.p2.repo/7.1.0"
+        label="rel 7.1.0"/>
+    <choice
+        value="https://bndtools.org/bndtools.p2.repo/7.0.0"
+        label="rel 7.0.0"/>
+    <choice
+        value="https://bndtools.org/bndtools.p2.repo/6.4.1"
+        label="rel 6.4.1"/>
+    <choice
+        value="https://bndtools.jfrog.io/bndtools/update-latest"
+        label="release (JFrog)"/>
+    <choice
+        value="https://bndtools.jfrog.io/bndtools/update-snapshot"
+        label="snapshot (JFrog)"/>
+</setupTask>
     <stream
         href="project_workspace-templates.setup#//@streams[name='master']"/>
     <description>bndtools workspace-templates on branch master.</description>

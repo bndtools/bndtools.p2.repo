@@ -3,7 +3,7 @@
 purpose of this repo is the provisioning of bndtools release additions
 
 * [oomph / eclipse-installer configuration setup links](https://bndtools.org/bndtools.p2.repo/)
-* as directly accessible p2 repositories e.g. [https://bndtools.org/bndtools.p2.repo/7.1.0/](https://bndtools.org/bndtools.p2.repo/7.1.0/)
+* as directly accessible p2 repositories e.g. [https://bndtools.org/bndtools.p2.repo/7.3.0/](https://bndtools.org/bndtools.p2.repo/7.3.0/)
 
 ## direct github pages URL for accessing published repo content
 

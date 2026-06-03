@@ -97,7 +97,7 @@ For a detailed overview on EPP packages see [comparison of Eclipse EPP Packages]
 [21s]: eclipse+installer:{{ site.raw_github_url }}/master/setup/bndtools.p2.repo/config_bndtools-p2-repo_21s.setup
 [22s]: eclipse+installer:{{ site.raw_github_url }}/master/setup/workspace-templates/config_workspace-templates_22s.setup
 
-[41]: https://github.com/bndtools/bnd/wiki/Changes-in-7.2.1
+[41]: https://github.com/bndtools/bnd/wiki/Changes-in-7.3.0
 [42]: https://github.com/bndtools/bnd/wiki/Changes-in-7.3.0
 
 [90]: https://www.eclipse.org/downloads/packages/
