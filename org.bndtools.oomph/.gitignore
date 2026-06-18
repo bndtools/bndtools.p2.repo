@@ -1,0 +1,6 @@
+target/
+**/target/
+bin/
+*.log
+.DS_Store
+.mvn/wrapper/apache-maven-*/

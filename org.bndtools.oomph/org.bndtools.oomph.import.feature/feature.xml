@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+    id="org.bndtools.oomph.import.feature"
+    label="Oomph Bndtools Import Feature"
+    version="1.0.0.qualifier"
+    provider-name="bndtools.org">
+
+  <description>
+    Adds an Oomph setup task type for Bnd workspace initialization.
+  </description>
+
+  <plugin
+      id="org.bndtools.oomph.import"
+      download-size="0"
+      install-size="0"
+      version="0.0.0"
+      unpack="false"/>
+</feature>

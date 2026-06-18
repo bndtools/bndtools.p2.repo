@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Oomph Bndtools Import Extension
+Bundle-SymbolicName: org.bndtools.oomph.import;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: bndtools.org
+Require-Bundle: org.eclipse.oomph.setup
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Automatic-Module-Name: org.bndtools.oomph.import

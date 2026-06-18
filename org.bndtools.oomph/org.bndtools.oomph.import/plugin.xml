@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin>
+  <extension point="org.eclipse.oomph.setup.setupTasks">
+    <setupTask
+        type="org.bndtools.import"
+        class="org.bndtools.oomph.importer.BndWorkspaceImportTask"
+        name="Import Bnd Workspace"/>
+  </extension>
+</plugin>

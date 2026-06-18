@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+  <feature
+      id="org.bndtools.oomph.import.feature"
+      version="0.0.0"
+      url="features/org.bndtools.oomph.import.feature_0.0.0.jar">
+    <category name="org.bndtools.oomph"/>
+  </feature>
+
+  <category-def
+      name="org.bndtools.oomph"
+      label="Bndtools Oomph Extensions"/>
+</site>
