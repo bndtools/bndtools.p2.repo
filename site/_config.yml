@@ -32,7 +32,6 @@ exclude:
   - Gemfile.lock
   - node_modules
   - vendor
-  - oomph-bndtools-import-task
   - "*.0/"
   - "[0-9]*/"
 raw_github_url: "https://raw.githubusercontent.com/bndtools/bndtools.p2.repo"
