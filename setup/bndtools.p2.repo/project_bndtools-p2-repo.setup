@@ -166,6 +166,16 @@
         option="-Djdk.xml.maxGeneralEntitySizeLimit"
         value="=0"
         vm="true"/>
+    <setupTask
+        xsi:type="setup:EclipseIniTask"
+        option="-Djdk.xml.totalEntitySizeLimit"
+        value="=0"
+        vm="true"/>
+    <setupTask
+        xsi:type="setup:EclipseIniTask"
+        option="-Djdk.xml.entityExpansionLimit"
+        value="=0"
+        vm="true"/>
   </setupTask>
   <setupTask
       xsi:type="setup:VariableTask"
