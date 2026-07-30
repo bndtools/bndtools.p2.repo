@@ -147,6 +147,11 @@
         option="-Dorg.eclipse.oomph.setup.donate"
         value="=false"
         vm="true"/>
+    <setupTask
+        xsi:type="setup:EclipseIniTask"
+        option="-Djdk.xml.maxGeneralEntitySizeLimit"
+        value="=0"
+        vm="true"/>
   </setupTask>
   <setupTask
       xsi:type="setup:VariableTask"

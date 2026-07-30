@@ -161,6 +161,11 @@
         excludedTriggers="STARTUP"
         option="-perspective"
         value="bndtools.perspective"/>
+    <setupTask
+        xsi:type="setup:EclipseIniTask"
+        option="-Djdk.xml.maxGeneralEntitySizeLimit"
+        value="=0"
+        vm="true"/>
   </setupTask>
   <setupTask
       xsi:type="setup:VariableTask"
