@@ -25,6 +25,9 @@ We assume that the locally installed oomph with a registered URL handler for the
 
 To launch the eclipse-installer for a selected setup press either release or snapshot button, depending on the bndtools setup you want.
 
+The [published p2 repository list](https://bndtools.org/bndtools.p2.repo/p2.html)
+contains all directly accessible bnd/bndtools update sites.
+
 ## Table of Contents
 
 - [I want to develop my project with bnd](#i-want-to-develop-my-project-with-bnd)
@@ -97,8 +100,8 @@ For a detailed overview on EPP packages see [comparison of Eclipse EPP Packages]
 [21s]: eclipse+installer:{{ site.raw_github_url }}/master/setup/bndtools.p2.repo/config_bndtools-p2-repo_21s.setup
 [22s]: eclipse+installer:{{ site.raw_github_url }}/master/setup/workspace-templates/config_workspace-templates_22s.setup
 
-[41]: https://github.com/bndtools/bnd/wiki/Changes-in-7.3.0
-[42]: https://github.com/bndtools/bnd/wiki/Changes-in-7.3.0
+[41]: https://github.com/bndtools/bnd/wiki/Changes-in-7.4.0
+[42]: https://github.com/bndtools/bnd/wiki/Changes-in-7.4.0
 
 [90]: https://www.eclipse.org/downloads/packages/
 [91]: https://www.eclipse.org/downloads/packages/compare

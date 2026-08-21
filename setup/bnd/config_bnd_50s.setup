@@ -20,9 +20,12 @@
         id="bndtools-release"
         type="URI"
         name="bndtools-release"
-        defaultValue="https://bndtools.jfrog.io/bndtools/update-snapshot"
+        defaultValue="https://bndtools.org/bndtools.p2.repo/7.4.0"
         label="bndtools-release">
           <choice
+        value="https://bndtools.org/bndtools.p2.repo/7.4.0"
+        label="rel 7.4.0"/>
+    <choice
         value="https://bndtools.org/bndtools.p2.repo/7.3.0"
         label="rel 7.3.0"/>
     <choice

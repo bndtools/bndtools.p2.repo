@@ -76,6 +76,7 @@ Fallback when `xsltproc` is unavailable:
 
 Current policy baseline:
 
+- `rel 7.4.0`
 - `rel 7.3.0`
 - `rel 7.2.3`
 - `rel 7.1.0`

@@ -1,9 +1,27 @@
 # bndtools.p2.repo
 
-purpose of this repo is the provisioning of bndtools release additions
+This repository publishes the bnd/bndtools Eclipse p2 repositories and the
+Eclipse Installer (Oomph) setup models that make them easy to install. It also
+contains the source and build for a small Oomph extension used during bnd
+workspace setup.
 
-* [oomph / eclipse-installer configuration setup links](https://bndtools.org/bndtools.p2.repo/)
-* as directly accessible p2 repositories e.g. [https://bndtools.org/bndtools.p2.repo/7.3.0/](https://bndtools.org/bndtools.p2.repo/7.3.0/)
+For repository structure, local builds, release procedures, and validation
+commands, see the [developer guide](dev.md).
+
+* [Oomph / Eclipse Installer setup links](https://bndtools.org/bndtools.p2.repo/)
+* [Published p2 repository list](https://bndtools.org/bndtools.p2.repo/p2.html)
+* Directly accessible p2 repositories, for example [bndtools 7.4.0](https://bndtools.org/bndtools.p2.repo/7.4.0/)
+
+## For users
+
+Use the [published setup page](https://bndtools.org/bndtools.p2.repo/) to
+install Eclipse with bnd/bndtools, start a new bnd project, import an existing
+repository, or configure bnd plus ECF. The page also provides setup models for
+contributing to repositories in the bndtools GitHub organization.
+
+If an Eclipse installation asks for an update site directly, use the p2
+repository for the required release, such as
+`https://bndtools.org/bndtools.p2.repo/7.4.0/`.
 
 ## direct github pages URL for accessing published repo content
 
