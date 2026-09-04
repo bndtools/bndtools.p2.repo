@@ -236,9 +236,16 @@
         xsi:type="setup.p2:P2Task"
         label="JRE17"
         licenseConfirmationDisabled="true">
+      <annotation
+          source="http://www.eclipse.org/oomph/setup/JRESpecificTasks">
+        <content
+            xsi:type="setup:EclipseIniTask"
+            option="--add-opens=java.base/java.lang=ALL-UNNAMED"
+            vm="true"/>
+      </annotation>
       <requirement
-          name="a.jre.org.eclipse.justj.openjdk.hotspot.jre.full"
-          versionRange="[17.0.0,17.0.0]"/>
+          name="org.eclipse.justj.openjdk.hotspot.jre.full.feature.group"
+          filter="(|(&amp;(osgi.arch=aarch64)(osgi.os=linux))(&amp;(osgi.arch=aarch64)(osgi.os=macosx))(&amp;(osgi.arch=ppc64le)(osgi.os=linux))(&amp;(osgi.arch=riscv64)(osgi.os=linux))(&amp;(osgi.arch=x86_64)(osgi.os=linux))(&amp;(osgi.arch=x86_64)(osgi.os=macosx))(&amp;(osgi.arch=x86_64)(osgi.os=win32)))"/>
       <repository
           url="https://download.eclipse.org/justj/jres/17/updates/release"/>
     </setupTask>
@@ -257,8 +264,21 @@
         xsi:type="setup.p2:P2Task"
         label="JRE21"
         licenseConfirmationDisabled="true">
+      <annotation
+          source="http://www.eclipse.org/oomph/setup/JRESpecificTasks">
+        <content
+            xsi:type="setup:EclipseIniTask"
+            option="--add-opens=java.base/java.lang=ALL-UNNAMED"
+            vm="true"/>
+        <content
+            xsi:type="setup:EclipseIniTask"
+            option="-Djava.security.manager"
+            value="=allow"
+            vm="true"/>
+      </annotation>
       <requirement
-          name="org.eclipse.justj.openjdk.hotspot.jre.full.feature.group"/>
+          name="org.eclipse.justj.openjdk.hotspot.jre.full.feature.group"
+          filter="(|(&amp;(osgi.arch=aarch64)(osgi.os=linux))(&amp;(osgi.arch=aarch64)(osgi.os=macosx))(&amp;(osgi.arch=aarch64)(osgi.os=win32))(&amp;(osgi.arch=ppc64le)(osgi.os=linux))(&amp;(osgi.arch=riscv64)(osgi.os=linux))(&amp;(osgi.arch=x86_64)(osgi.os=linux))(&amp;(osgi.arch=x86_64)(osgi.os=macosx))(&amp;(osgi.arch=x86_64)(osgi.os=win32)))"/>
       <repository
           url="https://download.eclipse.org/justj/jres/21/updates/release"/>
     </setupTask>
@@ -271,7 +291,43 @@
         Define the JRE needed to compile and run the Java projects of
         ${scope.project.label}
       </description>
-      <defaultExecutionEnvironment>JavaSE-17</defaultExecutionEnvironment>
+      <defaultExecutionEnvironment>JavaSE-21</defaultExecutionEnvironment>
+    </setupTask>
+    <setupTask
+        xsi:type="setup.p2:P2Task"
+        label="JRE 25.0.2">
+      <annotation
+          source="http://www.eclipse.org/oomph/setup/JRESpecificTasks">
+        <content
+            xsi:type="setup:EclipseIniTask"
+            option="--add-opens=java.base/java.lang=ALL-UNNAMED"
+            vm="true"/>
+        <content
+            xsi:type="setup:EclipseIniTask"
+            option="-Djava.security.manager"
+            value="=disallow"
+            vm="true"/>
+      </annotation>
+      <requirement
+          name="org.eclipse.justj.openjdk.hotspot.jre.full.feature.group"
+          filter="(|(&amp;(osgi.arch=aarch64)(osgi.os=linux))(&amp;(osgi.arch=aarch64)(osgi.os=macosx))(&amp;(osgi.arch=ppc64le)(osgi.os=linux))(&amp;(osgi.arch=riscv64)(osgi.os=linux))(&amp;(osgi.arch=x86_64)(osgi.os=linux))(&amp;(osgi.arch=x86_64)(osgi.os=macosx))(&amp;(osgi.arch=x86_64)(osgi.os=win32)))"/>
+      <repository
+          url="https://download.eclipse.org/justj/jres/25/updates/release/latest"/>
+      <description>
+        Contains the plug-ins and fragments for the Adoptium OpenJDK Hotspot JRE Complete.
+        Provides the complete set of modules of the JDK, excluding incubators.
+      </description>
+    </setupTask>
+    <setupTask
+        xsi:type="jdt:JRETask"
+        version="JavaSE-25"
+        location="${jre.location-25}"
+        name="JRE for JavaSE-25">
+      <description>
+        Define the JRE needed to compile and run the Java projects of
+        ${scope.project.label}
+      </description>
+      <defaultExecutionEnvironment>JavaSE-25</defaultExecutionEnvironment>
     </setupTask>
   </setupTask>
   <stream name="none"
