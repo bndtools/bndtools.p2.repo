@@ -57,6 +57,7 @@
         xsi:type="setup:VariableTask"
         id="workspace.name"
         name="workspace.name"
+        value="bnd-${bndtools-release|uriLastSegment}-branch-${scope.project.stream.label}"
         defaultValue="bnd-${bndtools-release|uriLastSegment}-branch-${scope.project.stream.label}"
         label="Workspace name"/>
     <stream
