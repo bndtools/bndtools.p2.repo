@@ -53,6 +53,12 @@
           value="${pr.repo.uri}"
           label="RepoURL"/>
     </setupTask>
+    <setupTask
+        xsi:type="setup:VariableTask"
+        id="workspace.name"
+        name="workspace.name"
+        defaultValue="bnd-${bndtools-release|uriLastSegment}-branch-${scope.project.stream.label}"
+        label="Workspace name"/>
     <stream
         href="project_bnd_workspace.setup#//@streams[name='none']"/>
     <description>bndtools snapshot workspace for starting a new project in an empty workspace.</description>
