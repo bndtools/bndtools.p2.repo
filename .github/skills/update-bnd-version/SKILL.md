@@ -11,7 +11,7 @@ Use this skill when the user asks to add a new bnd/bndtools release to this repo
 
 - Release version, for example `7.3.0`.
 - Source artifact URL, for example `https://bndtools.jfrog.io/artifactory/update-latest/org/bndtools/org.bndtools.p2/<version>/org.bndtools.p2-<version>.jar`.
-- Whether Oomph defaults (`value` and `defaultValue`) should be changed or kept as-is.
+- Oomph defaults (`value` and `defaultValue`) point at the `latest` alias (`https://bndtools.org/bndtools.p2.repo/latest`, which follows `site/latest`) and normally need no change per release; only change them if the user explicitly asks to pin a version.
 
 ## Repository areas involved
 
@@ -71,11 +71,14 @@ Fallback when `xsltproc` is unavailable:
 6. Update Oomph setup choices.
 
 - Update all `setupTask` blocks with `id="bndtools-release"`.
-- Keep each file's existing `value` and `defaultValue` unless explicitly asked to change defaults.
+- Each `bndtools-release` task's `value` and `defaultValue` (whichever are present) must be `https://bndtools.org/bndtools.p2.repo/latest`; do not pin them to `<version>` unless the user asks.
+- Keep a `rel latest` choice (`.../latest`) as the first choice, above the newest `rel <version>` choice.
+- Only change the task attributes, never the `value` of `<choice>` entries (those are followed by `label="rel ..."`).
 - Ensure choices include the maintained release set from latest to baseline.
 
 Current policy baseline:
 
+- `rel 7.5.0`
 - `rel 7.4.0`
 - `rel 7.3.0`
 - `rel 7.2.3`
@@ -110,12 +113,13 @@ grep -RIn "artifactory/p2/pr/\$\{pullrequest\}" setup
 - Run diagnostics (`get_errors`) to catch syntax issues.
 - Summarize:
   - what was changed,
-  - what defaults were intentionally preserved,
+  - that defaults stay on the `latest` alias,
   - any manual follow-up (for example, if `xsltproc` was missing).
 
 ## Common pitfalls
 
-- Accidentally changing `value`/`defaultValue` in setup files when asked not to.
+- Pinning `value`/`defaultValue` of `bndtools-release` to a version instead of `latest` (or dropping the `rel latest` choice).
+- Accidentally rewriting `<choice value=...>` entries while updating defaults.
 - Dropping `SelectPullRequest` or `RepoURL` choices from setups that support PR/repo override flows.
 - Corrupting `${pullrequest}` into a literal empty path.
 - Updating `site/latest` without adding the release to `site/p2.html`.
@@ -125,6 +129,6 @@ grep -RIn "artifactory/p2/pr/\$\{pullrequest\}" setup
 
 - New release exists under `site/<version>/` with p2 artifacts plus `content.xml` and `index.html`.
 - `site/latest` and `site/p2.html` reference the new release.
-- Oomph setup files have consistent release choices and preserved defaults unless requested otherwise.
+- Oomph setup files have consistent release choices and defaults pointing at `latest` unless requested otherwise.
 - Documentation references are aligned with the new release.
 - No validation errors remain.

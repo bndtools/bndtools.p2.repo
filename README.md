@@ -10,7 +10,7 @@ commands, see the [developer guide](dev.md).
 
 * [Oomph / Eclipse Installer setup links](https://bndtools.org/bndtools.p2.repo/)
 * [Published p2 repository list](https://bndtools.org/bndtools.p2.repo/p2.html)
-* Directly accessible p2 repositories, for example [bndtools 7.4.0](https://bndtools.org/bndtools.p2.repo/7.4.0/)
+* Directly accessible p2 repositories, for example [bndtools 7.5.0](https://bndtools.org/bndtools.p2.repo/7.5.0/)
 
 ## For users
 
@@ -21,7 +21,7 @@ contributing to repositories in the bndtools GitHub organization.
 
 If an Eclipse installation asks for an update site directly, use the p2
 repository for the required release, such as
-`https://bndtools.org/bndtools.p2.repo/7.4.0/`.
+`https://bndtools.org/bndtools.p2.repo/7.5.0/`.
 
 ## direct github pages URL for accessing published repo content
 
