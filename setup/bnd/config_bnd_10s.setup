@@ -20,10 +20,16 @@
         id="bndtools-release"
         type="URI"
         name="bndtools-release"
-        value="https://bndtools.org/bndtools.p2.repo/7.4.0"
-        defaultValue="https://bndtools.org/bndtools.p2.repo/7.4.0"
+        value="https://bndtools.org/bndtools.p2.repo/latest"
+        defaultValue="https://bndtools.org/bndtools.p2.repo/latest"
         storageURI="scope://Installation"
         label="bndtools-release">
+          <choice
+        value="https://bndtools.org/bndtools.p2.repo/latest"
+        label="rel latest"/>
+          <choice
+        value="https://bndtools.org/bndtools.p2.repo/7.5.0"
+        label="rel 7.5.0"/>
           <choice
         value="https://bndtools.org/bndtools.p2.repo/7.4.0"
         label="rel 7.4.0"/>
