@@ -334,6 +334,42 @@
       </description>
       <defaultExecutionEnvironment>JavaSE-17</defaultExecutionEnvironment>
     </setupTask>
+    <setupTask
+        xsi:type="setup.p2:P2Task"
+        label="JRE 25.0.2">
+      <annotation
+          source="http://www.eclipse.org/oomph/setup/JRESpecificTasks">
+        <content
+            xsi:type="setup:EclipseIniTask"
+            option="--add-opens=java.base/java.lang=ALL-UNNAMED"
+            vm="true"/>
+        <content
+            xsi:type="setup:EclipseIniTask"
+            option="-Djava.security.manager"
+            value="=disallow"
+            vm="true"/>
+      </annotation>
+      <requirement
+          name="org.eclipse.justj.openjdk.hotspot.jre.full.feature.group"
+          filter="(|(&amp;(osgi.arch=aarch64)(osgi.os=linux))(&amp;(osgi.arch=aarch64)(osgi.os=macosx))(&amp;(osgi.arch=ppc64le)(osgi.os=linux))(&amp;(osgi.arch=riscv64)(osgi.os=linux))(&amp;(osgi.arch=x86_64)(osgi.os=linux))(&amp;(osgi.arch=x86_64)(osgi.os=macosx))(&amp;(osgi.arch=x86_64)(osgi.os=win32)))"/>
+      <repository
+          url="https://download.eclipse.org/justj/jres/25/updates/release/latest"/>
+      <description>
+        Contains the plug-ins and fragments for the Adoptium OpenJDK Hotspot JRE Complete.
+        Provides the complete set of modules of the JDK, excluding incubators.
+      </description>
+    </setupTask>
+    <setupTask
+        xsi:type="jdt:JRETask"
+        version="JavaSE-25"
+        location="${jre.location-25}"
+        name="JRE for JavaSE-25">
+      <description>
+        Define the JRE needed to compile and run the Java projects of
+        ${scope.project.label}
+      </description>
+      <defaultExecutionEnvironment>JavaSE-25</defaultExecutionEnvironment>
+    </setupTask>
   </setupTask>
   <setupTask
       xsi:type="setup:VariableTask"
@@ -354,7 +390,7 @@
       name="bndtools-release"
       storageURI="scope://Installation"
       label="bndtools-release">
-        <choice
+    <choice
         value="https://bndtools.org/bndtools.p2.repo/7.4.0"
         label="rel 7.4.0"/>
     <choice
