@@ -62,6 +62,17 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v7
+      # site/oomph-bndtools-import-task is a symlink to the extension's Maven
+      # output, so Jekyll needs the extension built first (as in static.yml).
+      - name: Setup Java 21
+        uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: '21'
+      - name: Build org.bndtools.oomph
+        run: |
+          cd org.bndtools.oomph
+          ./mvnw -B -ntp verify
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
