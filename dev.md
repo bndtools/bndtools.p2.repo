@@ -14,6 +14,8 @@ the part that is compiled.
 - `curl`, `unzip`, and `find`
 - `xsltproc` when regenerating human-readable p2 indexes
 - `xmllint` is optional; `test-oomph-consistency.sh` uses it when available
+- Python 3 (standard library only) for `test-releases-structure.sh`,
+  `test-oomph-consistency.sh`, and `serve-site.py`
 
 On Windows, run shell commands from Git Bash or WSL. The Oomph project also
 provides `mvnw.cmd` for a native Windows command prompt or PowerShell.
@@ -71,10 +73,24 @@ part of the source release site.
   with `content2html.xsl` into a browsable `index.html`.
 - `test-repo-consistency.sh` checks the local latest release, p2 listing, and
   README release link.
-- `test-oomph-consistency.sh` checks setup release choices, repository URLs,
-  PR placeholders, and XML when `xmllint` is installed.
+- `test-releases-structure.sh` checks that every `site/<version>/` release
+  directory is complete and its metadata and jars are readable.
+- `test-install-links.sh` checks that every installer button on `site/index.md`
+  points at an existing setup file.
+- `test-oomph-consistency.sh` checks setup release choices, the `latest` default
+  of `bndtools-release`, repository URLs, PR placeholders, and XML when `xmllint`
+  is installed.
 - `test-deployed-pages-consistency.sh` checks the deployed GitHub Pages site.
-- `test-all-consistency.sh` runs the three consistency checks together.
+- `test-all-consistency.sh` runs the checks together.
+- `serve-site.py` serves `site/` on `127.0.0.1`, including the `latest` alias,
+  for local p2 clients (`python3 processing/serve-site.py --site site --port 0`).
+- `make-fixture-repo.sh <dir>` turns a copy of the small fixture bnd workspace in
+  `testbed/fixtures/bnd-workspace/` into a Git repository.
+- `add-release.sh <version> [--artifact-url <url>]` performs the mechanical steps
+  of adding a release (extract the p2 jar, generate `index.html`, `site/latest`,
+  `site/p2.html`, setup release choices, README and wiki links). Safe to run twice.
+- `tests/run-tests.sh` runs the tests of these scripts against synthetic trees.
+  All check scripts accept `P2_REPO_ROOT` to run against another root.
 
 `doc/` contains general documentation and diagrams. `artifactory-sync-p2-repo/`
 is reserved for the Artifactory synchronization area and currently contains
@@ -121,13 +137,18 @@ directories from Jekyll processing so the p2 files remain directly accessible.
 From the repository root:
 
 ```bash
+bash processing/tests/run-tests.sh
 processing/test-all-consistency.sh
 ```
 
+Pull requests run the tests and all checks except the deployed-pages check in
+`.github/workflows/pr-gate.yml`, together with the Oomph extension build and a
+Jekyll build. Nothing is deployed from a pull request. The plan for the full
+testbed is in [doc/testbed.md](doc/testbed.md).
+
 The deployed-pages check requires network access to
-`https://bndtools.org/bndtools.p2.repo/`. To check only local content, run
-`processing/test-repo-consistency.sh` and
-`processing/test-oomph-consistency.sh` separately.
+`https://bndtools.org/bndtools.p2.repo/`. To check only local content, run the
+scripts other than `test-deployed-pages-consistency.sh` separately.
 
 ## Release workflows
 

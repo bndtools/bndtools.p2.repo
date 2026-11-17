@@ -1,0 +1,76 @@
+# Verifies a pull request before it can be merged. Read-only: nothing is deployed
+# and no secret is used, so the checks may run on content from forks.
+name: PR gate
+
+on:
+  pull_request:
+    branches: ["master"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pr-gate-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  static:
+    name: Static checks (ubuntu-latest)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+      - name: Ensure xmllint
+        run: |
+          command -v xmllint || { sudo apt-get update -qq && sudo apt-get install -y -qq libxml2-utils; }
+          xmllint --version
+      - name: Test the check scripts
+        run: bash processing/tests/run-tests.sh
+      - name: Repository consistency
+        run: bash processing/test-repo-consistency.sh
+      - name: Release structure
+        run: bash processing/test-releases-structure.sh
+      - name: Installer links on the setup page
+        run: bash processing/test-install-links.sh
+      - name: Oomph setup consistency
+        run: bash processing/test-oomph-consistency.sh
+
+  extension:
+    name: Oomph extension build (ubuntu-latest)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+      - name: Setup Java 21
+        uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: '21'
+      - name: Build org.bndtools.oomph
+        run: |
+          cd org.bndtools.oomph
+          ./mvnw -B -ntp verify
+      - name: Verify built repository contents
+        run: |
+          REPO_DIR="org.bndtools.oomph/org.bndtools.oomph.import.site/target/repository"
+          test -d "$REPO_DIR" && test -n "$(find "$REPO_DIR" -mindepth 1 -print -quit)"
+
+  site:
+    name: Jekyll build (ubuntu-latest)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+          bundler-cache: true
+          working-directory: './site'
+      - name: Build with Jekyll
+        run: |
+          cd site
+          bundle exec jekyll build
+        env:
+          JEKYLL_ENV: production
