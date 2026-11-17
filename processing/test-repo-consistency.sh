@@ -2,7 +2,9 @@
 
 set -euo pipefail
 
-ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+ROOT_DIR="${P2_REPO_ROOT:-$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)}"
+# shellcheck source=processing/lib-latest.sh
+source "$(dirname "${BASH_SOURCE[0]}")/lib-latest.sh"
 cd "$ROOT_DIR"
 
 failures=0
@@ -16,13 +18,13 @@ fail() {
   failures=$((failures + 1))
 }
 
-if [[ ! -f site/latest ]]; then
+if ! has_latest "$ROOT_DIR"; then
   fail "site/latest file is missing"
   echo "Repo consistency checks failed early."
   exit 1
 fi
 
-latest="$(tr -d '\r\n' < site/latest)"
+latest="$(read_latest "$ROOT_DIR")"
 
 if [[ -z "$latest" ]]; then
   fail "site/latest is empty"

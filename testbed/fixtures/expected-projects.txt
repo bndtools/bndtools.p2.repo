@@ -1,0 +1,3 @@
+# Expected projects of the fixture bnd workspace, one per line.
+cnf
+fixture.hello

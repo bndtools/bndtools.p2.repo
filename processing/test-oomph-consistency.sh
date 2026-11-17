@@ -2,7 +2,9 @@
 
 set -euo pipefail
 
-ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+ROOT_DIR="${P2_REPO_ROOT:-$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)}"
+# shellcheck source=processing/lib-latest.sh
+source "$(dirname "${BASH_SOURCE[0]}")/lib-latest.sh"
 cd "$ROOT_DIR"
 
 failures=0
@@ -16,7 +18,7 @@ fail() {
   failures=$((failures + 1))
 }
 
-if [[ ! -f site/latest || ! -f site/p2.html ]]; then
+if ! has_latest "$ROOT_DIR" || [[ ! -f site/p2.html ]]; then
   echo "FAIL: expected site/latest and site/p2.html to exist"
   exit 1
 fi
@@ -28,7 +30,7 @@ if (( ${#setup_files[@]} == 0 )); then
   exit 1
 fi
 
-latest="$(tr -d '\r\n' < site/latest)"
+latest="$(read_latest "$ROOT_DIR")"
 canonical_file="setup/bnd/config_bnd_10r.setup"
 if [[ ! -f "$canonical_file" ]]; then
   canonical_file="${setup_files[0]}"
@@ -62,6 +64,34 @@ for file in "${setup_files[@]}"; do
     fail "$file is missing snapshot (JFrog) choice"
   fi
 done
+
+while IFS= read -r problem; do
+  [[ -n "$problem" ]] && fail "$problem"
+done < <(python3 - "${setup_files[@]}" <<'PY'
+import sys
+import xml.etree.ElementTree as ET
+
+LATEST = "https://bndtools.org/bndtools.p2.repo/latest"
+
+for path in sys.argv[1:]:
+    try:
+        tree = ET.parse(path)
+    except ET.ParseError as error:
+        print("%s cannot be parsed (%s)" % (path, error))
+        continue
+    for task in tree.iter():
+        if task.get("id") != "bndtools-release":
+            continue
+        for attribute in ("value", "defaultValue"):
+            current = task.get(attribute)
+            if current is not None and current != LATEST:
+                print("%s: bndtools-release %s is '%s', expected the latest alias" % (path, attribute, current))
+        choices = [child for child in task if child.tag.split("}")[-1] == "choice"]
+        if not choices or choices[0].get("value") != LATEST or choices[0].get("label") != "rel latest":
+            print("%s: first choice of bndtools-release must be 'rel latest' pointing at the latest alias" % path)
+PY
+)
+pass "bndtools-release defaults and first choice checked in ${#setup_files[@]} setup files"
 
 mapfile -t malformed_pr < <(grep -RIn 'artifactory/p2/pr/' setup --include='*.setup' | grep -v '\${pullrequest}' || true)
 if (( ${#malformed_pr[@]} > 0 )); then
